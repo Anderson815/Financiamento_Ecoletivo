@@ -1,0 +1,30 @@
+img{
+    -webkit-box-shadow: -1px 3px 13px 3px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 3px 13px 3px rgba(0,0,0,0.75);
+    box-shadow: -1px 3px 13px 3px rgba(0,0,0,0.75);
+}
+p{
+    font-weight: lighter;
+    color: gray;
+}
+.fa-linkedin-square{
+    color: #0072b1;
+    font-size: 21px;
+    padding: 0 10px;
+}
+.fa-github-square{
+    color: black;
+    font-size: 21px;
+}
+.fa-linkedin-square:hover{
+    color: gray;
+    font-size: 25px;
+}
+.fa-github-square:hover{
+    color: gray;
+    font-size: 25px;
+}
+.equipe{
+    background-image: url('../../assets/img/fundoEquipe.jpg');
+    background-size: 100% 100%;
+}
