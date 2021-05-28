@@ -6,17 +6,21 @@ import { AppComponent } from './app.component';
 import { SobreComponent } from './sobre/sobre.component';
 import { RodapeComponent } from './rodape/rodape.component';
 import { EquipeComponent } from './equipe/equipe.component';
+import { MenuComponent } from './menu/menu.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SobreComponent,
     RodapeComponent,
-    EquipeComponent
+    MenuComponent,
+    EquipeComponent,
+    HomeComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserModule
   ],
   providers: [],
   bootstrap: [AppComponent]
