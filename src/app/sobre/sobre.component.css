@@ -1,0 +1,19 @@
+img {
+  border-radius: 30px;
+  box-shadow: 0px 0px 5px black;
+}
+
+p{
+  font-family: Verdana, Geneva, Tahoma, sans-serif, 'Times New Roman', Times, serif
+ /*  font-family: 'Courier New', Courier, monospace, sans-serif; */
+}
+
+a{
+  font-size: 14pt;
+  text-decoration: none;
+}
+
+a:hover{
+  color: rgb(24, 158, 113);
+  font-weight: 600;
+}
