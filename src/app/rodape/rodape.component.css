@@ -16,9 +16,11 @@ ul.social-network li{
 }
 
 
-
+.fa-github-alt{
+    color: black;
+}
 .fa-github-alt:hover{
-    color: #3b5998;
+    color: gray;
 }
  footer {
           background-image: url('../../assets/img/rodapeverdepng.png');
