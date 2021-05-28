@@ -8,6 +8,7 @@ import { RodapeComponent } from './rodape/rodape.component';
 import { EquipeComponent } from './equipe/equipe.component';
 import { MenuComponent } from './menu/menu.component';
 import { HomeComponent } from './home/home.component';
+import { CadastroComponent } from './cadastro/cadastro.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HomeComponent } from './home/home.component';
     RodapeComponent,
     MenuComponent,
     EquipeComponent,
-    HomeComponent
+    HomeComponent,
+    CadastroComponent
   ],
   imports: [
     AppRoutingModule,
