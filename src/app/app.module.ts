@@ -9,6 +9,7 @@ import { EquipeComponent } from './equipe/equipe.component';
 import { MenuComponent } from './menu/menu.component';
 import { HomeComponent } from './home/home.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
+import { PgInicialComponent } from './pg-inicial/pg-inicial.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { CadastroComponent } from './cadastro/cadastro.component';
     MenuComponent,
     EquipeComponent,
     HomeComponent,
-    CadastroComponent
+    CadastroComponent,
+    PgInicialComponent
   ],
   imports: [
     AppRoutingModule,
