@@ -1,3 +1,7 @@
+#sobre{
+  background-color: rgb(236, 233, 228);
+}
+
 p{
   font-family: Verdana, Geneva, Tahoma, sans-serif, 'Times New Roman', Times, serif;
 }
@@ -15,4 +19,10 @@ a:hover{
 img {
   border-radius: 30px;
   box-shadow: 0px 0px 5px black;
+}
+
+#img-brasil{
+  border-radius: 0px;
+  box-shadow: none;
+  filter: drop-shadow(0px 0px 5px black);
 }
