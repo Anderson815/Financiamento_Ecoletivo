@@ -4,17 +4,21 @@ img{
     box-shadow: -1px 3px 13px 3px rgba(0,0,0,0.75);
 }
 p{
-    font-weight: lighter;
-    color: gray;
+    /* font-weight: lighter; */
+    color: black;
 }
 .fa-linkedin-square{
-    color: #0072b1;
+    color:  #32CD32;
     font-size: 21px;
     padding: 0 10px;
+  
+
+    
 }
 .fa-github-square{
-    color: black;
+    color: #32CD32;
     font-size: 21px;
+    
 }
 .fa-linkedin-square:hover{
     color: gray;
@@ -23,8 +27,17 @@ p{
 .fa-github-square:hover{
     color: gray;
     font-size: 25px;
+    
+    
 }
-.equipe{
+/* .equipe{
     background-image: url('../../assets/img/fundoEquipe.jpg');
     background-size: 100% 100%;
+} */
+.equipe{
+    background-color: rgb(236, 233, 228);
+
+}
+.coracao{
+    color: rgb(255, 0, 0);
 }
