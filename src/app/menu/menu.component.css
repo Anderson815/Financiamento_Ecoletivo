@@ -1,14 +1,4 @@
-/* .bg-dark {
-    background: transparent !important;
-    transition: 0.5s ease;
-}
-
-.bg-dark.scrolled {
-    background: #000 !important;
-}
- */
-
- *,
+*,
 *::before,
 *::after{
     margin: 0;
@@ -129,7 +119,3 @@ header{
 .scrolling-active .nav-link::after{
     background-color: #313131;
 }
-
-
-
-
