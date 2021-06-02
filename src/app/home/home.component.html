@@ -26,12 +26,12 @@ aria-hidden="true">
 
       <div class="form-group">
         <label for="usuario">Usuário:</label>
-        <input class="form-control" type="text" name="usuario" id="usuario" placeholder="Seu usuário">
+        <input [(ngModel)]='userLogin.email' class="form-control" type="text" name="usuario" id="usuario" placeholder="Seu usuário">
       </div>
 
       <div class="form-group">
         <label for="senha">Senha:</label>
-        <input class="form-control" type="text" name="senha" id="senha" aria-describedby="passwordHelpBlock" placeholder="Digite sua senha">
+        <input [(ngModel)]='userLogin.senha' class="form-control" type="password" name="senha" id="senha" aria-describedby="passwordHelpBlock" placeholder="Digite sua senha">
         <small id="passwordHelpBlock" class="form-text text-muted">
           Sua senha deve ter no máximo 8 caracteres, os quais devem ser letras e números, sem espaços, caracteres especiais ou emojis.
         </small>
@@ -43,7 +43,7 @@ aria-hidden="true">
       </div>
 
         <div class="d-flex justify-content-center">
-          <button type="button" class="btn btn-outline-success btn-lg btn-block" data-dismiss="modal">Entrar</button>
+          <button (click)='entrar()' type="button" class="btn btn-outline-success btn-lg btn-block" data-dismiss="modal">Entrar</button>
         </div>
 
     </div>

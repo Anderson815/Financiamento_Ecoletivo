@@ -14,6 +14,7 @@ import { CadastroComponent } from './cadastro/cadastro.component';
 import { PgInicialComponent } from './pg-inicial/pg-inicial.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { LoginComponent } from './login/login.component';
+import { TimelineComponent } from './timeline/timeline.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { LoginComponent } from './login/login.component';
     HomeComponent,
     CadastroComponent,
     PgInicialComponent,
-    LoginComponent
+    LoginComponent,
+    TimelineComponent
   ],
   imports: [
     AppRoutingModule,
