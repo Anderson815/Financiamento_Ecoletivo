@@ -10,6 +10,7 @@ import { MenuComponent } from './menu/menu.component';
 import { HomeComponent } from './home/home.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { PgInicialComponent } from './pg-inicial/pg-inicial.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { PgInicialComponent } from './pg-inicial/pg-inicial.component';
     EquipeComponent,
     HomeComponent,
     CadastroComponent,
-    PgInicialComponent
+    PgInicialComponent,
+    LoginComponent
   ],
   imports: [
     AppRoutingModule,

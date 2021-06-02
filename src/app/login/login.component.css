@@ -1,0 +1,10 @@
+.bg-modal{
+  
+ background-image: url('https://i.imgur.com/ZjOOAsj.jpg');
+
+min-height: 695px;
+
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+}

@@ -7,4 +7,54 @@
         <h1 class="display-1 text-white">Financiamento</h1>
         <h1 class="display-1 text-white">Ecoletivo</h1>
         </div>
+
+   </div>
+
+   <!-- Modal -->
+<div class="modal fade bg-modal" id="login" tabindex="-1" role="dialog" aria-labelledby="TituloLoginCentralizado"
+aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="TituloLoginCentralizado">Logo Fineco</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+        <span aria-hidden="true">&times;</span>
+      </button>
     </div>
+
+    <div class="modal-body">
+
+      <div class="form-group">
+        <label for="usuario">Usuário:</label>
+        <input class="form-control" type="text" name="usuario" id="usuario" placeholder="Seu usuário">
+      </div>
+
+      <div class="form-group">
+        <label for="senha">Senha:</label>
+        <input class="form-control" type="text" name="senha" id="senha" aria-describedby="passwordHelpBlock" placeholder="Digite sua senha">
+        <small id="passwordHelpBlock" class="form-text text-muted">
+          Sua senha deve ter no máximo 8 caracteres, os quais devem ser letras e números, sem espaços, caracteres especiais ou emojis.
+        </small>
+        <div class="custom-control custom-checkbox d-flex justify-content-start">
+          <input type="checkbox" class="custom-control-input" id="customControlInline">
+          <label class="custom-control-label" for="customControlInline">Lembrar preferências</label></div>
+
+          <div class="d-flex justify-content-end"><button type="button" class="btn btn-link" routerLink="/cadastrar"><p><span>Esqueceu a senha?</span></p></button>
+      </div>
+
+        <div class="d-flex justify-content-center">
+          <button type="button" class="btn btn-outline-success btn-lg btn-block" data-dismiss="modal">Entrar</button>
+        </div>
+
+    </div>
+
+    <div class="text-center" >Não tem uma conta?<button type="button" class="btn btn-link " routerLink="/cadastrar">Cadastre-se</button></div>
+
+
+
+    <div class="modal-footer">
+      <button type="button" routerLink="/inicial" class="btn btn-outline-danger" data-dismiss="modal">Fechar</button>
+    </div>
+  </div>
+</div>
+</div>
