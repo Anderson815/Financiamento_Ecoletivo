@@ -1,3 +1,4 @@
+import { LoginComponent } from './login/login.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
@@ -7,7 +8,8 @@ import { PgInicialComponent } from './pg-inicial/pg-inicial.component';
 const routes: Routes = [
   {path: '', redirectTo: 'inicial', pathMatch: 'full'},
   {path: 'cadastrar', component: CadastroComponent},
-  {path: 'inicial', component: PgInicialComponent}
+  {path: 'inicial', component: PgInicialComponent},
+  {path: 'login', component: LoginComponent}
 ];
 
 @NgModule({
