@@ -4,5 +4,5 @@ export const environment = {
   nome: '',
   id: 0,
   foto: '',
-  server: 'https://financiamentoecoletivo.herokuapp.com/'
+  server: 'https://financiamentoecoletivo.herokuapp.com'
 };
