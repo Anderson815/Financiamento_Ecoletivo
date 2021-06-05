@@ -45,24 +45,29 @@
 
 
 <header>
-    <div class="container">
+    <div class="container pl-0">
         <nav class="nav">
-            <a href="index.html" class="logo">Fineco</a>
-            <ul class="nav-list">
+            <ul class="nav-list ml-0">
                 <li>
-                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="#home" class="nav-link" style="color: cornsilk;">Home</a>
                 </li>
                 <li>
-                    <a href="#" class="nav-link">Sobre</a>
+                    <a href="#sobre" class="nav-link">Sobre</a>
                 </li>
                 <li>
-                    <a href="#" class="nav-link">Equipe</a>
+                    <a href="#equipe" class="nav-link">Equipe</a>
                 </li>
+
+                <!-- <a class="navbar-brand" href="#">
+                    <img src="https://i.imgur.com/IM1BN2a.png" width="100" height="100" alt="">
+                  </a>
+ -->
             </ul>
+
             <div class="pr-3">
-              <a  id="nav-cta" data-toggle="modal" data-target="#login">Entrar</a>
+                <a id="nav-cta" data-toggle="modal" data-target='#login' class="btn">Entrar</a>
             </div>
-            <a routerLink="/cadastrar" id="nav-cta">Cadastrar</a>
+            <a routerLink="/cadastrar" id="nav-cta" class="btn">Cadastrar</a>
         </nav>
     </div>
 </header>

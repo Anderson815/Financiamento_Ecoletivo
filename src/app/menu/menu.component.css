@@ -81,10 +81,10 @@ header{
 #nav-cta{
     
     display: inline-block;
-    background-color: #fff;
-    color: #313131;
-    padding: 1rem 2rem;
-    border-radius: 2rem;
+    background-color: #76b734;
+    color: #ffffff;
+    padding: 1rem 1rem;
+    border-radius: 1rem;
     transition: background-color .5s ease;
 }
 
@@ -95,7 +95,7 @@ header{
 
 /*Camis, aqui são as configs após scrollar pra baixo*/
 .scrolling-active{
-    background-color: black;
+    background-color: #76b734;
     box-shadow: 0 3px 1rem rgba(0,0,0,.1);
 }
 
@@ -108,8 +108,8 @@ header{
 }
 
 .scrolling-active #nav-cta{
-    background-color: #313131;
-    color: #fff;
+    background-color: #ffffff;
+    color: #76b734;
 }
 
 .scrolling-active #nav-cta:hover{
