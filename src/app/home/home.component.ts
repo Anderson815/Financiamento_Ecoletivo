@@ -34,7 +34,7 @@ export class HomeComponent implements OnInit {
       environment.foto = this.userLogin.foto
       environment.id = this.userLogin.id
 
-      this.router.navigate(['/timeline'])
+      this.router.navigate(['/tema'])
     }, erro => {
       if(erro.status == 500){
         alert('Usuário ou senha estão incorretas');
