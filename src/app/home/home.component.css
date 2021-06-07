@@ -1,6 +1,7 @@
 .fi {
-  background-image: url('https://i.imgur.com/jSSRnVG.jpg%27');
+  background-image: url('https://i.imgur.com/0f8emwc.jpg');
   background-size: cover;
+  opacity: .90;
 }
 
 .t-bg {
@@ -8,8 +9,8 @@
   height: 100vh;
 }
 
-
 #logo{
-  width: 35vw;
-  height: 45vh;
-}
+  width: 100%;
+} 
+
+/* https://i.imgur.com/jSSRnVG.jpg%27 */
