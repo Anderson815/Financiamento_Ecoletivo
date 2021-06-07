@@ -17,7 +17,7 @@ const routes: Routes = [
   {path: 'timeline', component: TimelineComponent},
   {path: 'tema', component: TemaComponent},
   {path: 'tema-edit/:id', component: TemaEditComponent},
-  {path:"tema-delete/:id", component: TemaDeleteComponent}
+  {path: "tema-delete/:id", component: TemaDeleteComponent}
 ];
 
 @NgModule({
