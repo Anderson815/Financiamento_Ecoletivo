@@ -15,6 +15,7 @@ import { PgInicialComponent } from './pg-inicial/pg-inicial.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { LoginComponent } from './login/login.component';
 import { TimelineComponent } from './timeline/timeline.component';
+import { TemaDeleteComponent } from './delete/tema-delete/tema-delete.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { TimelineComponent } from './timeline/timeline.component';
     CadastroComponent,
     PgInicialComponent,
     LoginComponent,
-    TimelineComponent
+    TimelineComponent,
+    TemaDeleteComponent
   ],
   imports: [
     AppRoutingModule,
