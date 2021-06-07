@@ -25,6 +25,8 @@ export class TemaService {
     return this.http.get<Tema>(`${environment.server}/tema/${id}`, this.token)
   }
 
-  
+  postTema(tema: Tema): Observable<Tema>{
+    return this.http.post<Tema>(`${environment.server}/tema`, tema, this.token)
+  }
 
 }
