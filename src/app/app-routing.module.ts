@@ -7,6 +7,7 @@ import { CadastroComponent } from './cadastro/cadastro.component';
 import { PgInicialComponent } from './pg-inicial/pg-inicial.component';
 import { TimelineComponent } from './timeline/timeline.component';
 import { TemaComponent } from './tema/tema.component';
+import { TemaDeleteComponent } from './delete/tema-delete/tema-delete.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'inicial', pathMatch: 'full'},
@@ -15,8 +16,8 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'timeline', component: TimelineComponent},
   {path: 'tema', component: TemaComponent},
-  {path: 'tema-edit/:id', component: TemaEditComponent}
-
+  {path: 'tema-edit/:id', component: TemaEditComponent},
+  {path:"tema-delete/:id", component: TemaDeleteComponent}
 ];
 
 @NgModule({
