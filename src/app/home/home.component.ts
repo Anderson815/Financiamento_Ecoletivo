@@ -12,12 +12,12 @@ import { AuthService } from '../service/auth.service';
 
 export class HomeComponent implements OnInit {
 
-  userLogin: UserLogin = new UserLogin();
+  /* userLogin: UserLogin = new UserLogin(); */
 
 
   constructor(
-    private auth: AuthService,
-    private router: Router
+    /* private auth: AuthService,
+    private router: Router */
   ) { }
 
   ngOnInit(){
@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
     this.animacaoMenu();
   }
 
-  entrar(){
+  /* entrar(){
     this.auth.entrar(this.userLogin).subscribe((resp: UserLogin) => {
       this.userLogin = resp;
 
@@ -40,7 +40,7 @@ export class HomeComponent implements OnInit {
         alert('Usuário ou senha estão incorretas');
       }
     })
-  }
+  } */
 
   animacaoMenu(){
     if(window.location.href.indexOf('inicial') != -1){
