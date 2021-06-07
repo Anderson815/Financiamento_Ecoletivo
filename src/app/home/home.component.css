@@ -8,22 +8,8 @@
   height: 100vh;
 }
 
-/* img.displayed {
-max-width:200px;
-max-height:150px;
-display: block;
-margin-left: 300;
-} */
 
 #logo{
   width: 35vw;
   height: 45vh;
-}
-
-.pt-30vh{
-  padding-top: 30vh;
-}
-
-.pl-30vw{
-  padding-left: 30vw;
 }
