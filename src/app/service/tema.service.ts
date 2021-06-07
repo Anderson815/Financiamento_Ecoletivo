@@ -29,4 +29,7 @@ export class TemaService {
     return this.http.post<Tema>(`${environment.server}/tema`, tema, this.token)
   }
 
+  putTema(tema: Tema): Observable<Tema>{
+    return this.http.put<Tema>(`${environment.server}/tema`, tema, this.token)
+  }
 }
