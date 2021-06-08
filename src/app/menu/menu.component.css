@@ -40,7 +40,7 @@ header{
 
 .nav a{
     text-decoration: none;
-    color: #fff;
+    color: #76b734;
     font-size: 1.6rem;
 }
 
@@ -96,7 +96,7 @@ header{
 /*Camis, aqui são as configs após scrollar pra baixo*/
 .scrolling-active{
     background-color: #76b734;
-    box-shadow: 0 3px 1rem rgba(0,0,0,.1);
+    box-shadow: 0 3px 1rem rgba(255, 255, 255, 0.1);
 }
 
 .scrolling-active .nav{
@@ -117,5 +117,5 @@ header{
 }
 
 .scrolling-active .nav-link::after{
-    background-color: #313131;
+    background-color: #ffffff;
 }
