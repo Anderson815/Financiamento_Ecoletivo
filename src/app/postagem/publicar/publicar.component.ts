@@ -23,7 +23,7 @@ export class PublicarComponent implements OnInit {
   idTema: number
 
   user: User = new User()
-  idUser = environment.id
+  idUser: number
 
   constructor(
 
@@ -39,6 +39,12 @@ export class PublicarComponent implements OnInit {
 
       this.router.navigate(['/inicial'])
     }
+
+    console.log(`Antes IDUSER: ${this.idUser}`)
+    this.idUser = environment.id
+    console.log(`Depois IDUSER: ${this.idUser}`)
+    console.log(`Envoir: ${environment.id}`)
+
     this.getAllTema()
     this.getAllPostagem()
   }
@@ -65,7 +71,7 @@ export class PublicarComponent implements OnInit {
     this.authService.getByIdUser(this.idUser).subscribe((resp: User) => {
       this.user = resp
     })
-  } 
+  }
 
   publicar() {
 
@@ -76,6 +82,7 @@ export class PublicarComponent implements OnInit {
     this.postagem.usuario = this.user
 
     this.postagem.valor_doado = 0
+    console.log(this.idUser)
     console.log(this.postagem)
 
     this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) => {

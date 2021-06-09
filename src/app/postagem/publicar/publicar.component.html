@@ -10,36 +10,36 @@
                   </button>
               </div>
               <div class="modal-body">
-  
+
                   <div class="form-group">
                       <label for="titulo">Título</label>
                       <input [(ngModel)]='postagem.titulo' type="text" class="form-control" id="titulo"
                           placeholder="Digite o título">
                   </div>
-  
+
                   <div class="form-group">
                       <label for="texto">Texto</label>
                       <textarea [(ngModel)]='postagem.descricao' class="form-control" name="texto" id="texto" placeholder="Digite uma descrição do projeto" rows="3"></textarea>
                   </div>
-  
+
                   <div class="form-group">
                     <label for="midia">Mídia</label>
                     <input [(ngModel)]='postagem.midia' type="midia" class="form-control" id="midia" placeholder="Se desejar, insira o link de uma imagem ou vídeo">
                 </div>
-  
+
                   <div class="form-group">
                     <label for="meta">Meta</label>
                     <input [(ngModel)]='postagem.meta' type="text" class="form-control" id="meta" placeholder="Digite o valor desejado">
                 </div>
-  
+
                   <div class="form-group">
                       <label for="texto">Escolha um tema ou <a data-dismiss="modal" routerLink='/tema'>cadastre um novo</a>: </label>
-                      <select name="tema" id="tema" class="form-control" [(ngModel)]='idTema' (change)='findByIdTema()'> 
+                      <select name="tema" id="tema" class="form-control" [(ngModel)]='idTema' (change)='findByIdTema()'>
                         <option *ngFor='let item of listaTemas' value="{{item.id}}">{{item.tema}}
-                        </option>                          
+                        </option>
                       </select>
                   </div>
-  
+
               </div>
               <div class="modal-footer">
                   <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
