@@ -1,48 +1,124 @@
+
 <!-- Criar Postagem -->
-<div class="container">
-  <div class="row d-flex align-items-center">
-    <div class="card">
-      <div class="card-body">
-        <button class="btn btn-outline-secondary" data-toggle="modal" data-target="#novaPostagem">Insira sua publicação</button>
-      </div>
+
+<!--Logo
+<div class="row d-flex justify-content align-items-center my-5" data-aos="fade-up-left">
+  <div class="col-md-6 px-5">
+    <img class="w-100 rounted" src="../../assets/img/Logo2.png" alt="funcionalidade da plataforma">
+  </div>
+-->
+
+<!--Carrossel
+<div class="col-md-6 px-5">
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100 " src="https://i.imgur.com/X4d6ft2.jpg" alt="Primeiro Slide" >
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100 "  src="https://i.imgur.com/1oCzizI.jpg" alt="Segundo Slide" >
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100 " src="https://i.imgur.com/fM18JIJ.png" alt="Terceiro Slide">
     </div>
   </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Anterior</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Próximo</span>
+  </a>
 </div>
-<h1 class="text-center mt-3">Timeline</h1>
-<app-publicar></app-publicar>
+</div>
+</div>
+-->
+
+   <!--NavBar-->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Home</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" class="d-flex justify-content align-items-center" id="conteudoNavbarSuportado">
+        <ul class="navbar-nav mr-auto ">
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Meu Perfil</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Editar Cadastro</a>
+              <a class="dropdown-item" href="#">Minhas Postagens</a>
+              </div>
+          </li>
+        <li class="nav-item active">
+        <a class="nav-link" href="#">Sair<span class="sr-only">(página atual)</span></a>
+        </li>
+          </ul>
+          </div>
+          </nav>
+    <!--/NavBar-->
+
+  <!--Filtro-->
+
+ <div>
+    <ul class="flex-column">
+      <li>Filtro</li>
+        <li>
+        <!-- Criar Postagem -->
+        <button class="btn" data-toggle="modal" data-target="#novaPostagem">Insira sua publicação</button>
+        <app-publicar></app-publicar>
+        </li>
+        <li>
+          <!-- Botão para acionar modal -->
+          <button type="button" class="btn" data-toggle="modal" data-target="#ExemploModalCentralizado">
+            Abrir modal de demonstração
+          </button>
+          <app-postagem-delete></app-postagem-delete>
+          </li>
+        <li>
+          <!-- Botão para acionar modal -->
+          <button type="button" class="btn" data-toggle="modal" data-target="#atualizarPostagem" (click)='editarPostagem(3)'>
+            Modal de Put Postagem
+          </button>
+          <app-postagem-edit></app-postagem-edit>
+      </li>
+    </ul>
+  </div>
+ <!--/Filtro-->
+
 
 <!-- Card de Postagem -->
 
 <div class="container-fluid">
-  <div class= "card-columns">
-    <div class="card text-center mt-3" style="width: 18rem;" *ngFor= 'let item of listaPostagens'>
-
+  <div class="card-columns">
+    <div class="card text-center mt-3" style="width: 18rem;" *ngFor='let item of listaPostagens'>
       <div class="card-header"> by: {{item.usuario.nome}}</div>
       <small class="text-muted"> Tema: {{item.tema.tema}}</small>
-        <h3 class="card-title mt-3">{{item.titulo}}</h3>
-        <div class="card-body">
+      <h3 class="card-title mt-3">{{item.titulo}}</h3>
+      <div class="card-body">
         <img class="card-img-top" src="{{item.midia}}" alt="Imagem de capa do card">
-          <p class="card-text-center mt-3">{{item.descricao}}</p>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">Arrecadado: R$ {{item.valor_doado}}</li>
-              <li class="list-group-item">Meta: R$ {{item.meta}}</li>
-          </ul>
-        <p class="card-text"><small class="text-muted">{{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date: 'HH:mm'}}</small></p>
-        <a href="#" class="btn btn-success mt-3">Doar</a>
+        <p class="card-text-center mt-3">{{item.descricao}}</p>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Arrecadado: R$ {{item.valor_doado}}</li>
+          <li class="list-group-item">Meta: R$ {{item.meta}}</li>
+        </ul>
+        <p class="card-text"><small class="text-muted">{{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date:
+            'HH:mm'}}</small></p>
+        <button type="button" class="btn btn-success mr-3" data-toggle="modal"
+          data-target="#editarPostagem" (click)='editarPostagem()'>Editar
+        </button>
+        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#excluirPostagem"
+          (click)='excluirPostagem()'>
+          Excluir
+        </button>
+        <app-postagem-edit></app-postagem-edit>
+        <app-postagem-delete></app-postagem-delete>
       </div>
     </div>
   </div>
-</div>
-
-
-<!-- Botão para acionar modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ExemploModalCentralizado">
-    Abrir modal de demonstração
-  </button>
-<app-postagem-delete></app-postagem-delete>
-
-<!-- Botão para acionar modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#atualizarPostagem" (click)='editarPostagem(3)'>
-  Modal de Put Postagem
-</button>
-<app-postagem-edit></app-postagem-edit>
+  </div>
