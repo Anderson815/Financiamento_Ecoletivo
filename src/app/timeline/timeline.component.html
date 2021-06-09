@@ -3,7 +3,8 @@
   <div class="row d-flex align-items-center">
     <div class="card">
       <div class="card-body">
-        <button class="btn btn-outline-secondary" data-toggle="modal" data-target="#novaPostagem">Insira sua publicação</button>
+        <button class="btn btn-outline-secondary" data-toggle="modal" data-target="#novaPostagem">Insira sua
+          publicação</button>
       </div>
     </div>
   </div>
@@ -14,35 +15,50 @@
 <!-- Card de Postagem -->
 
 <div class="container-fluid">
-  <div class= "card-columns">
-    <div class="card text-center mt-3" style="width: 18rem;" *ngFor= 'let item of listaPostagens'>
+  <div class="card-columns">
+    <div class="card text-center mt-3" style="width: 18rem;" *ngFor='let item of listaPostagens'>
 
       <div class="card-header"> by: {{item.usuario.nome}}</div>
       <small class="text-muted"> Tema: {{item.tema.tema}}</small>
-        <h3 class="card-title mt-3">{{item.titulo}}</h3>
-        <div class="card-body">
+      <h3 class="card-title mt-3">{{item.titulo}}</h3>
+      <div class="card-body">
         <img class="card-img-top" src="{{item.midia}}" alt="Imagem de capa do card">
-          <p class="card-text-center mt-3">{{item.descricao}}</p>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">Arrecadado: R$ {{item.valor_doado}}</li>
-              <li class="list-group-item">Meta: R$ {{item.meta}}</li>
-          </ul>
-        <p class="card-text"><small class="text-muted">{{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date: 'HH:mm'}}</small></p>
-        <a href="#" class="btn btn-success mt-3">Doar</a>
+        <p class="card-text-center mt-3">{{item.descricao}}</p>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Arrecadado: R$ {{item.valor_doado}}</li>
+          <li class="list-group-item">Meta: R$ {{item.meta}}</li>
+        </ul>
+        <p class="card-text"><small class="text-muted">{{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date:
+            'HH:mm'}}</small></p>
+
+        <button type="button" class="btn btn-success mr-3" data-toggle="modal"
+          data-target="#editarPostagem" (click)='editarPostagem()'>Editar
+        </button>
+
+        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#excluirPostagem"
+          (click)='excluirPostagem()'>
+          Excluir
+        </button>
+
+        <app-postagem-edit></app-postagem-edit>
+        <app-postagem-delete></app-postagem-delete>
+
       </div>
     </div>
   </div>
 </div>
 
 
-<!-- Botão para acionar modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ExemploModalCentralizado">
-    Abrir modal de demonstração
-  </button>
-<app-postagem-delete></app-postagem-delete>
+
 
 <!-- Botão para acionar modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#atualizarPostagem" (click)='editarPostagem(3)'>
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ExemploModalCentralizado">
+    Abrir modal de demonstração
+  </button>
+<app-postagem-delete></app-postagem-delete> -->
+
+<!-- Botão para acionar modal -->
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#atualizarPostagem" (click)='editarPostagem(3)'>
   Modal de Put Postagem
 </button>
-<app-postagem-edit></app-postagem-edit>
+<app-postagem-edit></app-postagem-edit> -->
