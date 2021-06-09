@@ -12,21 +12,28 @@
 <app-publicar></app-publicar>
 
 <!-- Card de Postagem -->
-<div class="card text-center mt-3" style="width: 18rem;">
-  <div class="card-header">Destaque: perfil do usuario </div>
-    <h3 class="card-title mt-3">Limpeza da Cachoeira</h3>
+
+<div class="container-fluid">
+<div class= "card-columns">
+<div class="card text-center mt-3" style="width: 18rem;" *ngFor= 'let item of listaPostagens'>
+
+  <div class="card-header"> by: {{item.usuario.nome}}</div>
+  <small class="text-muted"> Tema: {{item.tema.descricao}}</small>
+    <h3 class="card-title mt-3">{{item.titulo}}</h3>
     <div class="card-body">
   <img class="card-img-top" src="https://i.imgur.com/1oCzizI.jpg" alt="Imagem de capa do card">
-    <p class="card-text-center mt-3">
-      Olá, estou organizando grupos para limpeza da nossa cachoeira Uná! Resolvi fazer está campanha para compartilhar o feito com mais pessoas e começar a organizar as trilhas até a cachoeira e assim receber mais visitantes e proyteger o local tornando o espaço mais seguro para todos! Quero limpar as trilhas, a cachoeira! Faça a sua doação e contribua para a mudança do local! Quero colocar lixeiras, abrir mais as trilhas, Construir Decks pra facilitar a caminhada nas  travessias das trilhas e entre outras organizações. Você gostou da ideia? Quer ajudar? Precisa de mais informações? me mande mensagem. Desde já agradeço, vamos juntos cuidar desse paraiso S2</p>
-
+    <p class="card-text-center mt-3">{{item.texto}}</p>
       <ul class="list-group list-group-flush">
         <li class="list-group-item">Arrecadado: R$ 500,00</li>
         <li class="list-group-item">Meta: R$ 2.000,00</li>
      </ul>
-     <a href="#" class="btn btn-success mt-3">Doar</a>
+ <p class="card-text"><small class="text-muted">{{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date: 'HH:mm'}}</small></p>
+ <a href="#" class="btn btn-success mt-3">Doar</a>
 </div>
 </div>
+</div>
+</div>
+
 
 <!-- Botão para acionar modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ExemploModalCentralizado">
