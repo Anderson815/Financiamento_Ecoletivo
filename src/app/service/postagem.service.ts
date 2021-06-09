@@ -24,5 +24,9 @@ export class PostagemService {
   getByIdPostagem(id: number): Observable<Postagem>{
     return this.http.get<Postagem>(`${environment.server}/postagem/${id}`, this.token)
   }
-  
+
+  postPostagem(postagem: Postagem): Observable<Postagem>{
+    return this.http.post<Postagem>(`${environment.server}/postagem`, postagem, this.token)
+  }
+
 }
