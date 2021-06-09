@@ -33,6 +33,11 @@ export class PostagemService {
     return this.http.put<Postagem>(`${environment.server}/postagem`, postagem, this.token)
   }
 
+  //Pode dar problema
+  doarPostagem(id: number, valor: number){
+    return this.http.put<Postagem>(`${environment.server}/postagem/doacao/id/${id}/valor/${valor}`, this.token)
+  }
+
   deletePostagem(id: number){
     return this.http.delete(`${environment.server}/postagem/${id}`, this.token)
   }
