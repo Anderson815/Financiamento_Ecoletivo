@@ -33,5 +33,7 @@ export class PostagemService {
     return this.http.put<Postagem>(`${environment.server}/postagem`, postagem, this.token)
   }
 
-  
+  deletePostagem(id: number){
+    return this.http.delete(`${environment.server}/postagem/${id}`, this.token)
+  }
 }
