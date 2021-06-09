@@ -29,4 +29,9 @@ export class PostagemService {
     return this.http.post<Postagem>(`${environment.server}/postagem`, postagem, this.token)
   }
 
+  putPostagem(postagem: Postagem): Observable<Postagem>{
+    return this.http.put<Postagem>(`${environment.server}/postagem`, postagem, this.token)
+  }
+
+  
 }
