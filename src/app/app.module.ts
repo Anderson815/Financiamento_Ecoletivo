@@ -18,12 +18,8 @@ import { TimelineComponent } from './timeline/timeline.component';
 import { TemaComponent } from './tema/tema.component';
 import { TemaEditComponent } from './edit/tema-edit/tema-edit.component';
 import { TemaDeleteComponent } from './delete/tema-delete/tema-delete.component';
-<<<<<<< HEAD
-import { PostagemPublicarComponent } from './postagem-publicar/postagem-publicar.component';
 import { PublicarComponent } from './postagem/publicar/publicar.component';
-=======
 import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delete.component';
->>>>>>> modal-delete
 
 @NgModule({
   declarations: [
@@ -40,12 +36,8 @@ import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delet
     TemaComponent,
     TemaEditComponent,
     TemaDeleteComponent,
-<<<<<<< HEAD
-    PostagemPublicarComponent,
-    PublicarComponent
-=======
+    PublicarComponent,
     PostagemDeleteComponent
->>>>>>> modal-delete
   ],
   imports: [
     AppRoutingModule,

@@ -13,13 +13,13 @@
   
                   <div class="form-group">
                       <label for="titulo">Título</label>
-                      <input [(ngModel)]='postagem.titulo' type="text" class="form-control" id="titulo"
+                      <input type="text" class="form-control" id="titulo"
                           placeholder="Digite o título">
                   </div>
   
                   <div class="form-group">
                       <label for="texto">Texto</label>
-                      <textarea [(ngModel)]='postagem.texto' class="form-control" name="texto" id="texto" placeholder="Digite uma descrição do projeto" rows="3"></textarea>
+                      <textarea class="form-control" name="texto" id="texto" placeholder="Digite uma descrição do projeto" rows="3"></textarea>
                   </div>
   
                   <div class="form-group">
@@ -34,17 +34,17 @@
   
                   <div class="form-group">
                       <label for="texto">Escolha um tema ou <a data-dismiss="modal" routerLink='/tema'>cadastre um novo</a>: </label>
-                      <select name="tema" id="tema" class="form-control" [(ngModel)]='idTema' (change)='findByIdTema()'> 
+                      <select name="tema" id="tema" class="form-control"> 
                         <option selected>Opções</option>
   
-                          <option *ngFor='let item of listaTemas' value="{{item.id}}">{{item.descricao}}</option>
+                          <option value="">Tema</option>
                       </select>
                   </div>
   
               </div>
               <div class="modal-footer">
                   <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                  <button type="button" class="btn btn-success" (click)='publicar()'
+                  <button type="button" class="btn btn-success"
                       data-dismiss="modal">Publicar</button>
               </div>
           </div>
