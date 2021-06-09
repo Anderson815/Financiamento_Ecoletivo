@@ -41,4 +41,9 @@ export class PostagemService {
   deletePostagem(id: number){
     return this.http.delete(`${environment.server}/postagem/${id}`, this.token)
   }
+
+  getIdPostagem(){
+    let id = environment.idPostagem
+    return id
+  }
 }
