@@ -30,13 +30,11 @@ export class LoginComponent implements OnInit {
       environment.foto = this.userLogin.foto
       environment.id = this.userLogin.id
 
-      this.router.navigate(['/tema'])
+      this.router.navigate(['/timeline'])
     }, erro => {
       if(erro.status == 500){
         alert('Usuário ou senha estão incorretas');
       }
     })
   }
-
-
 }
