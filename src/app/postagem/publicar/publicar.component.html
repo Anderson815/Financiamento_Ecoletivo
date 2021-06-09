@@ -13,39 +13,37 @@
   
                   <div class="form-group">
                       <label for="titulo">Título</label>
-                      <input type="text" class="form-control" id="titulo"
+                      <input [(ngModel)]='postagem.titulo' type="text" class="form-control" id="titulo"
                           placeholder="Digite o título">
                   </div>
   
                   <div class="form-group">
                       <label for="texto">Texto</label>
-                      <textarea class="form-control" name="texto" id="texto" placeholder="Digite uma descrição do projeto" rows="3"></textarea>
+                      <textarea [(ngModel)]='postagem.descricao' class="form-control" name="texto" id="texto" placeholder="Digite uma descrição do projeto" rows="3"></textarea>
                   </div>
   
                   <div class="form-group">
-                    <label for="midia">Midia</label>
-                    <input type="midia" class="form-control" id="midia" placeholder="Se desejar, insira o link de uma imagem ou vídeo">
+                    <label for="midia">Mídia</label>
+                    <input [(ngModel)]='postagem.midia' type="midia" class="form-control" id="midia" placeholder="Se desejar, insira o link de uma imagem ou vídeo">
                 </div>
   
                   <div class="form-group">
                     <label for="meta">Meta</label>
-                    <input type="text" class="form-control" id="meta" placeholder="Digite o valor desejado">
+                    <input [(ngModel)]='postagem.meta' type="text" class="form-control" id="meta" placeholder="Digite o valor desejado">
                 </div>
   
                   <div class="form-group">
                       <label for="texto">Escolha um tema ou <a data-dismiss="modal" routerLink='/tema'>cadastre um novo</a>: </label>
-                      <select name="tema" id="tema" class="form-control"> 
-                        <option selected>Opções</option>
-  
-                          <option value="">Tema</option>
+                      <select name="tema" id="tema" class="form-control" [(ngModel)]='idTema' (change)='findByIdTema()'> 
+                        <option *ngFor='let item of listaTemas' value="{{item.id}}">{{item.tema}}
+                        </option>                          
                       </select>
                   </div>
   
               </div>
               <div class="modal-footer">
                   <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                  <button type="button" class="btn btn-success"
-                      data-dismiss="modal">Publicar</button>
+                  <button type="button" class="btn btn-success" data-dismiss="modal" (click)='publicar()' >Publicar</button>
               </div>
           </div>
       </div>
