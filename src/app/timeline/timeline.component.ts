@@ -13,6 +13,10 @@ import { User } from '../model/User';
 })
 export class TimelineComponent implements OnInit {
 
+
+  postagemEdit: Postagem = new Postagem();
+
+
   postagem: Postagem = new Postagem()
   listaPostagens: Postagem[]
 
@@ -36,18 +40,49 @@ export class TimelineComponent implements OnInit {
     this.getAllPostagem()
   }
 
-  editarPostagem(id: number){
-    environment.idPostagem = id;
+  editarPostagem(postagem: Postagem){
+    this.postagemEdit = postagem
+    console.log(this.postagemEdit)
   }
 
-getAllPostagem(){
-  this.postagemService.getAllPostagem().subscribe((resp: Postagem[]) => {
-    this.listaPostagens = resp
-  })
-}
-findByUser(){
-  this.authService.getByIdUser(this.idUser).subscribe((resp: User) =>{
-    this.user = resp
-  })
-}
+  /* atualizar(){
+    this.postagemService.putPostagem(this.postagemEdit).subscribe((resp: Postagem) => {
+      alert('Projeto atualizado com sucesso!')
+    })
+  } */
+
+  apagar(){
+    this.postagemService.deletePostagem(this.postagemEdit.id).subscribe(() => {
+      alert('Projeto deletado com sucesso!')
+    })
+  }
+
+  getAllPostagem(){
+    this.postagemService.getAllPostagem().subscribe((resp: Postagem[]) => {
+      this.listaPostagens = resp
+    })
+  }
+
+  findByUser(){
+    this.authService.getByIdUser(this.idUser).subscribe((resp: User) =>{
+      this.user = resp
+    })
+  }
+
+  minhaPostagem(id: number): boolean{
+    let meuPost: boolean;
+    if(id == this.idUser){
+      meuPost = true;
+    }
+    return meuPost;
+  }
+
+  outraPostagem(id: number): boolean{
+    let outroPost: boolean;
+    if(id != this.idUser){
+      outroPost = true;
+    }
+    return outroPost;
+  }
+
 }
