@@ -53,9 +53,12 @@
             <li class="list-group-item">Meta: R$ {{item.meta}}</li>
           </ul> -->
           <hr>
-          <span class="mr-2">Arrecadado: R$ {{item.valor_doado}}</span>
-          <span class="ml-2">Meta: R$ {{item.meta}}</span>
-          <hr>
+          <p>
+            <span class="mr-2">Arrecadado: R$ {{item.valor_doado}}</span>
+            <span class="ml-2">Meta: R$ {{item.meta}}</span>
+          </p>
+
+
           <!-- <p class="card-text"><small class="text-muted">{{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date:
               'HH:mm'}}</small></p> -->
 
@@ -71,7 +74,7 @@
           </div>
 
           <div *ngIf='outraPostagem(item.usuario.id)'>
-            <button type="button" class="btn btn-success mt-3" data-toggle="modal" data-target="#excluirPostagem"
+            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#excluirPostagem"
                 (click)='editarPostagem(item)'>
                 Doar
             </button>
