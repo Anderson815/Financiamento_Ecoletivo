@@ -81,6 +81,8 @@
           <div *ngIf='imagemOk(item.midia)'>
             <img class="card-img-top" src="{{item.midia}}" alt="Imagem do card">
           </div>
+          <p class="card-text-center text-left mt-3">{{item.descricao}}</p>
+          
 
         <app-doacao></app-doacao>
         <app-postagem-edit [postagem] = 'postagemEdit'></app-postagem-edit>
