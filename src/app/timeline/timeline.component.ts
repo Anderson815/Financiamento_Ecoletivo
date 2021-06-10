@@ -35,6 +35,8 @@ export class TimelineComponent implements OnInit {
       this.router.navigate(['/entrar'])
     }
 
+    this.findByUser()
+
     this.getAllPostagem()
     if(this.deleteOk){
       this.getAllPostagem()
@@ -74,4 +76,13 @@ export class TimelineComponent implements OnInit {
     }
     return outroPost;
   }
+
+  imagemOk(imagem: string): boolean{
+    let imgOk = false;
+    if(imagem !== ""){
+      imgOk = true;
+    }
+    return imgOk;
+  }
+
 }
