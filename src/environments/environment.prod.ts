@@ -5,5 +5,6 @@ export const environment = {
   id: 0,
   foto: '',
   server: 'https://financiamentoecoletivo.herokuapp.com',
-  idPostagem: 0
+  idPostagem: 0,
+  tipo: ''
 };
