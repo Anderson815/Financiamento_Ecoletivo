@@ -1,3 +1,4 @@
+import { AlertasService } from './../../service/alertas.service';
 import { environment } from 'src/environments/environment.prod';
 import { PostagemService } from './../../service/postagem.service';
 import { Component, OnInit } from '@angular/core';
@@ -15,7 +16,8 @@ export class PostagemEditComponent implements OnInit {
   idPostagem: number = this.postagemService.getIdPostagem();
 
   constructor(
-    private postagemService: PostagemService
+    private postagemService: PostagemService,
+    private alertas: AlertasService
   ) { }
 
   ngOnInit(){
@@ -29,8 +31,7 @@ export class PostagemEditComponent implements OnInit {
 
   atualizar(){
     this.postagemService.putPostagem(this.postagem).subscribe((resp: Postagem) => {
-      alert("Projeto atualizado com sucesso!");
+      this.alertas.showAlertSucess("Projeto atualizado com sucesso!");
     })
   }
-
 }
