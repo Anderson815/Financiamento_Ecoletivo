@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Postagem } from 'src/app/model/Postagem';
+import { AlertasService } from 'src/app/service/alertas.service';
 import { PostagemService } from 'src/app/service/postagem.service';
 import { environment } from 'src/environments/environment.prod';
 
@@ -21,6 +22,7 @@ export class PostagemDeleteComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private postagemService: PostagemService,
+    private alertas: AlertasService
 
   ) { }
 
@@ -41,7 +43,7 @@ export class PostagemDeleteComponent implements OnInit {
 
   apagar(){
     this.postagemService.deletePostagem(this.postagem.id).subscribe(()=>{
-      alert("Projeto excluído com sucesso!")
+      this.alertas.showAlertSucess('Projeto excluído com sucesso!')
       this.router.navigate(["/inicial"])
       setTimeout(()=>{
         this.router.navigate(["/timeline"])

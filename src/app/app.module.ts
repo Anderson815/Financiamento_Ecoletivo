@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 import { AppComponent } from './app.component';
 import { SobreComponent } from './sobre/sobre.component';
@@ -22,6 +23,7 @@ import { PublicarComponent } from './postagem/publicar/publicar.component';
 import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delete.component';
 import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.component';
 import { DoacaoComponent } from './doacao/doacao.component';
+import { AlertasComponent } from './alertas/alertas.component';
 
 @NgModule({
   declarations: [
@@ -41,13 +43,15 @@ import { DoacaoComponent } from './doacao/doacao.component';
     PublicarComponent,
     PostagemDeleteComponent,
     PostagemEditComponent,
-    DoacaoComponent
+    DoacaoComponent,
+    AlertasComponent
   ],
   imports: [
     AppRoutingModule,
     BrowserModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ModalModule.forRoot()
   ],
   providers: [
     {

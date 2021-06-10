@@ -1,3 +1,4 @@
+import { AlertasService } from './../../service/alertas.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Postagem } from 'src/app/model/Postagem';
@@ -30,7 +31,8 @@ export class PublicarComponent implements OnInit {
     private router: Router,
     private postagemService: PostagemService,
     private temaService: TemaService,
-    private authService: AuthService
+    private authService: AuthService,
+    private alertas: AlertasService
 
   ) {}
 
@@ -87,7 +89,7 @@ export class PublicarComponent implements OnInit {
 
     this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) => {
       this.postagem = resp
-      alert('Postagem realizada com sucesso!')
+      this.alertas.showAlertSucess('Postagem realizada com sucesso!')
       this.postagem = new Postagem()
       this.router.navigate(["/inicial"])
       setTimeout(()=>{
