@@ -1,27 +1,14 @@
-<!-- Criar Postagem -->
-<!--
-<div class="container">
-  <div class="row d-flex align-items-center">
-    <div class="card">
-      <div class="card-body">
-        <button class="btn btn-outline-secondary" data-toggle="modal" data-target="#novaPostagem">Insira sua
-          publicação</button>
-      </div>
-    </div>
-  </div>
-</div> -->
-
 <!--Menu-->
 <header>
   <section>
     <div class="container pl-0 pr-0">
       <nav class="nav">
         <li class="nav-item active ml-3">
-          <img src="{{foto}}" alt="Imagem do usuário" width="50px" height="50px" class="img-fluid rounded-circle">
+          <img src="../../assets/img/Logo2.png" alt="Imagem do usuário" width="50px" height="50px" class="img-fluid rounded-circle">
         </li>
 
         <li class="nav-item mr-auto">
-          <p class="m-0 txt-v font-weight-bold pl-2">{{nome}}</p>
+          <p class="m-0 txt-v font-weight-bold pl-3">Financiamento Ecoletivo</p>
         </li>
 
         <div class="mr-3">
@@ -75,23 +62,19 @@
             </div>
           </div>
         </div>
-<!--         <small class="text-muted"> Tema: {{item.tema.tema}}</small> -->
+
         <h3 class="card-title mt-3">{{item.titulo}}</h3>
         <div class="card-body">
           <div *ngIf='imagemOk(item.midia)'>
             <img class="card-img-top" src="{{item.midia}}" alt="Imagem do card">
           </div>
           <p class="card-text-center text-left mt-3">{{item.descricao}}</p>
-          
+
 
         <app-doacao></app-doacao>
         <app-postagem-edit [postagem] = 'postagemEdit'></app-postagem-edit>
         <app-postagem-delete [postagem] = 'postagemEdit'></app-postagem-delete>
 
-<!--           <ul class="list-group list-group-flush">
-            <li class="list-group-item">Arrecadado: R$ {{item.valor_doado}}</li>
-            <li class="list-group-item">Meta: R$ {{item.meta}}</li>
-          </ul> -->
           <hr>
           <p>
             <span class="mr-2">Arrecadado: R$ {{item.valor_doado}}</span>
