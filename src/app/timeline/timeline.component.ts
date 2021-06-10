@@ -14,6 +14,7 @@ import { User } from '../model/User';
 export class TimelineComponent implements OnInit {
 
   postagem: Postagem = new Postagem()
+  postagemEdit: Postagem = new Postagem();
   listaPostagens: Postagem[]
 
   user: User = new User()
@@ -36,18 +37,34 @@ export class TimelineComponent implements OnInit {
     this.getAllPostagem()
   }
 
-  editarPostagem(id: number){
-    environment.idPostagem = id;
+  editarPostagem(postagem: Postagem){
+    // environment.idPostagem = id;
+    this.postagemEdit = postagem;
+    console.log(this.postagemEdit)
   }
 
-getAllPostagem(){
-  this.postagemService.getAllPostagem().subscribe((resp: Postagem[]) => {
-    this.listaPostagens = resp
-  })
-}
-findByUser(){
-  this.authService.getByIdUser(this.idUser).subscribe((resp: User) =>{
-    this.user = resp
-  })
-}
+  getAllPostagem(){
+    this.postagemService.getAllPostagem().subscribe((resp: Postagem[]) => {
+      this.listaPostagens = resp
+    })
+  }
+
+  findByUser(){
+    this.authService.getByIdUser(this.idUser).subscribe((resp: User) =>{
+      this.user = resp
+    })
+  }
+
+/*   atualizar(){
+    // Adicionar FormControl e obter o objeto atualizado...
+    this.postagemService.putPostagem(this.postagemEdit).subscribe((resp: Postagem) => {
+      alert("Projeto atualizado com sucesso!");
+    })
+  }
+
+  apagar(){
+    this.postagemService.deletePostagem(this.postagemEdit.id).subscribe(()=>{
+      alert("Projeto excluído com sucesso!")
+    })
+  } */
 }

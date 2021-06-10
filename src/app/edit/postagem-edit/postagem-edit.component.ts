@@ -1,6 +1,6 @@
 import { environment } from 'src/environments/environment.prod';
 import { PostagemService } from './../../service/postagem.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { Postagem } from 'src/app/model/Postagem';
 
@@ -11,21 +11,21 @@ import { Postagem } from 'src/app/model/Postagem';
 })
 export class PostagemEditComponent implements OnInit {
 
-  postagem: Postagem = new Postagem();
+  @Input() postagem: Postagem;
   idPostagem: number = this.postagemService.getIdPostagem();
 
   constructor(
     private postagemService: PostagemService
-  ) { }
+  ) {}
 
   ngOnInit(){
   }
 
-  findByIdPostagem(id: number){
+/*   findByIdPostagem(id: number){
     this.postagemService.getByIdPostagem(id).subscribe((resp: Postagem) => {
       this.postagem = resp;
     })
-  }
+  } */
 
   atualizar(){
     this.postagemService.putPostagem(this.postagem).subscribe((resp: Postagem) => {
