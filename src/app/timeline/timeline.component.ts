@@ -35,6 +35,8 @@ export class TimelineComponent implements OnInit {
       this.router.navigate(['/entrar'])
     }
 
+    this.findByUser()
+
     this.getAllPostagem()
     if(this.deleteOk){
       this.getAllPostagem()
