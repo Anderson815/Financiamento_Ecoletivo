@@ -74,4 +74,13 @@ export class TimelineComponent implements OnInit {
     }
     return outroPost;
   }
+
+  imagemOk(imagem: string): boolean{
+    let imgOk = false;
+    if(imagem !== ""){
+      imgOk = true;
+    }
+    return imgOk;
+  }
+
 }

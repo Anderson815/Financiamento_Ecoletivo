@@ -16,43 +16,55 @@
 <!-- Card de Postagem -->
 
 <div class="container-fluid">
-  <div class="card-columns">
-    <div class="card text-center mt-3" style="width: 18rem;" *ngFor='let item of listaPostagens'>
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-6">
+      <div class="card text-center my-5" style="" *ngFor='let item of listaPostagens'>
 
-      <div class="card-header"> by: {{item.usuario.nome}}</div>
-      <small class="text-muted"> Tema: {{item.tema.tema}}</small>
-      <h3 class="card-title mt-3">{{item.titulo}}</h3>
-      <div class="card-body">
-        <img class="card-img-top" src="{{item.midia}}" alt="Imagem de capa do card">
-        <p class="card-text-center mt-3">{{item.descricao}}</p>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">Arrecadado: R$ {{item.valor_doado}}</li>
-          <li class="list-group-item">Meta: R$ {{item.meta}}</li>
-        </ul>
-        <p class="card-text"><small class="text-muted">{{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date:
-            'HH:mm'}}</small></p>
+        <!-- width: 18rem; -->
 
-        <div id="deletarAtualizarPostagem" *ngIf='minhaPostagem(item.usuario.id)'>
-          <button type="button" class="btn btn-success mr-3" data-toggle="modal"
-            data-target="#editarPostagem" (click)='editarPostagem(item)'>Editar
-          </button>
+        <div class="card-header"> by: {{item.usuario.nome}}</div>
+        <small class="text-muted"> Tema: {{item.tema.tema}}</small>
+        <h3 class="card-title mt-3">{{item.titulo}}</h3>
+        <div class="card-body">
+          <div *ngIf='imagemOk(item.midia)'>
+            <img class="card-img-top" src="{{item.midia}}" alt="Imagem do card">
+          </div>
 
-          <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#excluirPostagem"
-            (click)='editarPostagem(item)'>
-            Excluir
-          </button>
-        </div>
+          <p class="card-text-center mt-3">{{item.descricao}}</p>
 
-        <div *ngIf='outraPostagem(item.usuario.id)'>
-          <button type="button" class="btn btn-success mt-3" data-toggle="modal" data-target="#excluirPostagem"
+<!--           <ul class="list-group list-group-flush">
+            <li class="list-group-item">Arrecadado: R$ {{item.valor_doado}}</li>
+            <li class="list-group-item">Meta: R$ {{item.meta}}</li>
+          </ul> -->
+          <hr>
+          <span class="mr-2">Arrecadado: R$ {{item.valor_doado}}</span>
+          <span class="ml-2">Meta: R$ {{item.meta}}</span>
+          <hr>
+          <p class="card-text"><small class="text-muted">{{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date:
+              'HH:mm'}}</small></p>
+
+          <div id="deletarAtualizarPostagem" *ngIf='minhaPostagem(item.usuario.id)'>
+            <button type="button" class="btn btn-success mr-3" data-toggle="modal"
+              data-target="#editarPostagem" (click)='editarPostagem(item)'>Editar
+            </button>
+
+            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#excluirPostagem"
               (click)='editarPostagem(item)'>
-              Doar
-          </button>
+              Excluir
+            </button>
+          </div>
+
+          <div *ngIf='outraPostagem(item.usuario.id)'>
+            <button type="button" class="btn btn-success mt-3" data-toggle="modal" data-target="#excluirPostagem"
+                (click)='editarPostagem(item)'>
+                Doar
+            </button>
+          </div>
+
+          <app-postagem-edit [postagem] = 'postagemEdit'></app-postagem-edit>
+          <app-postagem-delete [postagem] = 'postagemEdit'></app-postagem-delete>
+
         </div>
-
-        <app-postagem-edit [postagem] = 'postagemEdit'></app-postagem-edit>
-        <app-postagem-delete [postagem] = 'postagemEdit'></app-postagem-delete>
-
       </div>
     </div>
   </div>
