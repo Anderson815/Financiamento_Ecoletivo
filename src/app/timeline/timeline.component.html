@@ -1,23 +1,50 @@
-<!-- Criar Postagem -->
+<!--Menu-->
+<header>
+  <section>
+    <div class="container pl-0 pr-0">
+      <nav class="nav">
+        <li class="nav-item active ml-3">
+          <img src="{{foto}}" alt="Imagem do usuário" width="50px" height="50px" class="img-fluid rounded-circle">
+        </li>
+    
+        <li class="nav-item mr-auto">
+          <p class="m-0 txt-v font-weight-bold pl-2">{{nome}}</p>
+        </li>
+    
+        <div class="mr-3">
+          <a routerLink="/inicial" id="nav-cta" class="btn">Sair</a>
+        </div>
+    
+      </nav>
+    </div>
+  </section>
+</header>
 
-<div class="container">
-  <div class="row d-flex align-items-center">
-    <div class="card">
-      <div class="card-body">
-        <button class="btn btn-outline-secondary" data-toggle="modal" data-target="#novaPostagem">Insira sua
-          publicação</button>
+
+
+
+<!-- Criar Postagem -->
+<!-- <footer>
+  <div class="container">
+    <div class="row d-flex align-items-center">
+      <div class="card">
+        <div class="card-body">
+          <button class="btn btn-outline-secondary" data-toggle="modal" data-target="#novaPostagem">Insira sua
+            publicação</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
-<h1 class="text-center mt-3">Timeline</h1>
-<app-publicar></app-publicar>
+  <h1 class="text-center mt-3">Timeline</h1>
+  <app-publicar></app-publicar>
+</footer> -->
+
+
 
 <!-- Card de Postagem -->
-
-<div class="container-fluid">
+<div class="container-fluid mt-5">
   <div class="card-columns">
-    <div class="card text-center mt-3" style="width: 18rem;" *ngFor='let item of listaPostagens'>
+    <div class="card text-center mt-5" style="width: 18rem;" *ngFor='let item of listaPostagens'>
 
       <div class="card-header"> by: {{item.usuario.nome}}</div>
       <small class="text-muted"> Tema: {{item.tema.tema}}</small>
@@ -33,8 +60,8 @@
             'HH:mm'}}</small></p>
 
         <div id="deletarAtualizarPostagem" *ngIf='minhaPostagem(item.usuario.id)'>
-          <button type="button" class="btn btn-success mr-3" data-toggle="modal"
-            data-target="#editarPostagem" (click)='editarPostagem(item)'>Editar
+          <button type="button" class="btn btn-success mr-3" data-toggle="modal" data-target="#editarPostagem"
+            (click)='editarPostagem(item)'>Editar
           </button>
 
           <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#excluirPostagem"
@@ -45,13 +72,13 @@
 
         <div *ngIf='outraPostagem(item.usuario.id)'>
           <button type="button" class="btn btn-success mt-3" data-toggle="modal" data-target="#excluirPostagem"
-              (click)='editarPostagem(item)'>
-              Doar
+            (click)='editarPostagem(item)'>
+            Doar
           </button>
         </div>
 
-        <app-postagem-edit [postagem] = 'postagemEdit'></app-postagem-edit>
-        <app-postagem-delete [postagem] = 'postagemEdit'></app-postagem-delete>
+        <app-postagem-edit [postagem]='postagemEdit'></app-postagem-edit>
+        <app-postagem-delete [postagem]='postagemEdit'></app-postagem-delete>
 
       </div>
     </div>
