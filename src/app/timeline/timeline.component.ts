@@ -21,6 +21,10 @@ export class TimelineComponent implements OnInit {
   user: User = new User()
   idUser = environment.id
 
+  nome = environment.nome
+  foto = environment.foto
+  token = environment.token
+
   constructor(
     private router: Router,
     private route: ActivatedRoute,
@@ -83,6 +87,16 @@ export class TimelineComponent implements OnInit {
       imgOk = true;
     }
     return imgOk;
+  }
+
+  animacaoMenuTimeline(){
+    if(window.location.href.indexOf('timeline') != -1){
+      window.addEventListener('scroll', function() {
+        let section = document.querySelector('section');
+        let windowPosition = window.scrollY > 100;
+        section.classList.toggle('scrolling-active', windowPosition);
+      })
+    }
   }
 
 }
