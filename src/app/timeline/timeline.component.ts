@@ -59,16 +59,19 @@ export class TimelineComponent implements OnInit {
     })
   }
 
-/*   atualizar(){
-    // Adicionar FormControl e obter o objeto atualizado...
-    this.postagemService.putPostagem(this.postagemEdit).subscribe((resp: Postagem) => {
-      alert("Projeto atualizado com sucesso!");
-    })
+  minhaPostagem(id: number): boolean{
+    let meuPost: boolean;
+    if(id == this.idUser){
+      meuPost = true;
+    }
+    return meuPost;
   }
 
-  apagar(){
-    this.postagemService.deletePostagem(this.postagemEdit.id).subscribe(()=>{
-      alert("Projeto excluído com sucesso!")
-    })
-  } */
+  outraPostagem(id: number): boolean{
+    let outroPost: boolean;
+    if(id != this.idUser){
+      outroPost = true;
+    }
+    return outroPost;
+  }
 }
