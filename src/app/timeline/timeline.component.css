@@ -10,9 +10,10 @@
 .redondo{
   border-radius: 15px;
 }
-<!--Menu-->
 
-*,
+/* <!--Menu--> */
+
+/* *,
 *::before,
 *::after{
     margin: 0;
@@ -50,7 +51,7 @@ header{
     background-color: #76b734;
     /* border-bottom: 1.5px solid #222B2B; */
     /* transition: height .5s ease; */
-}
+/* }
 
 .nav a{
     text-decoration: none;
@@ -114,3 +115,4 @@ header{
     font-weight: 500!important;
     font-size: 20px;
 }
+ */
