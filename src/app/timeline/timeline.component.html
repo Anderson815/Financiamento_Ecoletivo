@@ -44,12 +44,12 @@
         </div>
 
         <div *ngIf='outraPostagem(item.usuario.id)'>
-          <button type="button" class="btn btn-success mt-3" data-toggle="modal" data-target="#excluirPostagem"
-              (click)='editarPostagem(item)'>
-              Doar
+          <button type="button" class="btn btn-success mt-3" data-toggle="modal" data-target="#doacao"
+              (click)='editarPostagem(item)'> Doar
           </button>
         </div>
 
+        <app-doacao></app-doacao>
         <app-postagem-edit [postagem] = 'postagemEdit'></app-postagem-edit>
         <app-postagem-delete [postagem] = 'postagemEdit'></app-postagem-delete>
 
