@@ -1,6 +1,6 @@
 import { PostagemService } from './../service/postagem.service';
 import { AuthService } from './../service/auth.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Postagem } from '../model/Postagem';
@@ -13,6 +13,7 @@ import { User } from '../model/User';
 })
 export class TimelineComponent implements OnInit {
 
+  @Input() deleteOk: boolean = false
   postagem: Postagem = new Postagem()
   postagemEdit: Postagem = new Postagem();
   listaPostagens: Postagem[]
@@ -35,6 +36,9 @@ export class TimelineComponent implements OnInit {
     }
 
     this.getAllPostagem()
+    if(this.deleteOk){
+      this.getAllPostagem()
+    }
   }
 
   editarPostagem(postagem: Postagem){

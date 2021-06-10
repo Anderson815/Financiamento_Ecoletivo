@@ -46,4 +46,6 @@ export class PostagemService {
     let id = environment.idPostagem
     return id
   }
+
+  
 }

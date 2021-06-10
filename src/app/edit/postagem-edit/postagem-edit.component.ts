@@ -11,11 +11,13 @@ import { Postagem } from 'src/app/model/Postagem';
 })
 export class PostagemEditComponent implements OnInit {
 
+  listaPostagens: Postagem[]
   @Input() postagem: Postagem;
   idPostagem: number = this.postagemService.getIdPostagem();
 
   constructor(
-    private postagemService: PostagemService
+    private postagemService: PostagemService,
+    private router: Router
   ) {}
 
   ngOnInit(){
@@ -30,7 +32,23 @@ export class PostagemEditComponent implements OnInit {
   atualizar(){
     this.postagemService.putPostagem(this.postagem).subscribe((resp: Postagem) => {
       alert("Projeto atualizado com sucesso!");
+      this.router.navigate(["/inicial"])
+      setTimeout(()=>{
+        this.router.navigate(["/timeline"])
+      },100)  
     })
   }
 
+  getAllPostagem(){
+    this.postagemService.getAllPostagem().subscribe((resp: Postagem[]) => {
+      this.listaPostagens = resp
+    })
+  }
+
+  cancelar(){
+    this.router.navigate(["/inicial"])
+    setTimeout(()=>{
+      this.router.navigate(["/timeline"])
+    },100)  
+  }
 }

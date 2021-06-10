@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Postagem } from 'src/app/model/Postagem';
 import { PostagemService } from 'src/app/service/postagem.service';
@@ -11,6 +11,9 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class PostagemDeleteComponent implements OnInit {
 
+  mostraTimeline: boolean = false
+  deleteOk: boolean = false
+  listaPostagens: Postagem[]
   @Input() postagem: Postagem
   idPost: number
 
@@ -25,8 +28,8 @@ export class PostagemDeleteComponent implements OnInit {
     if(environment.token == ""){
       this.router.navigate(['/entrar'])
     }
-    this.idPost = this.route.snapshot.params['id']
-    this.findByIdPostagem(this.idPost)
+ /*    this.idPost = this.route.snapshot.params['id']
+    this.findByIdPostagem(this.idPost) */
   }
 
   findByIdPostagem(id:number){
@@ -39,8 +42,18 @@ export class PostagemDeleteComponent implements OnInit {
   apagar(){
     this.postagemService.deletePostagem(this.postagem.id).subscribe(()=>{
       alert("Projeto excluído com sucesso!")
-    
+      this.router.navigate(["/inicial"])
+      setTimeout(()=>{
+        this.router.navigate(["/timeline"])
+      },100)  
+      
     })
   }
+
+/*   getAllPostagem(){
+    this.postagemService.getAllPostagem().subscribe((resp: Postagem[]) => {
+      this.listaPostagens = resp
+    })
+  } */
 
 }

@@ -89,7 +89,10 @@ export class PublicarComponent implements OnInit {
       this.postagem = resp
       alert('Postagem realizada com sucesso!')
       this.postagem = new Postagem()
-      this.getAllPostagem()
+      this.router.navigate(["/inicial"])
+      setTimeout(()=>{
+        this.router.navigate(["/timeline"])
+      },100)  
     })
 
   }
