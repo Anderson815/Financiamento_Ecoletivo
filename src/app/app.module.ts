@@ -24,6 +24,7 @@ import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delet
 import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.component';
 import { DoacaoComponent } from './doacao/doacao.component';
 import { AlertasComponent } from './alertas/alertas.component';
+import { MenuGeralComponent } from './menu-geral/menu-geral.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { AlertasComponent } from './alertas/alertas.component';
     PostagemDeleteComponent,
     PostagemEditComponent,
     DoacaoComponent,
-    AlertasComponent
+    AlertasComponent,
+    MenuGeralComponent
   ],
   imports: [
     AppRoutingModule,
