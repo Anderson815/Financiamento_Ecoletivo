@@ -89,7 +89,7 @@ export class TimelineComponent implements OnInit {
     return imgOk;
   }
 
-  animacaoMenuTimeline(){
+  /* animacaoMenuTimeline(){
     if(window.location.href.indexOf('timeline') != -1){
       window.addEventListener('scroll', function() {
         let section = document.querySelector('section');
@@ -97,6 +97,6 @@ export class TimelineComponent implements OnInit {
         section.classList.toggle('scrolling-active', windowPosition);
       })
     }
-  }
+  } */
 
 }
