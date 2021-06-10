@@ -23,14 +23,21 @@
         <!-- width: 18rem; -->
 
         <div class="card-header text-left">
-          <p class="m-0">
-            <span>{{item.usuario.nome}} - </span>
-            <span>{{item.tema.tema}}</span>
-          </p>
-          <p class="m-0">
-            <small class="text-muted">{{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date:
-              'HH:mm'}}</small>
-          </p>
+          <div class="row">
+            <div class="col-md-2">
+              <img class="foto-perfil rounded-circle"src="{{item.usuario.foto}}" alt="Imagem do card">
+            </div>
+            <div class="col-md-8">
+              <p class="m-0">
+                <span>{{item.usuario.nome}} - </span>
+                <span>{{item.tema.tema}}</span>
+              </p>
+              <p class="m-0">
+                <small class="text-muted">{{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date:
+                  'HH:mm'}}</small>
+              </p>
+            </div>
+          </div>
         </div>
 <!--         <small class="text-muted"> Tema: {{item.tema.tema}}</small> -->
         <h3 class="card-title mt-3">{{item.titulo}}</h3>
