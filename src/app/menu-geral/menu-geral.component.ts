@@ -13,8 +13,14 @@ export class MenuGeralComponent implements OnInit {
     private router: Router
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit(){
   }
+
+  timeline(){
+    this.router.navigate(['/timeline'])
+    window.scroll(0, 0)
+  }
+
 
   sair(){
     environment.token = '',
