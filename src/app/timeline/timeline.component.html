@@ -116,7 +116,7 @@
 
     <!-- Postagens -->
     <div class="col-md-6">
-      <div class="card text-center my-5" *ngFor='let item of listaPostagens'>
+      <div class="card text-center my-5" *ngFor='let item of listaPostagens | orderBy : key : reverse'>
 
         <div class="card-header text-left">
           <div class="row">
