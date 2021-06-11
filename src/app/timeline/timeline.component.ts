@@ -29,6 +29,9 @@ export class TimelineComponent implements OnInit {
   user: User = new User()
   idUser = environment.id
 
+  key = 'data'
+  reverse = true
+
   nome = environment.nome
   foto = environment.foto
   token = environment.token
