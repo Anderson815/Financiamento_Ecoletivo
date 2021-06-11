@@ -58,6 +58,7 @@ header{
 .nav a{
     text-decoration: none;
     color: #76b734;
+    
     font-size: 1.4rem;
 }
 
@@ -128,7 +129,8 @@ header{
 .card-header-first{
 	margin-top:-40px;
     height: 80px;
-	background: linear-gradient(-90deg, #0f6328, #664da0);
+	/* background: linear-gradient(-90deg, #56BFA5, #76b734); */
+    background: linear-gradient(135deg, rgba(86,191,165,1) 16%, rgba(118,183,52,1) 100%);
 	box-shadow:1px 5px 15px #a2a2a2;
 }
 .card-section{
@@ -151,7 +153,8 @@ header{
 .card-header-first2{
     margin-top:-40px;
     height: 95px;
-    background: linear-gradient(-90deg, #76b734, #56BFA5);
+    /* background: linear-gradient(-90deg, #76b734, #56BFA5); */
+    background: linear-gradient(230deg, rgba(86,191,165,1) 16%, rgba(118,183,52,1) 100%);
     box-shadow:1px 5px 15px #a2a2a2;
 }
 
@@ -172,7 +175,7 @@ header{
 
 }
 .cor{
-    background-color: #F2E7D2;
+    background-color: #e6e2e0
 }
 
 .fa-handshake-o{

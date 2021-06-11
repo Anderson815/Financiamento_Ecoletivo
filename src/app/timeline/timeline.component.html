@@ -21,7 +21,7 @@
   <!-- /Card de Postagem -->
 
    <!-- FEED -->
-  <div class="row margem">
+  <div class="row margem " id="timeline">
 
     <!-- Card de Perfil -->
     <div class="col-md-3 margemCard">
@@ -53,7 +53,7 @@
 
     <!-- Postagens -->
     <div class="col-md-6">
-      <div class="card text-center my-5" *ngFor='let item of listaPostagens | orderBy : key : reverse'>
+      <div class="card text-center my-5 card-section" *ngFor='let item of listaPostagens | orderBy : key : reverse'>
 
         <div class="card-header text-left">
           <div class="row">

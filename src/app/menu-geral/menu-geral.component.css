@@ -1,4 +1,4 @@
-#projeto{
+.projeto{
   cursor: pointer;
 }
 
@@ -39,7 +39,8 @@ header{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #76b734;
+    /* background-color: #76b734; */
+    background: radial-gradient(circle, rgba(106,215,75,1) 15%, rgba(62,159,155,1) 100%);
     /* border-bottom: 1.5px solid #222B2B; */
     /* transition: height .5s ease; */
 }
