@@ -1,10 +1,12 @@
 import { PostagemService } from './../service/postagem.service';
 import { AuthService } from './../service/auth.service';
-import { Component, Input, OnInit} from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Postagem } from '../model/Postagem';
 import { User } from '../model/User';
+import { Tema } from '../model/Tema';
+import { TemaService } from '../service/tema.service';
 
 @Component({
   selector: 'app-timeline',
@@ -17,6 +19,12 @@ export class TimelineComponent implements OnInit {
   postagem: Postagem = new Postagem()
   postagemEdit: Postagem = new Postagem();
   listaPostagens: Postagem[]
+  tema: Tema = new Tema()
+  listaTemas: Tema[]
+  idTema: number
+  titulo: string
+  usuario: string
+
 
   user: User = new User()
   idUser = environment.id
@@ -29,59 +37,62 @@ export class TimelineComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private authService: AuthService,
-    private postagemService: PostagemService
+    private postagemService: PostagemService,
+    private temaService: TemaService
   ) { }
 
   ngOnInit() {
-    window.scroll(0,0)
+    window.scroll(0, 0)
 
-    if(environment.token == ""){
+    if (environment.token == "") {
       this.router.navigate(['/entrar'])
     }
 
     this.findByUser()
 
     this.getAllPostagem()
-    if(this.deleteOk){
+    if (this.deleteOk) {
       this.getAllPostagem()
     }
+
+    this.getAllTema()
   }
 
-  editarPostagem(postagem: Postagem){
+  editarPostagem(postagem: Postagem) {
     // environment.idPostagem = id;
     this.postagemEdit = postagem;
     console.log(this.postagemEdit)
   }
 
-  getAllPostagem(){
+  getAllPostagem() {
     this.postagemService.getAllPostagem().subscribe((resp: Postagem[]) => {
       this.listaPostagens = resp
     })
   }
 
-  findByUser(){
-    this.authService.getByIdUser(this.idUser).subscribe((resp: User) =>{
+  findByUser() {
+    this.authService.getByIdUser(this.idUser).subscribe((resp: User) => {
       this.user = resp
     })
   }
 
-  minhaPostagem(id: number): boolean{
+  minhaPostagem(id: number): boolean {
     let meuPost: boolean;
-    if(id == this.idUser){
+    if (id == this.idUser) {
       meuPost = true;
     }
     return meuPost;
   }
 
-  outraPostagem(id: number): boolean{
+  outraPostagem(id: number): boolean {
     let outroPost: boolean;
-    if(id != this.idUser){
+    if (id != this.idUser) {
       outroPost = true;
     }
     return outroPost;
   }
 
-  imagemOk(imagem: string): boolean{
+  imagemOk(imagem: string): boolean {
     let imgOk = false;
     if(imagem != null){
       imgOk = true;
@@ -89,4 +100,42 @@ export class TimelineComponent implements OnInit {
     return imgOk;
   }
 
+ /*  animacaoMenuTimeline() {
+    if (window.location.href.indexOf('timeline') != -1) {
+      window.addEventListener('scroll', function () {
+        let section = document.querySelector('section');
+        let windowPosition = window.scrollY > 100;
+        section.classList.toggle('scrolling-active', windowPosition);
+      })
+    }
+  } */
+
+  findByIdTema() {
+    this.getAllPostagem()
+    this.temaService.getByIdTema(this.idTema).subscribe((resp: Tema) => {
+      this.listaPostagens = this.listaPostagens.filter(filter => filter.tema.id === resp.id)
+    })
+  }
+
+  getAllTema() {
+    this.temaService.getAllTema().subscribe((resp: Tema[]) => {
+      this.listaTemas = resp
+    })
+  }
+
+  findByTitulo() {
+    if (this.titulo !== '') {
+      this.listaPostagens = this.listaPostagens.filter(filter => filter.titulo === this.titulo);
+    }
+  }
+  findByUsuario() {
+    if (this.usuario !== '') {
+      this.listaPostagens = this.listaPostagens.filter(filter => filter.usuario.nome === this.usuario);
+    }
+  }
+
+  resetarFiltro() {
+    this.ngOnInit()
+  }
 }
+

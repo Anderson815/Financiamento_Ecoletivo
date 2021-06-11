@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 
 export class HomeComponent implements OnInit {
 
+  
   constructor() { }
 
   ngOnInit(){
@@ -19,7 +20,7 @@ export class HomeComponent implements OnInit {
     if(window.location.href.indexOf('inicial') != -1){
       window.addEventListener('scroll', function() {
         let header = document.querySelector('header');
-        let windowPosition = window.scrollY > 500;
+        let windowPosition = window.scrollY > 560;
         header.classList.toggle('scrolling-active', windowPosition);
       })
     }
