@@ -28,6 +28,10 @@
             <div class="col-md-2 pr-0">
               <img class="foto-perfil rounded-circle"src="{{item.usuario.foto}}" alt="Imagem do card">
             </div>
+
+            <hr>
+
+
             <div class="col pl-0">
               <p class="m-0">
                 <span>{{item.usuario.nome}} - </span>
@@ -54,10 +58,10 @@
         <app-postagem-delete [postagem] = 'postagemEdit'></app-postagem-delete>
 
           <hr>
-          <p>
+          <h4>
             <span class="mr-2">Arrecadado: R$ {{item.valor_doado}}</span>
             <span class="ml-2">Meta: R$ {{item.meta}}</span>
-          </p>
+          </h4>
 
           <div id="deletarAtualizarPostagem" *ngIf='minhaPostagem(item.usuario.id)'>
             <button type="button" class="btn btn-success mr-3" data-toggle="modal"
@@ -70,11 +74,13 @@
             </button>
           </div>
 
+          <div class="col pl-0 ml-2 mt-3" >
           <div *ngIf='outraPostagem(item.usuario.id)'>
-            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#excluirPostagem"
+            <button type="button" class="btn btn-outline-success w-100 py-2 redondo" data-toggle="modal" data-target="#doacao"
                 (click)='editarPostagem(item)'>
                 Doar
             </button>
+          </div>
           </div>
 
           <app-postagem-edit [postagem] = 'postagemEdit'></app-postagem-edit>
