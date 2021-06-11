@@ -54,6 +54,36 @@
     </div>
   </div>
 
+<div class="card-filtro">
+  <div class="col-lg-12 text-center ">
+        <div class="card-section border rounded p-3">
+          <div class="card-header-first rounded pb-5">
+            <h2 class="card-header-title text-white pt-3">FILTRO</h2>
+           </div>
+              <div class="card-body text-center">
+                <div class="form-group">
+                  <label for="texto">TEMAS </label>
+                  <select name="tema" id="tema" class="form-control" [(ngModel)]='idTema' (change)='findByIdTema()'>
+                    <option *ngFor='let item of listaTemas' value="{{item.id}}">{{item.tema}}
+                    </option>
+                  </select>
+                </div>
+                    <div class="form-group">
+                      <label for="tituloPostagem">Titulo</label>
+                        <input class="form-control" type="text" name="tituloPostagem" [(ngModel)]='titulo' (change)='findByTitulo()' id ="tituloPostagem" placeholder="Titulo">
+                    </div>
+                      <div class="form-group">
+                        <label for="buscaUsuario">Pesquisar por usuário</label>
+                        <input class="form-control" type="text" name="buscaUsuario" id ="buscaUsuario" placeholder="Usuário">
+                      </div>
+              </div>
+                <div class="card-footer ">
+                  <button class="btn btn-secondary botaoFiltro" (click)='resetarFiltro()'>FILTRAR</button>
+                </div>
+        </div>
+  </div>
+</div>
+
   <div class="row d-flex justify-content-center">
     <div class="col-md-6">
       <div class="card text-center my-5" style="" *ngFor='let item of listaPostagens'>
@@ -128,6 +158,14 @@
     </div>
   </div>
 </div>
+
+<!-- CARDS DE FILTRO E BUSCA DE POSTAGEM -->
+<div class="container principal">
+  <div class="row">
+
+  </div>
+</div>
+
 
 <app-publicar></app-publicar>
 <app-postagem-delete [postagem]="postagemEdit"></app-postagem-delete>
