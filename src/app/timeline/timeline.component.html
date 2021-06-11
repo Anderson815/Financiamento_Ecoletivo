@@ -130,7 +130,7 @@
                       <div class="form-group">
                         <label for="texto">TEMAS </label>
                         <select name="tema" id="tema" class="form-control" [(ngModel)]='idTema' (change)='changeTema()'>
-
+                          <option (click)="resetarFiltro()">Nenhum</option>
                           <option *ngFor='let item of listaTemas' value="{{item.id}}">{{item.tema}}
                           </option>
                         </select>
