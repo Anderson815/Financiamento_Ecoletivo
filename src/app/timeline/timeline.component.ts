@@ -139,6 +139,7 @@ export class TimelineComponent implements OnInit {
       this.listaPostagens = this.listaPostagens.filter(filter => filter.titulo === this.titulo);
     }
   }
+
   findByUsuario() {
     if (this.usuario !== '') {
       this.listaPostagens = this.listaPostagens.filter(filter => filter.usuario.nome === this.usuario);
@@ -147,6 +148,10 @@ export class TimelineComponent implements OnInit {
 
   resetarFiltro() {
     this.ngOnInit()
+  }
+
+  findByMinhasPostagens() {    
+    this.listaPostagens = this.listaPostagens.filter(filter => filter.usuario.id === this.idUser);
   }
 }
 
