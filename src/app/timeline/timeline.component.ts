@@ -103,16 +103,6 @@ export class TimelineComponent implements OnInit {
     return imgOk;
   }
 
- /*  animacaoMenuTimeline() {
-    if (window.location.href.indexOf('timeline') != -1) {
-      window.addEventListener('scroll', function () {
-        let section = document.querySelector('section');
-        let windowPosition = window.scrollY > 100;
-        section.classList.toggle('scrolling-active', windowPosition);
-      })
-    }
-  } */
-
   changeTema() {
     if(this.idTema != 0){
       setTimeout(() => {
@@ -153,7 +143,7 @@ export class TimelineComponent implements OnInit {
     this.ngOnInit()
   }
 
-  findByMinhasPostagens() {    
+  findByMinhasPostagens() {
     this.listaPostagens = this.listaPostagens.filter(filter => filter.usuario.id === this.idUser);
   }
 }
