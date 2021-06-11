@@ -21,7 +21,7 @@
         </li>
 
         <li class="nav-item mr-auto">
-          <p class="m-0 txt-v font-weight-bold pl-2">{{nome}}</p>
+          <p class="m-0 txt-v pl-2">{{nome}}</p>
         </li>
 
         <div class="mr-3">
@@ -43,10 +43,11 @@
         <div class="card-body">
           <div class="row d-flex align-items-center">
             <div class="col-md-2 pr-0">
-              <img class="foto-perfil rounded-circle"src="{{user.foto}}" alt="Imagem do card">
+              <img class="foto-perfil rounded-circle" src="{{user.foto}}" alt="Imagem do card">
             </div>
             <div class="col pl-0">
-              <button class="btn btn-outline-success w-100 py-2 redondo" data-toggle="modal" data-target="#novaPostagem">Faça um projeto</button>
+              <button class="btn btn-outline-success w-100 py-2 redondo" data-toggle="modal"
+                data-target="#novaPostagem">Faça um projeto</button>
             </div>
           </div>
         </div>
@@ -84,6 +85,28 @@
   </div>
 </div>
 
+  <!-- Card de Perfil -->
+  <div class="card-perfil ml-5">
+    <div class="col-lg-12 text-center">
+      <div class="card-section border rounded p-3">
+        <div class="card-header-first2 rounded pb-5">
+          <div>
+            <img src="{{foto}}" alt="Imagem do usuário" class="foto-card-perfil rounded-circle mt-2">
+            <h2 class="card-header-title txt-v mt-1 mb-1">{{nome}}</h2>
+          </div>
+
+        </div>
+
+        <div class="card-footer pt-2">
+          <button class="btn btn-outline-success botaoMinhasPostagens">Minhas Postagens</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- /Card de Perfil -->
+
+
   <div class="row d-flex justify-content-center">
     <div class="col-md-6">
       <div class="card text-center my-5" style="" *ngFor='let item of listaPostagens'>
@@ -91,7 +114,7 @@
         <div class="card-header text-left">
           <div class="row">
             <div class="col-md-2 pr-0">
-              <img class="foto-perfil rounded-circle"src="{{item.usuario.foto}}" alt="Imagem do card">
+              <img class="foto-perfil rounded-circle" src="{{item.usuario.foto}}" alt="Imagem do card">
             </div>
             <div class="col pl-0">
               <p class="m-0">
@@ -105,20 +128,20 @@
             </div>
           </div>
         </div>
-<!--         <small class="text-muted"> Tema: {{item.tema.tema}}</small> -->
+        <!--         <small class="text-muted"> Tema: {{item.tema.tema}}</small> -->
         <h3 class="card-title mt-3">{{item.titulo}}</h3>
         <div class="card-body">
           <div *ngIf='imagemOk(item.midia)'>
             <img class="card-img-top" src="{{item.midia}}" alt="Imagem do card">
           </div>
           <p class="card-text-center text-left mt-3">{{item.descricao}}</p>
-          
 
-        <app-doacao></app-doacao>
-        <app-postagem-edit [postagem] = 'postagemEdit'></app-postagem-edit>
-        <app-postagem-delete [postagem] = 'postagemEdit'></app-postagem-delete>
 
-<!--           <ul class="list-group list-group-flush">
+          <app-doacao></app-doacao>
+          <app-postagem-edit [postagem]='postagemEdit'></app-postagem-edit>
+          <app-postagem-delete [postagem]='postagemEdit'></app-postagem-delete>
+
+          <!--           <ul class="list-group list-group-flush">
             <li class="list-group-item">Arrecadado: R$ {{item.valor_doado}}</li>
             <li class="list-group-item">Meta: R$ {{item.meta}}</li>
           </ul> -->
@@ -133,8 +156,8 @@
               'HH:mm'}}</small></p> -->
 
           <div id="deletarAtualizarPostagem" *ngIf='minhaPostagem(item.usuario.id)'>
-            <button type="button" class="btn btn-success mr-3" data-toggle="modal"
-              data-target="#editarPostagem" (click)='editarPostagem(item)'>Editar
+            <button type="button" class="btn btn-success mr-3" data-toggle="modal" data-target="#editarPostagem"
+              (click)='editarPostagem(item)'>Editar
             </button>
 
             <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#excluirPostagem"
@@ -145,13 +168,13 @@
 
           <div *ngIf='outraPostagem(item.usuario.id)'>
             <button type="button" class="btn btn-success" data-toggle="modal" data-target="#excluirPostagem"
-                (click)='editarPostagem(item)'>
-                Doar
+              (click)='editarPostagem(item)'>
+              Doar
             </button>
           </div>
 
-          <app-postagem-edit [postagem] = 'postagemEdit'></app-postagem-edit>
-          <app-postagem-delete [postagem] = 'postagemEdit'></app-postagem-delete>
+          <app-postagem-edit [postagem]='postagemEdit'></app-postagem-edit>
+          <app-postagem-delete [postagem]='postagemEdit'></app-postagem-delete>
 
         </div>
       </div>
