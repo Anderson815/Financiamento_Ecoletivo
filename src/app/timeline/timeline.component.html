@@ -1,5 +1,5 @@
 <!-- Card de Postagem -->
-<div id="timeline" class="container-fluid">
+<!-- <div id="timeline" class="container-fluid">
 
   <div class="row d-flex justify-content-center pt-5 mt-5">
     <div class="col-md-6">
@@ -17,14 +17,14 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
   <!-- /Card de Postagem -->
 
    <!-- FEED -->
-  <div class="row">
+  <div class="row margem">
 
     <!-- Card de Perfil -->
-    <div class="col-md-3">
+    <div class="col-md-3 margemCard">
       <div class="card-perfil">
         <div class="col-lg-10 text-center ajuste">
           <div class="card-section border rounded p-3 cor ">
@@ -35,7 +35,9 @@
               </div>
 
             </div>
-
+            <div class="pt-2">
+              <button class="py-0 btn btn-outline-success botaoMinhasPostagens" data-target="#novaPostagem" data-toggle="modal">Criar um projeto</button>
+            </div>
             <div class="pt-2 ">
               <button class="py-0 btn btn-outline-success botaoMinhasPostagens" (click)='findByMinhasPostagens()'>Minhas Postagens</button>
             </div>
@@ -117,7 +119,7 @@
     <!-- /Postagens -->
 
     <!-- CARD DE FILTRO -->
-    <div class="col-md-3">
+    <div class="col-md-3 margemCard">
       <div class="card-filtro">
         <div class="col-lg-10 text-center ">
               <div class="card-section border rounded p-3 cor">
