@@ -45,6 +45,9 @@ export class CadastroComponent implements OnInit {
         this.user = resp;
         this.router.navigate(['/inicial']);
         this.alertas.showAlertSucess('Usuário cadastrado com sucesso!')
+
+      }, erro => {
+        this.alertas.showAlertDanger('O cadastro não está completo');
       })
     }
   }
