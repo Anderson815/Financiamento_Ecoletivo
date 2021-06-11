@@ -83,7 +83,7 @@ export class TimelineComponent implements OnInit {
 
   imagemOk(imagem: string): boolean{
     let imgOk = false;
-    if(imagem !== ""){
+    if(imagem != null){
       imgOk = true;
     }
     return imgOk;
