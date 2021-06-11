@@ -30,8 +30,8 @@
               <div class="card-body text-center">
                 <div class="form-group">
                   <label for="texto">TEMAS </label>
-                  <select name="tema" id="tema" class="form-control" [(ngModel)]='idTema' (change)='findByIdTema()'>
-                    <option>Selecione um tema</option>
+                  <select name="tema" id="tema" class="form-control" [(ngModel)]='idTema' (change)='changeTema()'>
+                    
                     <option *ngFor='let item of listaTemas' value="{{item.id}}">{{item.tema}}
                     </option>
                   </select>
