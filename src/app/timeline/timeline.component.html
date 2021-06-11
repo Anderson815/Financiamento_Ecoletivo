@@ -56,13 +56,17 @@
 
   <div class="row d-flex justify-content-center">
     <div class="col-md-6">
-      <div class="card text-center my-5" style="" *ngFor='let item of listaPostagens'>
+      <div class="card text-center my-5" *ngFor='let item of listaPostagens'>
 
         <div class="card-header text-left">
           <div class="row">
             <div class="col-md-2 pr-0">
               <img class="foto-perfil rounded-circle"src="{{item.usuario.foto}}" alt="Imagem do card">
             </div>
+
+            <hr>
+
+
             <div class="col pl-0">
               <p class="m-0">
                 <span>{{item.usuario.nome}} - </span>
@@ -82,7 +86,7 @@
             <img class="card-img-top" src="{{item.midia}}" alt="Imagem do card">
           </div>
           <p class="card-text-center text-left mt-3">{{item.descricao}}</p>
-          
+
 
         <app-doacao></app-doacao>
         <app-postagem-edit [postagem] = 'postagemEdit'></app-postagem-edit>
@@ -93,10 +97,10 @@
             <li class="list-group-item">Meta: R$ {{item.meta}}</li>
           </ul> -->
           <hr>
-          <p>
+          <h4>
             <span class="mr-2">Arrecadado: R$ {{item.valor_doado}}</span>
             <span class="ml-2">Meta: R$ {{item.meta}}</span>
-          </p>
+          </h4>
 
 
           <!-- <p class="card-text"><small class="text-muted">{{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date:
@@ -113,11 +117,13 @@
             </button>
           </div>
 
+          <div class="col pl-0 ml-2 mt-3" >
           <div *ngIf='outraPostagem(item.usuario.id)'>
-            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#excluirPostagem"
+            <button type="button" class="btn btn-outline-success w-100 py-2 redondo" data-toggle="modal" data-target="#doacao"
                 (click)='editarPostagem(item)'>
                 Doar
             </button>
+          </div>
           </div>
 
           <app-postagem-edit [postagem] = 'postagemEdit'></app-postagem-edit>

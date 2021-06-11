@@ -1,6 +1,6 @@
- img.displayed {
-    max-width:200px;
-    max-height:150px;
-    display: block;
-    margin-left: 300;
+img.displayed {
+  max-width:200px;
+  max-height:150px;
+  display: block;
+  margin-left: 300;
 }
