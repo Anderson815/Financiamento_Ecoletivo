@@ -35,7 +35,7 @@ export class PostagemService {
 
   //Pode dar problema
   doarPostagem(id: number, valor: number){
-    return this.http.put<Postagem>(`${environment.server}/postagem/doacao/id/${id}/valor/${valor}`, this.token)
+    return this.http.put<Postagem>(`${environment.server}/postagem/doacao/id/${id}/valor/${valor}`, null,  this.token)
   }
 
   deletePostagem(id: number){
@@ -47,5 +47,5 @@ export class PostagemService {
     return id
   }
 
-  
+
 }

@@ -22,15 +22,25 @@ export class DoacaoComponent implements OnInit {
 
   ngOnInit() {
   }
-  
+
   doar(){
-    this.postagemService.doarPostagem(this.postagem.id, this.valor).subscribe((resp: Postagem) => {
-      this.alertas.showAlertSucess("Doação realizada com sucesso!");
-      this.router.navigate(["/inicial"])
-      setTimeout(()=>{
-        this.router.navigate(["/timeline"])
-      },100)
-    })
+
+    if(this.valor > 0){
+      this.postagemService.doarPostagem(this.postagem.id, this.valor).subscribe((resp: Postagem) => {
+        this.alertas.showAlertSucess("Doação realizada com sucesso!");
+        this.router.navigate(["/inicial"])
+        setTimeout(()=>{
+          this.router.navigate(["/timeline"])
+        },100)
+      }, erro => {
+        if(erro.status == 400){
+          this.alertas.showAlertDanger('O valor ultrapassa a meta');
+        }
+      })
+    }else{
+      this.alertas.showAlertDanger('O valor não pode ser negativo ou zero')
+    }
+
   }
 
   cancelar(){
