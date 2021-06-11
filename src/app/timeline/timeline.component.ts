@@ -45,7 +45,7 @@ export class TimelineComponent implements OnInit {
     window.scroll(0, 0)
 
     if (environment.token == "") {
-      this.router.navigate(['/entrar'])
+      this.router.navigate(['/inicial'])
     }
 
     this.findByUser()
@@ -110,8 +110,19 @@ export class TimelineComponent implements OnInit {
     }
   } */
 
-  findByIdTema() {
-    this.getAllPostagem()
+  changeTema() {
+    if(this.idTema != 0){
+      setTimeout(() => {
+        this.getAllPostagem()
+      }, 50);
+
+      this.findByIdTema()
+    }
+    this.findByIdTema()
+
+  }
+
+  findByIdTema(){
     this.temaService.getByIdTema(this.idTema).subscribe((resp: Tema) => {
       this.listaPostagens = this.listaPostagens.filter(filter => filter.tema.id === resp.id)
     })

@@ -18,69 +18,103 @@
       </div>
     </div>
   </div>
-  <!-- Card de Postagem -->
-
-  <!-- CARD DE FILTRO -->
-<div class="card-filtro">
-  <div class="col-lg-10 text-center ">
-        <div class="card-section border rounded p-3 cor">
-          <div class="card-header-first rounded pb-5">
-            <h2 class="card-header-title text-white pt-3">FILTRO</h2>
-           </div>
-              <div class="card-body text-center">
-                <div class="form-group">
-                  <label for="texto">TEMAS </label>
-                  <select name="tema" id="tema" class="form-control" [(ngModel)]='idTema' (change)='findByIdTema()'>
-                    <option>Selecione um tema</option>
-                    <option *ngFor='let item of listaTemas' value="{{item.id}}">{{item.tema}}
-                    </option>
-                  </select>
-                </div>
-                    <div class="form-group">
-                      <label for="tituloPostagem">Titulo</label>
-                        <input class="form-control" type="text" name="tituloPostagem" [(ngModel)]='titulo' (change)='findByTitulo()' id ="tituloPostagem" placeholder="Titulo">
-                    </div>
-                      <div class="form-group">
-                        <label for="buscaUsuario">Pesquisar por usuário</label>
-                        <input class="form-control" type="text" name="buscaUsuario" [(ngModel)]="usuario" (change)="findByUsuario()" id ="buscaUsuario" placeholder="Usuário">
-                      </div>
-              </div>
-                <div >
-                  <button class="py-0 btn btn-secondary botaoFiltro" (click)='resetarFiltro()'>FILTRAR</button>
-                </div>
-        </div>
-  </div>
-</div>
- <!-- CARD DE FILTRO -->
-
-  <!-- Card de Perfil -->
-  <div class="card-perfil">
-    <div class="col-lg-10 text-center ajuste">
-      <div class="card-section border rounded p-3 cor ">
-        <div class="card-header-first2 rounded pb-5 ">
-          <div>
-            <img src="{{foto}}" alt="Imagem do usuário" class="foto-card-perfil rounded-circle mt-2">
-            <h2 class="card-header-title txt-v mt-1 mb-1">{{nome}}</h2>
-          </div>
-
-        </div>
-
-        <div class="pt-2 ">
-          <button class="py-0 btn btn-outline-success botaoMinhasPostagens">Minhas Postagens</button>
-        </div>
-        <div class="pt-2">
-          <button class="py-0 btn btn-outline-success botaoMinhasPostagens">Perfil</button>
-        </div>
-
-      </div>
-    </div>
-  </div>
-  <!-- /Card de Perfil -->
+  <!-- /Card de Postagem -->
 
    <!-- FEED -->
   <div class="row d-flex justify-content-center">
 
+    <!-- Card de Perfil -->
+    <!-- <div class="col-md-12">
+      <div class="card-perfil">
+        <div class="col-lg-10 text-center ajuste">
+          <div class="card-section border rounded p-3 cor ">
+            <div class="card-header-first2 rounded pb-5 ">
+              <div>
+                <img src="{{foto}}" alt="Imagem do usuário" class="foto-card-perfil rounded-circle mt-2">
+                <h2 class="card-header-title txt-v mt-1 mb-1">{{nome}}</h2>
+              </div>
 
+            </div>
+
+            <div class="pt-2 ">
+              <button class="py-0 btn btn-outline-success botaoMinhasPostagens">Minhas Postagens</button>
+            </div>
+            <div class="pt-2">
+              <button class="py-0 btn btn-outline-success botaoMinhasPostagens">Perfil</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div> -->
+     <!-- /Card de Perfil -->
+
+    <!-- CARD DE FILTRO -->
+<!--     <div class="col-md-12">
+      <div class="card-filtro">
+        <div class="col-lg-12 text-center ">
+              <div class="card-section border rounded p-3 cor">
+                <div class="card-header-first rounded pb-5">
+                  <h2 class="card-header-title text-white pt-3">FILTRO</h2>
+                 </div>
+                    <div class="card-body text-center">
+                      <div class="form-group">
+                        <label for="texto">TEMAS </label>
+                        <select name="tema" id="tema" class="form-control" [(ngModel)]='idTema' (change)='changeTema()'>
+
+                          <option *ngFor='let item of listaTemas' value="{{item.id}}">{{item.tema}}
+                          </option>
+                        </select>
+                      </div>
+                          <div class="form-group">
+                            <label for="tituloPostagem">Titulo</label>
+                              <input class="form-control" type="text" name="tituloPostagem" [(ngModel)]='titulo' (change)='findByTitulo()' id ="tituloPostagem" placeholder="Titulo">
+                          </div>
+                            <div class="form-group">
+                              <label for="buscaUsuario">Pesquisar por usuário</label>
+                              <input class="form-control" type="text" name="buscaUsuario" [(ngModel)]="usuario" (change)="findByUsuario()" id ="buscaUsuario" placeholder="Usuário">
+                            </div>
+                    </div>
+                      <div >
+                        <button class="py-0 btn btn-secondary botaoFiltro" (click)='resetarFiltro()'>Todos projetos</button>
+                      </div>
+              </div>
+        </div>
+      </div>
+    </div> -->
+    <!-- /CARD DE FILTRO -->
+
+
+   <!-- FEED -->
+  <div class="row">
+
+    <!-- Card de Perfil -->
+    <div class="col-md-3">
+      <div class="card-perfil">
+        <div class="col-lg-10 text-center ajuste">
+          <div class="card-section border rounded p-3 cor ">
+            <div class="card-header-first2 rounded pb-5 ">
+              <div>
+                <img src="{{foto}}" alt="Imagem do usuário" class="foto-card-perfil rounded-circle mt-2">
+                <h2 class="card-header-title txt-v mt-1 mb-1">{{nome}}</h2>
+              </div>
+
+            </div>
+
+            <div class="pt-2 ">
+              <button class="py-0 btn btn-outline-success botaoMinhasPostagens">Minhas Postagens</button>
+            </div>
+            <div class="pt-2">
+              <button class="py-0 btn btn-outline-success botaoMinhasPostagens">Perfil</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /Card de Perfil -->
+
+    <!-- Postagens -->
     <div class="col-md-6">
       <div class="card text-center my-5" *ngFor='let item of listaPostagens'>
 
@@ -145,9 +179,46 @@
         </div>
       </div>
     </div>
+    <!-- /Postagens -->
+
+    <!-- CARD DE FILTRO -->
+    <div class="col-md-3">
+      <div class="card-filtro">
+        <div class="col-lg-10 text-center ">
+              <div class="card-section border rounded p-3 cor">
+                <div class="card-header-first rounded pb-5">
+                  <h2 class="card-header-title text-white pt-3">FILTRO</h2>
+                 </div>
+                    <div class="card-body text-center">
+                      <div class="form-group">
+                        <label for="texto">TEMAS </label>
+                        <select name="tema" id="tema" class="form-control" [(ngModel)]='idTema' (change)='changeTema()'>
+
+                          <option *ngFor='let item of listaTemas' value="{{item.id}}">{{item.tema}}
+                          </option>
+                        </select>
+                      </div>
+                          <div class="form-group">
+                            <label for="tituloPostagem">Titulo</label>
+                              <input class="form-control" type="text" name="tituloPostagem" [(ngModel)]='titulo' (change)='findByTitulo()' id ="tituloPostagem" placeholder="Titulo">
+                          </div>
+                            <div class="form-group">
+                              <label for="buscaUsuario">Pesquisar por usuário</label>
+                              <input class="form-control" type="text" name="buscaUsuario" [(ngModel)]="usuario" (change)="findByUsuario()" id ="buscaUsuario" placeholder="Usuário">
+                            </div>
+                    </div>
+                      <div >
+                        <button class="py-0 btn btn-secondary botaoFiltro" (click)='resetarFiltro()'>Todos projetos</button>
+                      </div>
+              </div>
+        </div>
+      </div>
+    </div>
+    <!-- /CARD DE FILTRO -->
+
   </div>
 </div>
- <!-- FEED -->
+ <!-- /FEED -->
 
 <app-publicar></app-publicar>
 <app-doacao [postagem]="postagemEdit"></app-doacao>

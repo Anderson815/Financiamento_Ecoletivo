@@ -28,7 +28,7 @@ export class PostagemDeleteComponent implements OnInit {
 
   ngOnInit() {
     if(environment.token == ""){
-      this.router.navigate(['/entrar'])
+      this.router.navigate(['/inicial'])
     }
  /*    this.idPost = this.route.snapshot.params['id']
     this.findByIdPostagem(this.idPost) */
