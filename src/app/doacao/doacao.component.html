@@ -54,7 +54,7 @@
                 </div>
               </div>
 
-               <h1 class="text-center mb-3 mt-3 ">Titulo do Projeto</h1>
+               <h1 class="text-center mb-3 mt-3 ">{{postagem.titulo}}</h1>
             </div>
             <hr>
         </div>
@@ -62,18 +62,14 @@
           <div class="col-md-12 ">
             <h4 class="text-center">Qual é o valor da sua doação?</h4>
           </div>
-          <input class="form-control form-control-lg mx-sm-5 mb-3 mt-3" rows="5" type="text" name="valor" id ="valor" placeholder="R$ ">
+          <input [(ngModel)]='valor' class="form-control form-control-lg mx-sm-5 mb-3 mt-3" rows="5" type="number" name="valor" id ="valor" placeholder="R$ ">
         </div>
         <div class="row mt-2 mb-3">
-            <div class="col-md-12 d-flex justify-content-center">
+          <div class="col pl-0 d-flex justify-content-center">
+            <button (click)="doar()" class="btn btn-lg btn-outline-success ml-4 mr-3" data-dismiss="modal" > Doar </button>
 
-            <div class="col pl-0">
-              <button class="btn btn-lg btn-outline-success ml-4 mr-3" data-dismiss="modal" > Doar </button>
-
-              <button class="btn btn-lg btn-outline-danger md-2" routerLink="/timeline" data-dismiss="modal">Fechar</button>
-            </div>
-
-            </div>
+            <button class="btn btn-lg btn-outline-danger md-2" routerLink="/timeline" data-dismiss="modal">Fechar</button>
+          </div>
         </div>
       </div>
     </div>
