@@ -23,6 +23,8 @@ export class TimelineComponent implements OnInit {
   listaTemas: Tema[]
   idTema: number
   titulo: string
+  usuario: string
+  
 
   user: User = new User()
   idUser = environment.id
@@ -124,6 +126,11 @@ export class TimelineComponent implements OnInit {
   findByTitulo() {
     if (this.titulo !== '') {      
       this.listaPostagens = this.listaPostagens.filter(filter => filter.titulo === this.titulo);
+    }
+  }
+  findByUsuario() {
+    if (this.usuario !== '') {      
+      this.listaPostagens = this.listaPostagens.filter(filter => filter.usuario.nome === this.usuario);
     }
   }
 

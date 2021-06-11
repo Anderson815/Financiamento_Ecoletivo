@@ -1,5 +1,5 @@
 .fi {
-  background-image: url('https://i.imgur.com/0f8emwc.jpg');
+  background-image: url('https://image.freepik.com/free-photo/green-bokeh-tree-leaves-nature-out-focus-background_55716-1606.jpg');
   background-size: cover;
   opacity: .90;
 }
@@ -10,7 +10,9 @@
 }
 
 #logo{
-  width: 100%;
-} 
+  width: 28%;
+  margin-top: 170px;
+}
+
 
 /* https://i.imgur.com/jSSRnVG.jpg%27 */
