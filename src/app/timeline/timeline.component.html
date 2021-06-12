@@ -18,143 +18,152 @@
       </div>
     </div>
   </div> -->
-  <!-- /Card de Postagem -->
+<!-- /Card de Postagem -->
 
-   <!-- FEED -->
-  <div class="row margem " id="timeline">
+<!-- FEED -->
+<div class="row margem " id="timeline">
 
-    <!-- Card de Perfil -->
-    <div class="col-md-3 margemCard">
-      <div class="card-perfil">
-        <div class="col-lg-10 text-center ajuste">
-          <div class="card-section border rounded p-3 cor ">
-            <div class="card-header-first2 rounded pb-5 ">
-              <div>
-                <img src="{{foto}}" alt="Imagem do usuário" class="foto-card-perfil rounded-circle mt-2">
-                <h2 class="card-header-title txt-v mt-1 mb-1">{{nome}}</h2>
-              </div>
-
-            </div>
-            <div class="pt-2">
-              <button class="py-0 btn btn-outline-success botaoMinhasPostagens" data-target="#novaPostagem" data-toggle="modal">Criar um projeto</button>
-            </div>
-            <div class="pt-2 ">
-              <button class="py-0 btn btn-outline-success botaoMinhasPostagens" (click)='findByMinhasPostagens()'>Minhas Postagens</button>
-            </div>
-            <div class="pt-2">
-              <button class="py-0 btn btn-outline-success botaoMinhasPostagens">Perfil</button>
+  <!-- Card de Perfil -->
+  <div class="col-md-3 margemCard">
+    <div class="card-perfil">
+      <div class="col-lg-10 text-center ajuste">
+        <div class="card-section border rounded p-3 cor ">
+          <div class="card-header-first2 rounded pb-5 ">
+            <div>
+              <img src="{{foto}}" alt="Imagem do usuário" class="foto-card-perfil rounded-circle mt-2">
+              <h2 class="card-header-title txt-v mt-1 mb-1">{{nome}}</h2>
             </div>
 
           </div>
+          <div class="pt-2">
+            <button class="py-0 btn btn-outline-success botaoMinhasPostagens" data-target="#novaPostagem"
+              data-toggle="modal">Criar um projeto</button>
+          </div>
+          <div class="pt-2 ">
+            <button class="py-0 btn btn-outline-success botaoMinhasPostagens" (click)='findByMinhasPostagens()'>Minhas
+              Postagens</button>
+          </div>
+          <div class="pt-2">
+            <button class="py-0 btn btn-outline-success botaoMinhasPostagens">Perfil</button>
+          </div>
+
         </div>
       </div>
     </div>
-    <!-- /Card de Perfil -->
+  </div>
+  <!-- /Card de Perfil -->
 
-    <!-- Postagens -->
-    <div class="col-md-6">
-      <div class="card text-center my-5 card-section" *ngFor='let item of listaPostagens | orderBy : key : reverse'>
+  <!-- Postagens -->
+  <div class="col-md-6">
+    <div class="card text-center my-5 card-section" *ngFor='let item of listaPostagens | orderBy : key : reverse'>
 
-        <div class="card-header text-left">
-          <div class="row">
-            <div class="col-md-2 pr-0">
-              <img class="foto-perfil rounded-circle" src="{{item.usuario.foto}}" alt="Imagem do card">
-            </div>
-
-            <hr>
-
-
-            <div class="col pl-0">
-              <p class="m-0">
-                <span>{{item.usuario.nome}} - </span>
-                <span>{{item.tema.tema}}</span>
-              </p>
-              <p class="m-0">
-                <small class="text-muted">{{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date:
-                  'HH:mm'}}</small>
-              </p>
-            </div>
+      <div class="card-header text-left">
+        <div class="row">
+          <div class="col-md-2 pr-0">
+            <img class="foto-perfil rounded-circle" src="{{item.usuario.foto}}" alt="Imagem do card">
           </div>
-        </div>
-
-        <h3 class="card-title mt-3 mb-0">{{item.titulo}}</h3>
-        <div class="card-body pt-2">
-          <div *ngIf='imagemOk(item.midia)'>
-            <img class="card-img-top" src="{{item.midia}}" alt="Imagem do card">
-          </div>
-          <p class="card-text-center text-left mt-2">{{item.descricao}}</p>
 
           <hr>
-          <h4>
-            <span class="mr-2"><!-- Arrecadado: R$ --><i class="fa fa-handshake-o" aria-hidden="true"></i> {{item.valor_doado}}</span>
-            <span class="ml-2"><!-- Meta --><i class="fa fa-flag" aria-hidden="true"></i> R$ {{item.meta}}</span>
-          </h4>
 
-          <div id="deletarAtualizarPostagem" class="mt-3" *ngIf='minhaPostagem(item.usuario.id)'>
-            <button type="button" class="btn btn-success mr-3" data-toggle="modal" data-target="#editarPostagem"
-              (click)='editarPostagem(item)'>Editar
-            </button>
 
-            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#excluirPostagem"
-              (click)='editarPostagem(item)'>
-              Excluir
+          <div class="col pl-0">
+            <p class="m-0">
+              <span>{{item.usuario.nome}} - </span>
+              <span>{{item.tema.tema}}</span>
+            </p>
+            <p class="m-0">
+              <small class="text-muted">{{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date:
+                'HH:mm'}}</small>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="card-title mt-3 mb-0">{{item.titulo}}</h3>
+      <div class="card-body pt-2">
+        <div *ngIf='imagemOk(item.midia)'>
+          <img class="card-img-top" src="{{item.midia}}" alt="Imagem do card">
+        </div>
+        <p class="card-text-center text-left mt-2">{{item.descricao}}</p>
+
+        <hr>
+        <h4>
+          <span class="mr-2">
+            <!-- Arrecadado: R$ --><i class="fa fa-handshake-o" aria-hidden="true"></i> {{item.valor_doado}}
+          </span>
+          <span class="ml-2">
+            <!-- Meta --><i class="fa fa-flag" aria-hidden="true"></i> R$ {{item.meta}}
+          </span>
+        </h4>
+
+        <div id="deletarAtualizarPostagem" class="mt-3" *ngIf='minhaPostagem(item.usuario.id)'>
+          <button type="button" class="btn btn-success mr-3" data-toggle="modal" data-target="#editarPostagem"
+            (click)='editarPostagem(item)'>Editar
+          </button>
+
+          <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#excluirPostagem"
+            (click)='editarPostagem(item)'>
+            Excluir
+          </button>
+        </div>
+
+        <div class="col pl-0 ml-2 mt-3">
+          <div *ngIf='outraPostagem(item.usuario.id)'>
+            <button type="button" class="btn btn-outline-success w-100 py-2 redondo" data-toggle="modal"
+              data-target="#doacao" (click)='editarPostagem(item)'>
+              Doar
             </button>
           </div>
+        </div>
 
-          <div class="col pl-0 ml-2 mt-3" >
-            <div *ngIf='outraPostagem(item.usuario.id)'>
-              <button type="button" class="btn btn-outline-success w-100 py-2 redondo" data-toggle="modal" data-target="#doacao"
-                  (click)='editarPostagem(item)'>
-                  Doar
-              </button>
+        <app-postagem-edit [postagem]='postagemEdit'></app-postagem-edit>
+        <app-postagem-delete [postagem]='postagemEdit'></app-postagem-delete>
+
+      </div>
+    </div>
+  </div>
+  <!-- /Postagens -->
+
+  <!-- CARD DE FILTRO -->
+  <div class="col-md-3 margemCard">
+    <div class="card-filtro">
+      <div class="col-lg-10 text-center ">
+        <div class="card-section border rounded p-3 cor">
+          <div class="card-header-first rounded pb-5">
+            <h2 class="card-header-title text-white pt-3">FILTRO</h2>
+          </div>
+          <div class="card-body text-center">
+            <div class="form-group">
+              <button class="btn btn-outline-primary py-0  my-2 botaoFiltro">Tema </button>
+              <select name="tema" id="tema" class="form-control" [(ngModel)]='idTema' (change)='changeTema()'>
+                <option (click)="resetarFiltro()">Nenhum</option>
+                <option *ngFor='let item of listaTemas' value="{{item.id}}">{{item.tema}}
+                </option>
+              </select>
+            </div>
+            <div class="form-group">
+              <button class="btn btn-outline-primary py-0  my-2 botaoFiltro">Título</button>
+              <input class="form-control" type="text" name="tituloPostagem" [(ngModel)]='titulo'
+                (change)='findByTitulo()' id="tituloPostagem" placeholder="Titulo">
+            </div>
+            <div class="form-group">
+              <button class="btn btn-outline-primary py-0  my-2 botaoFiltro">Usuário</button>
+              <input class="form-control" type="text" name="buscaUsuario" [(ngModel)]="usuario"
+                (change)="findByUsuario()" id="buscaUsuario" placeholder="Usuário">
+            </div>
+            <div>
+              <button class="btn btn-outline-primary py-0  my-2 botaoFiltro" (click)='resetarFiltro()'>Todos projetos</button>
             </div>
           </div>
 
-          <app-postagem-edit [postagem]='postagemEdit'></app-postagem-edit>
-          <app-postagem-delete [postagem]='postagemEdit'></app-postagem-delete>
-
         </div>
       </div>
     </div>
-    <!-- /Postagens -->
-
-    <!-- CARD DE FILTRO -->
-    <div class="col-md-3 margemCard">
-      <div class="card-filtro">
-        <div class="col-lg-10 text-center ">
-              <div class="card-section border rounded p-3 cor">
-                <div class="card-header-first rounded pb-5">
-                  <h2 class="card-header-title text-white pt-3">FILTRO</h2>
-                 </div>
-                    <div class="card-body text-center">
-                      <div class="form-group">
-                        <label for="texto">TEMAS </label>
-                        <select name="tema" id="tema" class="form-control" [(ngModel)]='idTema' (change)='changeTema()'>
-                          <option (click)="resetarFiltro()">Nenhum</option>
-                          <option *ngFor='let item of listaTemas' value="{{item.id}}">{{item.tema}}
-                          </option>
-                        </select>
-                      </div>
-                          <div class="form-group">
-                            <label for="tituloPostagem">Titulo</label>
-                              <input class="form-control" type="text" name="tituloPostagem" [(ngModel)]='titulo' (change)='findByTitulo()' id ="tituloPostagem" placeholder="Titulo">
-                          </div>
-                            <div class="form-group">
-                              <label for="buscaUsuario">Pesquisar por usuário</label>
-                              <input class="form-control" type="text" name="buscaUsuario" [(ngModel)]="usuario" (change)="findByUsuario()" id ="buscaUsuario" placeholder="Usuário">
-                            </div>
-                    </div>
-                      <div >
-                        <button class="py-0 btn btn-secondary botaoFiltro" (click)='resetarFiltro()'>Todos projetos</button>
-                      </div>
-              </div>
-        </div>
-      </div>
-    </div>
-    <!-- /CARD DE FILTRO -->
-
   </div>
- <!-- /FEED -->
+  <!-- /CARD DE FILTRO -->
+
+</div>
+<!-- /FEED -->
 
 <app-publicar></app-publicar>
 <app-doacao [postagem]="postagemEdit"></app-doacao>

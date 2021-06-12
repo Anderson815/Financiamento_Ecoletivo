@@ -58,7 +58,7 @@ header{
 .nav a{
     text-decoration: none;
     color: #76b734;
-    
+
     font-size: 1.4rem;
 }
 
@@ -190,4 +190,9 @@ header{
 }
 .margemCard{
     margin-top: 112px;
+}
+
+.botaoFiltro{
+  width: 100%;
+  height: 30px;
 }
