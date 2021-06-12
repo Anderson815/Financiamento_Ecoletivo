@@ -133,26 +133,46 @@
             <h2 class="card-header-title text-white pt-3">FILTRO</h2>
           </div>
           <div class="card-body text-center">
-            <div class="form-group">
-              <button class="btn btn-outline-primary py-0  my-2 botaoFiltro">Tema </button>
-              <select name="tema" id="tema" class="form-control" [(ngModel)]='idTema' (change)='changeTema()'>
-                <option (click)="resetarFiltro()">Nenhum</option>
-                <option *ngFor='let item of listaTemas' value="{{item.id}}">{{item.tema}}
-                </option>
-              </select>
-            </div>
-            <div class="form-group">
-              <button class="btn btn-outline-primary py-0  my-2 botaoFiltro">Título</button>
-              <input class="form-control" type="text" name="tituloPostagem" [(ngModel)]='titulo'
+            <div class="form-group w-100">
+
+              <button class="btn btn-outline-primary py-0  my-1 botaoFiltro" data-toggle="collapse" data-target="#collapseTema" aria-expanded="false" aria-controls="collapseFiltro">
+                              Tema
+              </button>
+
+
+              <div class="collapse campoFiltro" id="collapseTema">
+                <select name="tema" id="tema" class="form-control" [(ngModel)]='idTema' (change)='changeTema()'>
+                  <option (click)="resetarFiltro()">Nenhum</option>
+                  <option *ngFor='let item of listaTemas' value="{{item.id}}">{{item.tema}}
+                  </option>
+                </select>
+              </div>
+
+            <!-- </div> -->
+            <!-- <div class="form-group"> -->
+              <button class="btn btn-outline-primary py-0  my-1 botaoFiltro" type="button" data-toggle="collapse" data-target="#collapseTitulo" aria-expanded="false" aria-controls="collapseFiltro">
+                Título
+              </button>
+              <div class="collapse" id="collapseTitulo">
+                <input class="form-control campoFiltro" type="text" name="tituloPostagem" [(ngModel)]='titulo'
                 (change)='findByTitulo()' id="tituloPostagem" placeholder="Titulo">
-            </div>
-            <div class="form-group">
-              <button class="btn btn-outline-primary py-0  my-2 botaoFiltro">Usuário</button>
-              <input class="form-control" type="text" name="buscaUsuario" [(ngModel)]="usuario"
+              </div>
+
+            <!-- </div> -->
+            <!-- <div class="form-group"> -->
+              <button class="btn btn-outline-primary py-0  my-1 botaoFiltro" type="button" data-toggle="collapse" data-target="#collapseUsuario" aria-expanded="false" aria-controls="collapseFiltro">
+                Usuário
+              </button>
+              <div class="collapse" id="collapseUsuario">
+                <input class="form-control campoFiltro" type="text" name="buscaUsuario" [(ngModel)]="usuario"
                 (change)="findByUsuario()" id="buscaUsuario" placeholder="Usuário">
-            </div>
-            <div>
-              <button class="btn btn-outline-primary py-0  my-2 botaoFiltro" (click)='resetarFiltro()'>Todos projetos</button>
+              </div>
+
+
+              <div>
+                <button class="btn btn-outline-primary py-0  my-1 botaoFiltro" (click)='resetarFiltro()'>Todos
+                  projetos</button>
+              </div>
             </div>
           </div>
 
