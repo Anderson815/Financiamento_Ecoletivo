@@ -140,6 +140,13 @@ export class TimelineComponent implements OnInit {
   }
 
   resetarFiltro() {
+    let titulo = <HTMLInputElement>document.querySelector('#tituloPostagem')
+    let usuario = <HTMLInputElement>document.querySelector('#buscaUsuario')
+
+    this.idTema = 0
+    titulo.value = ""
+    usuario.value = ""
+
     this.ngOnInit()
   }
 
