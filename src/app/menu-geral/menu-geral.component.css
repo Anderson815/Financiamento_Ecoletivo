@@ -40,7 +40,7 @@ header{
     align-items: center;
     justify-content: space-between;
     /* background-color: #76b734; */
-    background: radial-gradient(circle, rgba(106,215,75,1) 15%, rgba(62,159,155,1) 100%);
+    background: #594947
     /* border-bottom: 1.5px solid #222B2B; */
     /* transition: height .5s ease; */
 }
@@ -100,7 +100,7 @@ header{
 }
 
 .txt-v {
-    color: #222B2B;
+    color: #ffffff;
 }
 
 .font-weight-bold {

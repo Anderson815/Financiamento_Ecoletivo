@@ -37,8 +37,16 @@ p{
 } */
 .equipe{
     background-color: rgb(236, 233, 228);
+/*     background-image: url("../../assets/img/fundotextura.png");
+    background-size: cover; */
 
 }
 .coracao{
     color: rgb(255, 0, 0);
+}
+.corJ{
+    background-color: #006837;
+    color: blanchedalmond;
+    padding: -200px;
+    
 }
