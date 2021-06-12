@@ -34,10 +34,10 @@ export class PostagemEditComponent implements OnInit {
   atualizar(){
     this.postagemService.putPostagem(this.postagem).subscribe((resp: Postagem) => {
       this.alertas.showAlertSucess("Projeto atualizado com sucesso!");
-      this.router.navigate(["/inicial"])
+      this.router.navigate(["/timeline-timeout"])
       setTimeout(()=>{
         this.router.navigate(["/timeline"])
-      },100)  
+      },5)  
     })
   }
 
