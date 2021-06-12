@@ -40,7 +40,7 @@ header{
 
 .nav a{
     text-decoration: none;
-    color: #76b734;
+    color: #006837;
     font-size: 1.4rem;
 }
 
@@ -65,7 +65,7 @@ header{
     content: '';
     width: 100%;
     height: 2px;
-    background-color: #fff;
+    background-color: #6e5504;
     position: absolute;
     left: 0;
     bottom: -3px;
@@ -81,15 +81,15 @@ header{
 #nav-cta{
     
     display: inline-block;
-    background-color: #76b734;
-    color: #ffffff;
+    background-color: #006837;
+    color: #c3e31a;
     padding: 0rem 1rem;
     border-radius: 1rem;
     transition: background-color .5s ease;
 }
 
 #nav-cta:hover{
-    background-color: #B9EB6E;
+    background-color: #6e5504;
 }
 
 
@@ -104,18 +104,22 @@ header{
 }
 
 .scrolling-active .nav a{
-    color: #E6F2D3;
+    color: #6e5504;
 }
 
 .scrolling-active #nav-cta{
-    background-color: #E6F2D3;
+    background-color: #6e5504;
     color: #76b734;
 }
 
 .scrolling-active #nav-cta:hover{
-    background-color: #ffffff;
+    background-color: #006837;
 }
 
 .scrolling-active .nav-link::after{
-    background-color: #ffffff;
+    background-color: #006837;
+}
+
+.btn {
+     font-weight: 350;
 }
