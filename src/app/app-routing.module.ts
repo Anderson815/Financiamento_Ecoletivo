@@ -1,3 +1,4 @@
+import { PerfilComponent } from './perfil/perfil.component';
 import { TemaEditComponent } from './edit/tema-edit/tema-edit.component';
 import { LoginComponent } from './login/login.component';
 import { NgModule } from '@angular/core';
@@ -17,7 +18,8 @@ const routes: Routes = [
   {path: 'timeline', component: TimelineComponent},
   {path: 'tema', component: TemaComponent},
   {path: 'tema-edit/:id', component: TemaEditComponent},
-  {path: "tema-delete/:id", component: TemaDeleteComponent}
+  {path: "tema-delete/:id", component: TemaDeleteComponent},
+  {path: 'perfil', component: PerfilComponent}
 
 ];
 

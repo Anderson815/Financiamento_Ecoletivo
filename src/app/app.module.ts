@@ -27,6 +27,7 @@ import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.compon
 import { DoacaoComponent } from './doacao/doacao.component';
 import { AlertasComponent } from './alertas/alertas.component';
 import { MenuGeralComponent } from './menu-geral/menu-geral.component';
+import { PerfilComponent } from './perfil/perfil.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { MenuGeralComponent } from './menu-geral/menu-geral.component';
     PostagemEditComponent,
     DoacaoComponent,
     AlertasComponent,
-    MenuGeralComponent
+    MenuGeralComponent,
+    PerfilComponent
   ],
   imports: [
     AppRoutingModule,

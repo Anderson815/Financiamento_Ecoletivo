@@ -1,6 +1,5 @@
 <!-- Card de Postagem -->
 <!-- <div id="timeline" class="container-fluid">
-
   <div class="row d-flex justify-content-center pt-5 mt-5">
     <div class="col-md-6">
       <div class="card">
@@ -21,34 +20,33 @@
   <!-- /Card de Postagem -->
 
    <!-- FEED -->
-  <div class="row margem " id="timeline">
+   <div class="row margem" id="timeline">
 
     <!-- Card de Perfil -->
     <div class="col-md-3 margemCard">
       <div class="card-perfil">
         <div class="col-lg-10 text-center ajuste">
           <div class="card-section border rounded p-3 cor ">
-            <div class="card-header-first2 rounded pb-5 ">
+            <div class="card-header-first2 rounded pb-5">
               <div>
                 <img src="{{foto}}" alt="Imagem do usuário" class="foto-card-perfil rounded-circle mt-2">
                 <h2 class="card-header-title txt-v mt-1 mb-1">{{nome}}</h2>
               </div>
-
+            </div>
+            <div class="pt-4">
+              <button class="py-0 btn btn-outline-success botaoMinhasPostagens" routerLink="/perfil" >Perfil</button>
             </div>
             <div class="pt-2">
               <button class="py-0 btn btn-outline-success botaoMinhasPostagens" data-target="#novaPostagem" data-toggle="modal">Criar um projeto</button>
             </div>
-            <div class="pt-2 ">
+            <div class="pt-2">
               <button class="py-0 btn btn-outline-success botaoMinhasPostagens" (click)='findByMinhasPostagens()'>Minhas Postagens</button>
             </div>
-            <div class="pt-2">
-              <button class="py-0 btn btn-outline-success botaoMinhasPostagens">Perfil</button>
-            </div>
-
           </div>
         </div>
       </div>
     </div>
+
     <!-- /Card de Perfil -->
 
     <!-- Postagens -->
@@ -60,10 +58,7 @@
             <div class="col-md-2 pr-0">
               <img class="foto-perfil rounded-circle" src="{{item.usuario.foto}}" alt="Imagem do card">
             </div>
-
             <hr>
-
-
             <div class="col pl-0">
               <p class="m-0">
                 <span>{{item.usuario.nome}} - </span>

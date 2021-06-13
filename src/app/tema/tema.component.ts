@@ -30,7 +30,7 @@ export class TemaComponent implements OnInit {
     }
 
     if(environment.tipo != 'admin') {
-      this.alertas.showAlertInfo('Você precisa ser administrador para realizar essa tarefa!')
+      this.alertas.showAlertDanger('Você precisa ser administrador para realizar essa tarefa!')
       this.router.navigate(['/timeline'])
     }
 

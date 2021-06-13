@@ -1,0 +1,47 @@
+<div class="row margem" id="perfil">
+  <div class="container-fluid">
+  <div class="d-flex justify-content-center">
+    <div class="col-md-5">
+      <div class="card margemCard" id="card">
+        <div class="card-header text-center"><strong>Atualize seu Perfil</strong></div>
+        <div class="card-body">
+          <div class="form-group">
+          <label for="nome">Nome</label>
+          <input [(ngModel)]='user.nome' class="form-control" type="text" name="nome" id="nome" placeholder="">
+        </div>
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <input [(ngModel)]='user.email' class="form-control" type="text" name="email" id="email" placeholder="">
+          </div>
+          <div class="form-group">
+            <label for="linkFoto">Link da foto</label>
+            <input [(ngModel)]='user.foto' class="form-control" type="text" name="linkFoto" id="linkFoto" placeholder="">
+          </div>
+          <div class="form-group">
+            <label for="senha">Senha</label>
+            <input (input)='confirmSenha($event)' class="form-control" type="password" name="senha" id="senha" placeholder="Digite sua senha">
+          </div>
+          <div class="form-group">
+            <label for="confirmSenha">Confirme sua senha</label>
+            <input [(ngModel)]='user.senha' class="form-control" type="password" name="confirmSenha" id="confirmSenha"
+              placeholder="Por favor, digite sua senha novamente">
+          </div>
+
+          <div class="form-group">
+            <label for="tipo">Tipo de Usuário</label>
+            <select class="form-control" name="tipo" id="tipo" (change)='tipoUser($event)'>
+                <option>Selecione o tipo de usuário:</option>
+                <option value="normal">Normal</option>
+                <option value="admin">Administrador</option>
+            </select>
+          </div>
+
+          <div class="d-flex justify-content-center">
+            <button type="submit" routerLink="/timeline"  class="btn btn-outline-danger mx-3">Cancelar</button>
+            <button type="submit" class="btn btn-outline-success ml-3">Atualizar</button>
+          </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
