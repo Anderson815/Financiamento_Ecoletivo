@@ -4,3 +4,7 @@ img.displayed {
   display: block;
   margin-left: 300;
 }
+
+.redondo{
+  border-radius: 15px;
+}

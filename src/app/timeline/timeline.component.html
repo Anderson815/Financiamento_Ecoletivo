@@ -36,13 +36,13 @@
 
             </div>
             <div class="pt-2">
-              <button class="py-0 btn btn-outline-success botaoMinhasPostagens" data-target="#novaPostagem" data-toggle="modal">Criar um projeto</button>
+              <button class="py-0 btn btn-outline-success botaoMinhasPostagens redondo" data-target="#novaPostagem" data-toggle="modal">Criar um projeto</button>
             </div>
             <div class="pt-2 ">
-              <button class="py-0 btn btn-outline-success botaoMinhasPostagens" (click)='findByMinhasPostagens()'>Minhas Postagens</button>
+              <button class="py-0 btn btn-outline-success botaoMinhasPostagens redondo" (click)='findByMinhasPostagens()'>Minhas Postagens</button>
             </div>
             <div class="pt-2">
-              <button class="py-0 btn btn-outline-success botaoMinhasPostagens">Perfil</button>
+              <button class="py-0 btn btn-outline-success botaoMinhasPostagens redondo">Perfil</button>
             </div>
 
           </div>
@@ -91,11 +91,11 @@
           </h4>
 
           <div id="deletarAtualizarPostagem" class="mt-3" *ngIf='minhaPostagem(item.usuario.id)'>
-            <button type="button" class="btn btn-success mr-3" data-toggle="modal" data-target="#editarPostagem"
+            <button type="button" class="btn btn-outline-success  redondo py mr-3" data-toggle="modal" data-target="#editarPostagem"
               (click)='editarPostagem(item)'>Editar
             </button>
 
-            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#excluirPostagem"
+            <button type="button" class="btn btn-outline-danger  redondo py " data-toggle="modal" data-target="#excluirPostagem"
               (click)='editarPostagem(item)'>
               Excluir
             </button>
@@ -145,7 +145,7 @@
                             </div>
                     </div>
                       <div >
-                        <button class="py-0 btn btn-secondary botaoFiltro" (click)='resetarFiltro()'>Todos projetos</button>
+                        <button class="py-0 btn btn-outline-success redondo botaoFiltro" (click)='resetarFiltro()'>Todos projetos</button>
                       </div>
               </div>
         </div>

@@ -1,4 +1,4 @@
 <app-menu-geral *ngIf='(auth.logado())'></app-menu-geral>
 <router-outlet></router-outlet>
-<app-rodape></app-rodape>
+<app-rodape *ngIf='(auth.logado())' ></app-rodape>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
