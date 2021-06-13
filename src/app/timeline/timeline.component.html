@@ -142,7 +142,7 @@
 
               <!-- <div class="collapse show" id="collapseTema"> -->
                 <p class="text-primary mb-1">TEMA</p>
-                <select name="tema" id="tema" class="form-control" [(ngModel)]='idTema' (change)='changeTema()'>
+                <select name="tema" id="tema" class="form-control" [(ngModel)]='idTema' (change)='changeTema()' (click)='trocaCorTema()'>
                   <option (click)='resetarFiltro()'>Nenhum</option>
                   <option *ngFor='let item of listaTemas' value="{{item.id}}">{{item.tema}}
                   </option>
@@ -158,7 +158,7 @@
               <!-- <div class="collapse" id="collapseTitulo"> -->
                 <p class="text-primary mt-2 mb-1">TÍTULO</p>
                 <input class="form-control" type="text" name="tituloPostagem" [(ngModel)]='titulo'
-                (change)='findByTitulo()' (click)='tituloFiltro()' id="tituloPostagem" placeholder="Titulo">
+                (change)='findByTitulo()' (click)='tituloFiltro()' id="tituloPostagem" placeholder="Título">
                 <hr class="mb-2">
              <!--  </div> -->
 

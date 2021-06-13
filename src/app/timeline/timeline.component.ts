@@ -36,7 +36,7 @@ export class TimelineComponent implements OnInit {
   foto = environment.foto
   token = environment.token
 
-  filtroBloqueado: string = 'rgb(172, 224, 203)'
+  filtroBloqueado: string = 'rgb(232, 240, 254)'
 
   constructor(
     private router: Router,
@@ -159,6 +159,16 @@ export class TimelineComponent implements OnInit {
 
   }
 
+  trocaCorTema(){
+    let tema = <HTMLSelectElement>document.querySelector('#tema')
+    let titulo = <HTMLInputElement>document.querySelector('#tituloPostagem')
+    let usuario = <HTMLInputElement>document.querySelector('#buscaUsuario')
+
+    tema.style.backgroundColor = "white"
+    titulo.style.backgroundColor = this.filtroBloqueado
+    usuario.style.backgroundColor = this.filtroBloqueado
+  }
+
   temaFiltro(){
     let tema = <HTMLSelectElement>document.querySelector('#tema')
     let titulo = <HTMLInputElement>document.querySelector('#tituloPostagem')
@@ -166,10 +176,6 @@ export class TimelineComponent implements OnInit {
 
     titulo.value = ""
     usuario.value = ""
-
-    tema.style.backgroundColor = "white"
-    titulo.style.backgroundColor = this.filtroBloqueado
-    usuario.style.backgroundColor = this.filtroBloqueado
   }
 
   tituloFiltro(){
