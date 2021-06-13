@@ -95,7 +95,7 @@ header{
 
 /*Camis, aqui são as configs após scrollar pra baixo*/
 .scrolling-active{
-    background-color: #594947;
+    background-color:   #332b29;
     box-shadow: 0 3px 1rem rgba(255, 255, 255, 0.1);
 }
 
@@ -119,3 +119,4 @@ header{
 .scrolling-active .nav-link::after{
     background-color: #ffffff;
 }
+

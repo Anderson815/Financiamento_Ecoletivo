@@ -40,7 +40,7 @@ header{
     align-items: center;
     justify-content: space-between;
     /* background-color: #76b734; */
-    background: #594947
+    background: #050808
     /* border-bottom: 1.5px solid #222B2B; */
     /* transition: height .5s ease; */
 }
@@ -88,7 +88,7 @@ header{
 #nav-cta{
 
     display: inline-block;
-    background-color: #E6F2D3;
+    background-color: rgb(236, 233, 228);
     color: #222B2B;
     padding: 0rem 1rem;
     border-radius: 1rem;
@@ -96,7 +96,7 @@ header{
 }
 
 #nav-cta:hover{
-    background-color: #d3d3d3;
+    background-color: #ffffff;
 }
 
 .txt-v {

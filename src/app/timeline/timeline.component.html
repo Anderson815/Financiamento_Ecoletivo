@@ -36,13 +36,13 @@
 
             </div>
             <div class="pt-2">
-              <button class="py-0 btn btn-outline-success botaoMinhasPostagens" data-target="#novaPostagem" data-toggle="modal">Criar um projeto</button>
+              <button class="py-0 btn btn-outline-success corBtn botaoMinhasPostagens" data-target="#novaPostagem" data-toggle="modal">Criar um projeto</button>
             </div>
             <div class="pt-2 ">
-              <button class="py-0 btn btn-outline-success botaoMinhasPostagens" (click)='findByMinhasPostagens()'>Minhas Postagens</button>
+              <button class="py-0 btn btn-outline-success corBtn botaoMinhasPostagens" (click)='findByMinhasPostagens()'>Minhas Postagens</button>
             </div>
             <div class="pt-2">
-              <button class="py-0 btn btn-outline-success botaoMinhasPostagens">Perfil</button>
+              <button class="py-0 btn btn-outline-success corBtn botaoMinhasPostagens">Perfil</button>
             </div>
 
           </div>
@@ -53,47 +53,21 @@
 
     <!-- Postagens -->
     <div class="col-md-6">
-      <div class="card text-center my-5 card-section" *ngFor='let item of listaPostagens | orderBy : key : reverse'>
+      <div class=" text-center my-5 " *ngFor='let item of listaPostagens | orderBy : key : reverse'>
 
-        <div class="card-header text-left">
+        <div class="">
           <div class="row">
             <div class="col-md-2 pr-0">
-              <img class="foto-perfil rounded-circle" src="{{item.usuario.foto}}" alt="Imagem do card">
-            </div>
-
-            <hr>
-
-
-            <div class="col pl-0">
-              <p class="m-0">
-                <span>{{item.usuario.nome}} - </span>
-                <span>{{item.tema.tema}}</span>
-              </p>
-              <p class="m-0">
-                <small class="text-muted">{{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date:
-                  'HH:mm'}}</small>
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <h3 class="card-title mt-3 mb-0">{{item.titulo}}</h3>
-        <div class="card-body pt-2">
-          <div *ngIf='imagemOk(item.midia)'>
-            <img class="card-img-top" src="{{item.midia}}" alt="Imagem do card">
-          </div>
-          <p class="card-text-center text-left mt-2">{{item.descricao}}</p>
-
-          <hr>
-          <h4>
-            <span class="mr-2"><!-- Arrecadado: R$ --><i class="fa fa-handshake-o" aria-hidden="true"></i> {{item.valor_doado}}</span>
-            <span class="ml-2"><!-- Meta --><i class="fa fa-flag" aria-hidden="true"></i> R$ {{item.meta}}</span>
-          </h4>
-
-          <div id="deletarAtualizarPostagem" class="mt-3" *ngIf='minhaPostagem(item.usuario.id)'>
-            <button type="button" class="btn btn-success mr-3" data-toggle="modal" data-target="#editarPostagem"
-              (click)='editarPostagem(item)'>Editar
-            </button>
+              <figure class="snip1336">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample87.jpg" alt="sample87" />
+                <figcaption>
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample4.jpg" alt="profile-sample4" class="profile" />
+                  <h2>Hans Down<span>Engineer</span></h2>
+                  <p>I'm looking for something that can deliver a 50-pound payload of snow on a small feminine target. Can you suggest something? Hello...? </p>
+                  <a href="#" class="follow">Follow</a>
+                  <a href="#" class="info">More Info</a>
+                </figcaption>
+              </figure>
 
             <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#excluirPostagem"
               (click)='editarPostagem(item)'>
@@ -101,14 +75,7 @@
             </button>
           </div>
 
-          <div class="col pl-0 ml-2 mt-3" >
-            <div *ngIf='outraPostagem(item.usuario.id)'>
-              <button type="button" class="btn btn-outline-success w-100 py-2 redondo" data-toggle="modal" data-target="#doacao"
-                  (click)='editarPostagem(item)'>
-                  Doar
-              </button>
-            </div>
-          </div>
+
 
           <app-postagem-edit [postagem]='postagemEdit'></app-postagem-edit>
           <app-postagem-delete [postagem]='postagemEdit'></app-postagem-delete>
@@ -119,7 +86,7 @@
     <!-- /Postagens -->
 
     <!-- CARD DE FILTRO -->
-    <div class="col-md-3 margemCard">
+    <div class="col-md-3 margemCard sombraF">
       <div class="card-filtro">
         <div class="col-lg-10 text-center ">
               <div class="card-section border rounded p-3 cor">
