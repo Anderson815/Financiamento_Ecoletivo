@@ -57,31 +57,60 @@
 
         <div class="">
           <div class="row">
-            <div class="col-md-2 pr-0">
+            <div class="col-md-12 pr-0">
               <figure class="snip1336">
-                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample87.jpg" alt="sample87" />
+                <div *ngIf='imagemOk(item.midia)'>
+                <img class="fotoMidia" src="{{item.midia}}" alt="sample87" />
+              </div>
                 <figcaption>
-                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample4.jpg" alt="profile-sample4" class="profile" />
-                  <h2>Hans Down<span>Engineer</span></h2>
-                  <p>I'm looking for something that can deliver a 50-pound payload of snow on a small feminine target. Can you suggest something? Hello...? </p>
-                  <a href="#" class="follow">Follow</a>
-                  <a href="#" class="info">More Info</a>
+                  <img src="{{item.usuario.foto}}" alt="profile-sample4" class="profile" />
+                  <h2>{{item.titulo}}<span>{{item.tema.tema}}</span></h2>
+                  <br>
+                  <h5>{{item.descricao}}</h5>
+                  <br>
+                  <p>Criado por: {{item.usuario.nome}}</p>
+                  
+                  <h4>
+                    <span class="mr-2"><!-- Arrecadado: R$ --><i class="fa fa-handshake-o" aria-hidden="true"></i> {{item.valor_doado}}</span>
+                    <span class="ml-2"><!-- Meta --><i class="fa fa-flag" aria-hidden="true"></i> R$ {{item.meta}}</span>
+                  </h4>
+                  
+                  <div class="fund" >
+                    <div class="progress">
+                        <div class="bar" ng-style="{width:{{((item.valor_doado / item.meta) * 100)}} + '%'}">
+
+                          <span class="percent" ng-show="{{((item.valor_doado / item.meta) * 100)}} <= 100">{{((item.valor_doado / item.meta) * 100) | number:0}}%</span>
+                          
+                           <!-- <span class="percent" ng-show="{{((item.valor_doado / item.meta) * 100)}} > 100">100%</span>  -->
+                        </div>
+                    </div>
+                  </div>
+                  
+                  
+ 
+
+        
+        
+                  <div id="deletarAtualizarPostagem" class="margemEditar" *ngIf='minhaPostagem(item.usuario.id)'>
+                  <a href="#" data-toggle="modal" data-target="#editarPostagem" (click)='editarPostagem(item)' class="follow">Editar</a>
+                  <a href="#" data-toggle="modal" data-target="#excluirPostagem" (click)='editarPostagem(item)' class="info">Excluir</a>
+                  </div>
+                  <div class="col pl-0 ml-2 mt-3" >
+                    <div *ngIf='outraPostagem(item.usuario.id)'>
+                      <button type="button" class="btn btn-outline-success w-100 py-2 " data-toggle="modal" data-target="#doacao" (click)='editarPostagem(item)'>
+                          Doar
+                      </button>
+                    </div>
+                  </div>
                 </figcaption>
               </figure>
-
-            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#excluirPostagem"
-              (click)='editarPostagem(item)'>
-              Excluir
-            </button>
-          </div>
-
-
-
           <app-postagem-edit [postagem]='postagemEdit'></app-postagem-edit>
           <app-postagem-delete [postagem]='postagemEdit'></app-postagem-delete>
 
         </div>
       </div>
+    </div>
+  </div>
     </div>
     <!-- /Postagens -->
 
@@ -120,8 +149,27 @@
     </div>
     <!-- /CARD DE FILTRO -->
 
+
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4">Fluid jumbotron</h1>
+        <p class="lead">Este é um jumbotron modificado que ocupa todo o espaço horizontal de seu elemento pai.</p>
+      </div>
+    </div>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4">Fluid jumbotron</h1>
+        <p class="lead">Este é um jumbotron modificado que ocupa todo o espaço horizontal de seu elemento pai.</p>
+      </div>
+    </div>
   </div>
+  
+  
+ 
+
  <!-- /FEED -->
+
+
 
 <app-publicar></app-publicar>
 <app-doacao [postagem]="postagemEdit"></app-doacao>

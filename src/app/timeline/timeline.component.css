@@ -6,6 +6,10 @@
 #timeline{
   background-color: rgb(236, 233, 228);
 }
+.fotoMidia{
+    width: 50vw;
+    height: 70vh;
+}
 
 .redondo{
   border-radius: 15px;
@@ -123,6 +127,7 @@ header{
 /* Card Perfil */
 .card-perfil{
     position: fixed;
+    
 }
 
 
@@ -132,12 +137,14 @@ header{
     height: 80px;
 	/* background: linear-gradient(-90deg, #56BFA5, #76b734); */
     background: #006837
+    
 	
 }
 .card-section{
     -webkit-box-shadow: 6px 6px 11px -1px rgba(0,0,0,0.75);
     -moz-box-shadow: 6px 6px 11px -1px rgba(0,0,0,0.75);
     box-shadow: 6px 6px 11px -1px rgba(0,0,0,0.75);
+    
     
 }
 /* .card-section:hover{
@@ -153,6 +160,7 @@ header{
     display: flex;
     justify-content: flex-end;
     right: 0;
+    
 }
 .card-header-first2{
     margin-top:-40px;
@@ -207,13 +215,21 @@ header{
   position: relative;
   overflow: hidden;
   margin: 10px;
-  min-width: 230px;
-  max-width: 315px;
+  /* min-width: 230px; */
+  max-width: 100%;
   width: 100%;
   color: #ffffff;
   text-align: left;
   line-height: 1.4em;
-  background-color: #141414;
+  background-color: #332b29;
+  margin-left: -1%;
+  border-radius: 15px 15px 15px 15px;
+-moz-border-radius: 15px 15px 15px 15px;
+-webkit-border-radius: 15px 15px 15px 15px;
+border: 4px double #ffffff;
+  -webkit-box-shadow: 11px 11px 12px -1px rgba(0,0,0,1);
+  -moz-box-shadow: 11px 11px 12px -1px rgba(0,0,0,1);
+  box-shadow: 11px 11px 12px -1px rgba(0,0,0,1);
 }
 .snip1336 * {
   -webkit-box-sizing: border-box;
@@ -228,7 +244,7 @@ header{
 }
 .snip1336 figcaption {
   width: 100%;
-  background-color: #141414;
+  background-color: #332b29;
   padding: 25px;
   position: relative;
 }
@@ -240,8 +256,8 @@ header{
   width: 0;
   height: 0;
   border-style: solid;
-  border-width: 55px 0 0 400px;
-  border-color: transparent transparent transparent #141414;
+  border-width: 80px 0 0 190px;
+  border-color: transparent transparent transparent #332b29;
 }
 .snip1336 figcaption a {
   padding: 5px;
@@ -267,7 +283,8 @@ header{
   bottom: 100%;
   left: 25px;
   z-index: 1;
-  max-width: 90px;
+  width: 100px;
+  height: 100px;
   opacity: 1;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
@@ -291,3 +308,87 @@ header{
   letter-spacing: 1px;
   opacity: 0.8;
 }
+
+/* BARRA DE PROGRESSÃO */
+.fund {
+    background-color:rgba(0,0,0,.06);
+    border-radius:4px;
+    margin:0 0 4%;
+    padding:2.5% 3.5%;
+    }
+    
+    .fund:last-child {
+    margin-bottom:4%;
+    }
+    
+    .progress {
+    background-color:#bdd3fb;
+    border-radius:4px;
+    box-shadow:0 1px 1px rgba(0,0,0,.15) inset;
+    height:27px;
+    margin-bottom:2%;
+    overflow:hidden;
+    }
+    
+    .bar {
+    background-color:#e3426a;
+    box-shadow:0 -1px 1px rgba(0,0,0,.15) inset;
+    color:#fff;
+    float:left;
+    height:100%;
+    position:relative;
+    text-align:left;
+    
+    }
+    
+    .bar > .percent {
+    font-size:.9rem;
+    left:8px;
+    position:absolute;
+    top:3px;
+    }
+    
+    .goal {
+    color:#dfe2ed;
+    }
+    
+    .donate {
+    color:#fff;
+    float:right;
+    font-weight:400;
+    text-decoration:none;
+    }
+    
+    .donate:hover {
+    text-decoration:underline;
+    }
+    
+    
+    /* Responsive */
+    
+    @media only screen and (max-width:600px) {
+        h1 {
+        font-size:2rem;
+        margin:8% 0;
+        }
+        
+        .fund {
+        margin:0 0 10%;
+        padding:5%;
+        }
+    }
+    
+    @media only screen and (max-width:480px) {
+        h1 {
+        font-size:1.4rem;
+        }
+        
+        .donate {
+        display:block;
+        float:none;
+        margin-top:3%;
+        }
+    }
+    .margemEditar{
+        margin-right: -6%;
+    }
