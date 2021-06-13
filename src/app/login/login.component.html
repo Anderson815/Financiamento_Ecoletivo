@@ -3,42 +3,34 @@
 <div class="modal-dialog modal-dialog-centered" role="document">
   <div class="modal-content">
 
-    <div class="row d-flex justify-content-center">
-      <div class="col-md-7" >
-        <div class="modal-header d-flex justify-content-center">
-          <img class="displayed ml-3" src="../../assets/img/Logo2.png" alt="Logo: Financiamento Ecoletivo">
-        </div>
-      </div>
-    </div>
+    
 
-    <div class="modal-body" >
-        <!-- <divclass="form-group">
-          <label for="email">Titulo:</label>
-          <input [(ngModel)]='userLogin.email' class="col-sm-7 col-form-label col-form-label-lg is-valid" type="text" name="email" id="email" placeholder="Seu e-mail">
-        </div>-->
-
-        <div class="form-group row d-flex justify-content-center">
-          <div class="col-sm-12 my-2">
-            <input input [(ngModel)]='userLogin.email' type="text" name="email" id="email" class="form-control form-control-lg" id="colFormLabelLg" placeholder="Digite seu e-mail">
+      
+  
+      <section class="login-container">
+        
+          <div>
+              <header>
+                  <h2>Bem vindo novamente</h2>
+                  <br>
+              </header>
+  
+              <form action="" method="post">
+                
+                  <input input [(ngModel)]='userLogin.email' type="text" name="email" id="email" class="form-control form-control-lg" id="colFormLabelLg" placeholder="Digite seu email" required="required"/>
+                  <input  [(ngModel)]='userLogin.senha' type="password" name="senha" id="senha" class=" form-control form-control-lg" id="colFormLabelLg" aria-describedby="passwordHelpBlock" placeholder="Digite sua senha" required="required"/>
+                  <button (click)='entrar()' type="submit" data-dismiss="modal">Entrar</button>
+  
+                  <div class="text-center my-2" >Não tem uma conta?<button type="button" class="btn btn-link" data-dismiss="modal" routerLink="/cadastrar">Cadastre-se</button></div>
+                  <div class="modal-footer">
+                    <button type="button" routerLink="/inicial" class="btn btn-lg btn-outline-danger" data-dismiss="modal">Fechar</button>
+                  </div>
+              </form>
           </div>
-          </div>
-
-        <!--<div class="form-group">
-          <label for="senha">Senha:</label>
-          <input [(ngModel)]='userLogin.senha' class="form-control" type="password" name="senha" id="senha" aria-describedby="passwordHelpBlock" placeholder="Digite sua senha">-->
-
-        <div class="form-group row d-flex justify-content-center">
-          <div class="my-2 col-sm-12 mb-2">
-            <input [(ngModel)]='userLogin.senha' type="password" name="senha" id="senha" class=" form-control form-control-lg" id="colFormLabelLg" aria-describedby="passwordHelpBlock" placeholder="Digite sua senha">
-          </div>
-          </div>
-
-          <button (click)='entrar()' type="button" class="btn btn-outline-success btn-lg btn-block my-2" data-dismiss="modal">Entrar</button>
-
-          <div class="text-center my-2" >Não tem uma conta?<button type="button" class="btn btn-link" data-dismiss="modal" routerLink="/cadastrar">Cadastre-se</button></div>
-        <div class="modal-footer">
-          <button type="button" routerLink="/inicial" class="btn btn-lg btn-outline-danger" data-dismiss="modal">Fechar</button>
-        </div>
+      </section>
+  
+  
+  
      </div>
 </div>
 </div>

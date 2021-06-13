@@ -7,6 +7,7 @@ import { Postagem } from '../model/Postagem';
 import { User } from '../model/User';
 import { Tema } from '../model/Tema';
 import { TemaService } from '../service/tema.service';
+import { EMPTY } from 'rxjs';
 
 @Component({
   selector: 'app-timeline',
@@ -145,6 +146,12 @@ export class TimelineComponent implements OnInit {
 
   findByMinhasPostagens() {
     this.listaPostagens = this.listaPostagens.filter(filter => filter.usuario.id === this.idUser);
+  }
+
+  nenhumaEncontrada(){
+    if(this.listaPostagens === []){
+      
+    }
   }
 }
 
