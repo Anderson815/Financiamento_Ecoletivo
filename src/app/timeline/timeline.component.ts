@@ -145,6 +145,7 @@ export class TimelineComponent implements OnInit {
   }
 
   resetarFiltro() {
+    let tema = <HTMLSelectElement>document.querySelector('#tema')
     let titulo = <HTMLInputElement>document.querySelector('#tituloPostagem')
     let usuario = <HTMLInputElement>document.querySelector('#buscaUsuario')
 
@@ -152,8 +153,9 @@ export class TimelineComponent implements OnInit {
     titulo.value = ""
     usuario.value = ""
 
-/*     titulo.setAttribute("class", "collapse")
-    usuario.setAttribute("class", "collapse") */
+    usuario.style.backgroundColor = "white"
+    titulo.style.backgroundColor = "white"
+    tema.style.backgroundColor = "white"
 
   this.ngOnInit()
 
@@ -170,7 +172,6 @@ export class TimelineComponent implements OnInit {
   }
 
   temaFiltro(){
-    let tema = <HTMLSelectElement>document.querySelector('#tema')
     let titulo = <HTMLInputElement>document.querySelector('#tituloPostagem')
     let usuario = <HTMLInputElement>document.querySelector('#buscaUsuario')
 
@@ -183,9 +184,6 @@ export class TimelineComponent implements OnInit {
     let titulo = <HTMLInputElement>document.querySelector('#tituloPostagem')
     let usuario = <HTMLInputElement>document.querySelector('#buscaUsuario')
 
-/*     titulo.disabled = false
-    tema.disabled = true
-    usuario.disabled = true */
     this.getAllPostagem()
 
     this.idTema = 0
