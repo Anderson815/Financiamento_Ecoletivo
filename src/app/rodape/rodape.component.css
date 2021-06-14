@@ -23,12 +23,9 @@ ul.social-network li{
     color: gray;
 }
  footer {
-
-          background-image: url('../../assets/img/rodapeverdepng.png');
-          background-size: 100% 100%;
-          background-position: center;
-          background-repeat: no-repeat;
-          background-color: rgb(236, 233, 228);
-          
-         
+    background-image: url('../../assets/img/rodapeverdepng.png');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgb(236, 233, 228);         
  }

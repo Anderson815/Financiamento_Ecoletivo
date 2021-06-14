@@ -152,15 +152,15 @@ header{
 } */
 .botaoFiltro{
     width: 130px;
-    height: 30px;
+    height: 30px;    
 }
 .card-filtro{
+    z-index: 999;
     position:fixed;
     margin-top: -40px;
     display: flex;
     justify-content: flex-end;
     right: 0;
-    
 }
 .card-header-first2{
     margin-top:-40px;

@@ -18,156 +18,156 @@
       </div>
     </div>
   </div> -->
-  <!-- /Card de Postagem -->
+<!-- /Card de Postagem -->
 
-   <!-- FEED -->
-  <div class="row margem " id="timeline">
+<!-- FEED -->
+<div class="row margem " id="timeline">
 
-    <!-- Card de Perfil -->
-    <div class="col-md-3 margemPerfil margemCard">
-      <div class="card-perfil">
-        <div class="col-lg-10 text-center ajuste">
-          <div class="card-section border rounded p-3 cor ">
-            <div class="card-header-first2 rounded pb-5 ">
-              <div>
-                <img src="{{foto}}" alt="Imagem do usuário" class="foto-card-perfil rounded-circle mt-2">
-                <h2 class="card-header-title txt-v mt-1 mb-1">{{nome}}</h2>
+  <!-- Card de Perfil -->
+  <div class="col-md-3 margemPerfil margemCard">
+    <div class="card-perfil">
+      <div class="col-lg-10 text-center ajuste">
+        <div class="card-section border rounded p-3 cor ">
+          <div class="card-header-first2 rounded pb-5 ">
+            <div>
+              <img src="{{foto}}" alt="Imagem do usuário" class="foto-card-perfil rounded-circle mt-2">
+              <h2 class="card-header-title txt-v mt-1 mb-1">{{nome}}</h2>
+            </div>
+
+          </div>
+          <div class="pt-2">
+            <button class="py-0 btn btn-outline-success corBtn botaoMinhasPostagens" data-target="#novaPostagem"
+              data-toggle="modal">Criar um projeto</button>
+          </div>
+          <div class="pt-2 ">
+            <button class="py-0 btn btn-outline-success corBtn botaoMinhasPostagens"
+              (click)='findByMinhasPostagens()'>Minhas Postagens</button>
+          </div>
+          <div class="pt-2">
+            <button class="py-0 btn btn-outline-success corBtn botaoMinhasPostagens">Perfil</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /Card de Perfil -->
+
+  <!-- Postagens -->
+  <div class="col-md-6">
+    <div class=" text-center my-5 " *ngFor='let item of listaPostagens | orderBy : key : reverse'>
+
+      <div class="">
+        <div class="row">
+          <div class="col-md-12 pr-0">
+            <figure class="snip1336">
+              <div *ngIf='imagemOk(item.midia)'>
+                <img class="fotoMidia" src="{{item.midia}}" alt="sample87" />
               </div>
+              <figcaption>
+                <img src="{{item.usuario.foto}}" alt="profile-sample4" class="profile" />
+                <h2>{{item.titulo}}<span>{{item.tema.tema}}</span></h2>
+                <br>
+                <h5>{{item.descricao}}</h5>
+                <br>
+                <p>Criado por: {{item.usuario.nome}}</p>
 
-            </div>
-            <div class="pt-2">
-              <button class="py-0 btn btn-outline-success corBtn botaoMinhasPostagens" data-target="#novaPostagem" data-toggle="modal">Criar um projeto</button>
-            </div>
-            <div class="pt-2 ">
-              <button class="py-0 btn btn-outline-success corBtn botaoMinhasPostagens" (click)='findByMinhasPostagens()'>Minhas Postagens</button>
-            </div>
-            <div class="pt-2">
-              <button class="py-0 btn btn-outline-success corBtn botaoMinhasPostagens">Perfil</button>
-            </div>
+                <h4>
+                  <span class="mr-2">
+                    <!-- Arrecadado: R$ --><i class="fa fa-handshake-o" aria-hidden="true"></i> {{item.valor_doado}}
+                  </span>
+                  <span class="ml-2">
+                    <!-- Meta --><i class="fa fa-flag" aria-hidden="true"></i> R$ {{item.meta}}
+                  </span>
+                </h4>
+
+
+                <div class="fund">
+                  <div class="progress">
+
+                    <div class="bar" [ngStyle]="{'width': ((item.valor_doado / item.meta) * 100) + '%'}">
+                      <span class="percent">{{((item.valor_doado / item.meta) * 100) | number:0}}%</span>
+                    </div>
+                    
+                  </div>
+                </div>
+
+                <div id="deletarAtualizarPostagem" class="margemEditar" *ngIf='minhaPostagem(item.usuario.id)'>
+                  <a href="#" data-toggle="modal" data-target="#editarPostagem" (click)='editarPostagem(item)'
+                    class="follow">Editar</a>
+                  <a href="#" data-toggle="modal" data-target="#excluirPostagem" (click)='editarPostagem(item)'
+                    class="info">Excluir</a>
+                </div>
+                <div class="col pl-0 ml-2 mt-3">
+                  <div *ngIf='outraPostagem(item.usuario.id)'>
+                    <button type="button" class="btn btn-outline-success w-100 py-2 " data-toggle="modal"
+                      data-target="#doacao" (click)='editarPostagem(item)'>
+                      Doar
+                    </button>
+                  </div>
+                </div>
+              </figcaption>
+            </figure>
+            <app-postagem-edit [postagem]='postagemEdit'></app-postagem-edit>
+            <app-postagem-delete [postagem]='postagemEdit'></app-postagem-delete>
 
           </div>
         </div>
       </div>
     </div>
-    <!-- /Card de Perfil -->
+  </div>
+  <!-- /Postagens -->
 
-    <!-- Postagens -->
-    <div class="col-md-6">
-      <div class=" text-center my-5 " *ngFor='let item of listaPostagens | orderBy : key : reverse'>
-
-        <div class="">
-          <div class="row">
-            <div class="col-md-12 pr-0">
-              <figure class="snip1336">
-                <div *ngIf='imagemOk(item.midia)'>
-                <img class="fotoMidia" src="{{item.midia}}" alt="sample87" />
-              </div>
-                <figcaption>
-                  <img src="{{item.usuario.foto}}" alt="profile-sample4" class="profile" />
-                  <h2>{{item.titulo}}<span>{{item.tema.tema}}</span></h2>
-                  <br>
-                  <h5>{{item.descricao}}</h5>
-                  <br>
-                  <p>Criado por: {{item.usuario.nome}}</p>
-                  
-                  <h4>
-                    <span class="mr-2"><!-- Arrecadado: R$ --><i class="fa fa-handshake-o" aria-hidden="true"></i> {{item.valor_doado}}</span>
-                    <span class="ml-2"><!-- Meta --><i class="fa fa-flag" aria-hidden="true"></i> R$ {{item.meta}}</span>
-                  </h4>
-                  
-                  <div class="fund" >
-                    <div class="progress">
-                        <div class="bar" ng-style="{width:{{((item.valor_doado / item.meta) * 100)}} + '%'}">
-
-                          <span class="percent" ng-show="{{((item.valor_doado / item.meta) * 100)}} <= 100">{{((item.valor_doado / item.meta) * 100) | number:0}}%</span>
-                          
-                           <!-- <span class="percent" ng-show="{{((item.valor_doado / item.meta) * 100)}} > 100">100%</span>  -->
-                        </div>
-                    </div>
-                  </div>
-                  
-                  
- 
-
-        
-        
-                  <div id="deletarAtualizarPostagem" class="margemEditar" *ngIf='minhaPostagem(item.usuario.id)'>
-                  <a href="#" data-toggle="modal" data-target="#editarPostagem" (click)='editarPostagem(item)' class="follow">Editar</a>
-                  <a href="#" data-toggle="modal" data-target="#excluirPostagem" (click)='editarPostagem(item)' class="info">Excluir</a>
-                  </div>
-                  <div class="col pl-0 ml-2 mt-3" >
-                    <div *ngIf='outraPostagem(item.usuario.id)'>
-                      <button type="button" class="btn btn-outline-success w-100 py-2 " data-toggle="modal" data-target="#doacao" (click)='editarPostagem(item)'>
-                          Doar
-                      </button>
-                    </div>
-                  </div>
-                </figcaption>
-              </figure>
-          <app-postagem-edit [postagem]='postagemEdit'></app-postagem-edit>
-          <app-postagem-delete [postagem]='postagemEdit'></app-postagem-delete>
-
+  <!-- CARD DE FILTRO -->
+  <div class="col-md-3 margemCard sombraF">
+    <div class="card-filtro">
+      <div class="col-lg-10 text-center ">
+        <div class="card-section border rounded p-3 cor">
+          <div class="card-header-first rounded pb-5">
+            <h2 class="card-header-title text-white pt-3">FILTRO</h2>
+          </div>
+          <div class="card-body text-center">
+            <div class="form-group">
+              <label for="texto">TEMAS </label>
+              <select name="tema" id="tema" class="form-control" [(ngModel)]='idTema' (change)='changeTema()'>
+                <option (click)="resetarFiltro()">Nenhum</option>
+                <option *ngFor='let item of listaTemas' value="{{item.id}}">{{item.tema}}
+                </option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="tituloPostagem">Titulo</label>
+              <input class="form-control" type="text" name="tituloPostagem" [(ngModel)]='titulo' (change)='findByTitulo()' id="tituloPostagem" placeholder="Titulo">
+            </div>
+            <div class="form-group">
+              <label for="buscaUsuario">Pesquisar por usuário</label>
+              <input class="form-control" type="text" name="buscaUsuario" [(ngModel)]="usuario" (change)="findByUsuario()" id="buscaUsuario" placeholder="Usuário">
+            </div>
+          </div>
+          <div>
+            <button class="py-0 btn btn-secondary botaoFiltro" (click)='resetarFiltro()'>Todos projetos</button>
+          </div>
         </div>
       </div>
     </div>
   </div>
-    </div>
-    <!-- /Postagens -->
-
-    <!-- CARD DE FILTRO -->
-    <div class="col-md-3 margemCard sombraF">
-      <div class="card-filtro">
-        <div class="col-lg-10 text-center ">
-              <div class="card-section border rounded p-3 cor">
-                <div class="card-header-first rounded pb-5">
-                  <h2 class="card-header-title text-white pt-3">FILTRO</h2>
-                 </div>
-                    <div class="card-body text-center">
-                      <div class="form-group">
-                        <label for="texto">TEMAS </label>
-                        <select name="tema" id="tema" class="form-control" [(ngModel)]='idTema' (change)='changeTema()'>
-                          <option (click)="resetarFiltro()">Nenhum</option>
-                          <option *ngFor='let item of listaTemas' value="{{item.id}}">{{item.tema}}
-                          </option>
-                        </select>
-                      </div>
-                          <div class="form-group">
-                            <label for="tituloPostagem">Titulo</label>
-                              <input class="form-control" type="text" name="tituloPostagem" [(ngModel)]='titulo' (change)='findByTitulo()' id ="tituloPostagem" placeholder="Titulo">
-                          </div>
-                            <div class="form-group">
-                              <label for="buscaUsuario">Pesquisar por usuário</label>
-                              <input class="form-control" type="text" name="buscaUsuario" [(ngModel)]="usuario" (change)="findByUsuario()" id ="buscaUsuario" placeholder="Usuário">
-                            </div>
-                    </div>
-                      <div >
-                        <button class="py-0 btn btn-secondary botaoFiltro" (click)='resetarFiltro()'>Todos projetos</button>
-                      </div>
-              </div>
-        </div>
-      </div>
-    </div>
-    <!-- /CARD DE FILTRO -->
+  <!-- /CARD DE FILTRO -->
 
 
-    <div class="jumbotron jumbotron-fluid">
-      <div class="container">
-        <h1 class="display-4">Fluid jumbotron</h1>
-        <p class="lead">Este é um jumbotron modificado que ocupa todo o espaço horizontal de seu elemento pai.</p>
-      </div>
-    </div>
-    <div class="jumbotron jumbotron-fluid">
-      <div class="container">
-        <h1 class="display-4">Fluid jumbotron</h1>
-        <p class="lead">Este é um jumbotron modificado que ocupa todo o espaço horizontal de seu elemento pai.</p>
-      </div>
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Fluid jumbotron</h1>
+      <p class="lead">Este é um jumbotron modificado que ocupa todo o espaço horizontal de seu elemento pai.</p>
     </div>
   </div>
-  
-  
- 
-
- <!-- /FEED -->
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Fluid jumbotron</h1>
+      <p class="lead">Este é um jumbotron modificado que ocupa todo o espaço horizontal de seu elemento pai.</p>
+    </div>
+  </div>
+</div>
+<!-- /FEED -->
 
 
 
