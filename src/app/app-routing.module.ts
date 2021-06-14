@@ -9,6 +9,7 @@ import { PgInicialComponent } from './pg-inicial/pg-inicial.component';
 import { TimelineComponent } from './timeline/timeline.component';
 import { TemaComponent } from './tema/tema.component';
 import { TemaDeleteComponent } from './delete/tema-delete/tema-delete.component';
+import { TimelineTimeoutComponent } from './timeout/timeline-timeout/timeline-timeout.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'inicial', pathMatch: 'full'},
@@ -19,7 +20,8 @@ const routes: Routes = [
   {path: 'tema', component: TemaComponent},
   {path: 'tema-edit/:id', component: TemaEditComponent},
   {path: "tema-delete/:id", component: TemaDeleteComponent},
-  {path: 'perfil/:id', component: PerfilComponent}
+  {path: 'perfil/:id', component: PerfilComponent},
+  {path: 'timeline-timeout', component: TimelineTimeoutComponent}
 
 ];
 

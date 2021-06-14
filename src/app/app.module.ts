@@ -28,6 +28,7 @@ import { DoacaoComponent } from './doacao/doacao.component';
 import { AlertasComponent } from './alertas/alertas.component';
 import { MenuGeralComponent } from './menu-geral/menu-geral.component';
 import { PerfilComponent } from './perfil/perfil.component';
+import { TimelineTimeoutComponent } from './timeout/timeline-timeout/timeline-timeout.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { PerfilComponent } from './perfil/perfil.component';
     DoacaoComponent,
     AlertasComponent,
     MenuGeralComponent,
-    PerfilComponent
+    PerfilComponent,
+    TimelineTimeoutComponent
   ],
   imports: [
     AppRoutingModule,

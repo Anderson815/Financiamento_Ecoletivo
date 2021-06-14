@@ -44,10 +44,10 @@ export class PostagemDeleteComponent implements OnInit {
   apagar(){
     this.postagemService.deletePostagem(this.postagem.id).subscribe(()=>{
       this.alertas.showAlertSucess('Projeto excluído com sucesso!')
-      this.router.navigate(["/inicial"])
+      this.router.navigate(["/timeline-timeout"])
       setTimeout(()=>{
         this.router.navigate(["/timeline"])
-      },100)  
+      },5)  
       
     })
   }

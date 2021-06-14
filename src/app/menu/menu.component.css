@@ -113,10 +113,10 @@ header{
 }
 
 .scrolling-active #nav-cta:hover{
-    background-color: #ffffff;
+    background-color: #006837;
 }
 
 .scrolling-active .nav-link::after{
-    background-color: #ffffff;
+    background-color: #006837;
 }
 
