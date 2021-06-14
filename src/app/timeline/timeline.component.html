@@ -34,6 +34,11 @@
             </div>
           </div>
           <div class="pt-2">
+            <a [routerLink]="['/perfil', idUser]">
+            <button class="py-0 btn btn-outline-success corBtn botaoMinhasPostagens" >Perfil</button>
+          </a>
+          </div>
+          <div class="pt-2">
             <button class="py-0 btn btn-outline-success corBtn botaoMinhasPostagens" data-target="#novaPostagem"
               data-toggle="modal">Criar um projeto</button>
           </div>
@@ -41,12 +46,6 @@
             <button class="py-0 btn btn-outline-success corBtn botaoMinhasPostagens"
               (click)='findByMinhasPostagens()'>Minhas Postagens</button>
           </div>
-          <div class="pt-2">
-            <a [routerLink]="['/perfil', idUser]">
-            <button class="py-0 btn btn-outline-success corBtn botaoMinhasPostagens" >Perfil</button>
-          </a>
-          </div>
-
         </div>
       </div>
     </div>
@@ -95,16 +94,22 @@
                 </div>
 
                 <div id="deletarAtualizarPostagem" class="margemEditar" *ngIf='minhaPostagem(item.usuario.id)'>
-                  <a href="#" data-toggle="modal" data-target="#editarPostagem" (click)='editarPostagem(item)'
+<!--                   <a href="#" data-toggle="modal" data-target="#editarPostagem" (click)='editarPostagem(item)'
                     class="follow">Editar</a>
                   <a href="#" data-toggle="modal" data-target="#excluirPostagem" (click)='editarPostagem(item)'
-                    class="info">Excluir</a>
+                    class="info">Excluir</a> -->
+                    <button type="button" class="botaoEditar mr-3 ml-1" data-toggle="modal" data-target="#editarPostagem" (click)='editarPostagem(item)'>
+                   Editar
+                  </button>
+                  <button type="button" class="botaoApagar" data-toggle="modal" data-target="#excluirPostagem" (click)='editarPostagem(item)'>
+                    Excluir
+                   </button>
                 </div>
                 <div class="col pl-0 ml-2 mt-3">
                   <div *ngIf='outraPostagem(item.usuario.id)'>
-                    <button type="button" class="btn btn-outline-success w-100 py-2 " data-toggle="modal"
+                    <button type="button" class="botaoDoar" data-toggle="modal"
                       data-target="#doacao" (click)='editarPostagem(item)'>
-                      Doar
+                     Doar
                     </button>
                   </div>
                 </div>
@@ -126,7 +131,7 @@
       <div class="col-lg-10 text-center ">
         <div class="card-section border rounded p-3 cor">
           <div class="card-header-first rounded pb-5">
-            <h2 class="card-header-title text-white pt-3">FILTRO</h2>
+            <h2 class="card-header-title text-white pt-3">EXPLORAR</h2>
           </div>
           <div class="card-body text-center">
             <div class="form-group">
@@ -158,14 +163,14 @@
 
   <div class="jumbotron jumbotron-fluid">
     <div class="container">
-      <h1 class="display-4">Fluid jumbotron</h1>
-      <p class="lead">Este é um jumbotron modificado que ocupa todo o espaço horizontal de seu elemento pai.</p>
+      <p></p>
+      <p></p>
     </div>
   </div>
   <div class="jumbotron jumbotron-fluid">
     <div class="container">
-      <h1 class="display-4">Fluid jumbotron</h1>
-      <p class="lead">Este é um jumbotron modificado que ocupa todo o espaço horizontal de seu elemento pai.</p>
+      <p></p>
+      <p></p>
     </div>
   </div>
 </div>

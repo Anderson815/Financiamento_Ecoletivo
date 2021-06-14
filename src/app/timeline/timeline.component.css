@@ -152,7 +152,21 @@ header{
 } */
 .botaoFiltro{
     width: 130px;
-    height: 30px;    
+    height: 30px;
+    font-size:15px;
+    font-family:Verdana;
+    border-width:1px;
+    color:rgb(255, 255, 255);
+    border-color:rgb(255, 255, 255);
+    border-top-left-radius:3px;
+    border-top-right-radius:3px;
+    border-bottom-left-radius:3px;
+    border-bottom-right-radius:3px;
+    background: rgba(0, 104, 55, 1);   
+}
+.botaoFiltro:hover{
+  background: rgb(0, 0, 0);
+  color: white;
 }
 .card-filtro{
     z-index: 999;
@@ -334,7 +348,7 @@ border: 4px double #ffffff;
     }
     
     .bar {
-    background-color:#006837;
+    background-color:#df0d0d;
     box-shadow:0 -1px 1px rgba(0,0,0,.15) inset;
     color:#fff;
     float:left;
@@ -394,4 +408,62 @@ border: 4px double #ffffff;
     }
     .margemEditar{
         margin-right: -6%;
+    }
+    .botaoDoar {
+      font-size:15px;
+      font-family:Verdana;
+      width:100%;
+      height:50px;
+      border-width:1px;
+      color:rgba(0, 0, 0, 1);
+      border-color:rgb(255, 255, 255);
+      border-top-left-radius:3px;
+      border-top-right-radius:3px;
+      border-bottom-left-radius:3px;
+      border-bottom-right-radius:3px;
+      background:rgba(255, 255, 255, 1);
+    }
+    
+    .botaoDoar:hover {
+      background: #2980b9;
+      color: white;
+    }
+    .botaoEditar{
+      font-size:15px;
+      font-family:Verdana;
+      width:45%;
+      height:50px;
+      border-width:1px;
+      color:rgba(0, 0, 0, 1);
+      border-color:rgb(255, 255, 255);
+      border-top-left-radius:3px;
+      border-top-right-radius:3px;
+      border-bottom-left-radius:3px;
+      border-bottom-right-radius:3px;
+      background:rgba(255, 255, 255, 1);
+    }
+    .botaoEditar:hover{
+      background: #2980b9;
+      color: white;
+    }
+    .botaoApagar{
+      font-size:15px;
+      font-family:Verdana;
+      width:45%;
+      height:50px;
+      border-width:1px;
+      color:rgba(0, 0, 0, 1);
+      border-color:rgb(255, 255, 255);
+      border-top-left-radius:3px;
+      border-top-right-radius:3px;
+      border-bottom-left-radius:3px;
+      border-bottom-right-radius:3px;
+      background:rgba(255, 255, 255, 1);
+    }
+    .botaoApagar:hover{
+      background: rgb(214, 13, 13);
+      color: white;
+    }
+    .jumbotron{
+      background-color: rgba(238, 233, 228)
     }
