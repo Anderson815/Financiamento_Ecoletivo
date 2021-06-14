@@ -2,7 +2,7 @@ import { UserLogin } from './../model/UserLogin';
 import { AlertasService } from 'src/app/service/alertas.service';
 import { User } from 'src/app/model/User';
 import { environment } from 'src/environments/environment.prod';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/service/auth.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -28,14 +28,19 @@ export class PerfilComponent implements OnInit {
 
     private authService: AuthService,
     private router: Router,
+    private route: ActivatedRoute,
     private alertas: AlertasService
 
   ) {}
 
   ngOnInit() {
+    window.scroll(0, 0)
 
-    window.scroll(0,0)
-    this.idUser = environment.id
+    if (environment.token == "") {
+      this.router.navigate(['/inicial'])
+    }
+    this.idUser = this.route.snapshot.params['id']
+    this.findByIdUser(this.idUser)
   }
   confirmSenha(event: any){
     this.confirmarSenha = event.target.value;
@@ -44,4 +49,32 @@ export class PerfilComponent implements OnInit {
   tipoUser(event: any){
     this.tipoUsuario = event.target.value;
   }
+
+  atualizar(){
+    this.user.tipo = this.tipoUsuario;
+
+    if(this.user.senha != this.confirmarSenha){
+      this.alertas.showAlertDanger('Senhas estão diferentes!');
+    }
+    else{
+      this.authService.atualizar(this.user).subscribe((resp: User) => {
+        this.user = resp;
+        this.router.navigate(['/timeline']);
+        this.alertas.showAlertSucess('Usuário atualizado com sucesso, faça o login novamente')
+        environment.token = ""
+        environment.nome = ""
+        environment.foto = ""
+        environment.id = 0
+        this.router.navigate(['/inicial'])
+
+      })
+    }
+  }
+  
+  findByIdUser(id: number){
+    this.authService.getByIdUser(id).subscribe((resp: User)=>{
+      this.user = resp
+    })
+  }
+
 }

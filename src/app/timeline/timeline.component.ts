@@ -20,6 +20,7 @@ export class TimelineComponent implements OnInit {
   postagem: Postagem = new Postagem()
   postagemEdit: Postagem = new Postagem();
   listaPostagens: Postagem[]
+  tituloPost: string
   tema: Tema = new Tema()
   listaTemas: Tema[]
   idTema: number
@@ -132,6 +133,17 @@ export class TimelineComponent implements OnInit {
     if (this.titulo !== '') {
       this.listaPostagens = this.listaPostagens.filter(filter => filter.titulo === this.titulo);
     }
+  }
+  findByTituloPostagem(){
+    if(this.tituloPost == ""){
+      this.getAllPostagem()
+    }
+    else{
+      this.postagemService.getByTituloPostagem(this.tituloPost).subscribe((resp: Postagem[])=>{
+        this.listaPostagens = resp
+      })
+    }
+
   }
 
   findByUsuario() {

@@ -42,7 +42,9 @@
               (click)='findByMinhasPostagens()'>Minhas Postagens</button>
           </div>
           <div class="pt-2">
-            <button class="py-0 btn btn-outline-success corBtn botaoMinhasPostagens" routerLink="/perfil">Perfil</button>
+            <a [routerLink]="['/perfil', idUser]">
+            <button class="py-0 btn btn-outline-success corBtn botaoMinhasPostagens" >Perfil</button>
+          </a>
           </div>
 
         </div>
@@ -69,7 +71,9 @@
                 <h5>{{item.descricao}}</h5>
                 <br>
                 <p>Criado por: {{item.usuario.nome}}</p>
-
+                <p>{{item.data | date: 'dd/MM/yyyy'}}</p>
+                <br>
+                <br>
                 <h4>
                   <span class="mr-2">
                     <!-- Arrecadado: R$ --><i class="fa fa-handshake-o" aria-hidden="true"></i> {{item.valor_doado}}
@@ -135,7 +139,7 @@
             </div>
             <div class="form-group">
               <label for="tituloPostagem">Titulo</label>
-              <input class="form-control" type="text" name="tituloPostagem" [(ngModel)]='titulo' (change)='findByTitulo()' id="tituloPostagem" placeholder="Titulo">
+              <input class="form-control" type="text" name="tituloPostagem" [(ngModel)]='tituloPost' (keyup)='findByTituloPostagem()' id="tituloPostagem" placeholder="Titulo">
             </div>
             <div class="form-group">
               <label for="buscaUsuario">Pesquisar por usuário</label>
