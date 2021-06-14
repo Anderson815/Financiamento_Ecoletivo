@@ -38,6 +38,8 @@ export class TimelineComponent implements OnInit {
   foto = environment.foto
   token = environment.token
 
+  filtroBloqueado: string = 'rgb(232, 240, 254)'
+
   constructor(
     private router: Router,
     private route: ActivatedRoute,
@@ -106,6 +108,9 @@ export class TimelineComponent implements OnInit {
   }
 
   changeTema() {
+
+    this.temaFiltro()
+
     if(this.idTema != 0){
       setTimeout(() => {
         this.getAllPostagem()
@@ -153,8 +158,70 @@ export class TimelineComponent implements OnInit {
   }
 
   resetarFiltro() {
-    this.ngOnInit()
+    let tema = <HTMLSelectElement>document.querySelector('#tema')
+    let titulo = <HTMLInputElement>document.querySelector('#tituloPostagem')
+    let usuario = <HTMLInputElement>document.querySelector('#buscaUsuario')
+
+    this.idTema = 0
+    titulo.value = ""
+    usuario.value = ""
+
+    usuario.style.backgroundColor = "white"
+    titulo.style.backgroundColor = "white"
+    tema.style.backgroundColor = "white"
+
+  this.ngOnInit()
+
   }
+
+  trocaCorTema(){
+    let tema = <HTMLSelectElement>document.querySelector('#tema')
+    let titulo = <HTMLInputElement>document.querySelector('#tituloPostagem')
+    let usuario = <HTMLInputElement>document.querySelector('#buscaUsuario')
+
+    tema.style.backgroundColor = "white"
+    titulo.style.backgroundColor = this.filtroBloqueado
+    usuario.style.backgroundColor = this.filtroBloqueado
+  }
+
+  temaFiltro(){
+    let titulo = <HTMLInputElement>document.querySelector('#tituloPostagem')
+    let usuario = <HTMLInputElement>document.querySelector('#buscaUsuario')
+
+    titulo.value = ""
+    usuario.value = ""
+  }
+
+  tituloFiltro(){
+    let tema = <HTMLSelectElement>document.querySelector('#tema')
+    let titulo = <HTMLInputElement>document.querySelector('#tituloPostagem')
+    let usuario = <HTMLInputElement>document.querySelector('#buscaUsuario')
+
+    this.getAllPostagem()
+
+    this.idTema = 0
+    usuario.value = ""
+
+    titulo.style.backgroundColor = "white"
+    usuario.style.backgroundColor = this.filtroBloqueado
+    tema.style.backgroundColor = this.filtroBloqueado
+  }
+
+  usuarioFiltro(){
+    let tema = <HTMLSelectElement>document.querySelector('#tema')
+    let titulo = <HTMLInputElement>document.querySelector('#tituloPostagem')
+    let usuario = <HTMLInputElement>document.querySelector('#buscaUsuario')
+
+    this.getAllPostagem()
+
+    this.idTema = 0
+    titulo.value = ""
+
+    usuario.style.backgroundColor = "white"
+    titulo.style.backgroundColor = this.filtroBloqueado
+    tema.style.backgroundColor = this.filtroBloqueado
+  }
+
 
   findByMinhasPostagens() {
     this.listaPostagens = this.listaPostagens.filter(filter => filter.usuario.id === this.idUser);

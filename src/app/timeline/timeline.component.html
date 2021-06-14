@@ -131,7 +131,7 @@
           <div class="card-body text-center">
             <div class="form-group">
               <label for="texto">TEMAS </label>
-              <select name="tema" id="tema" class="form-control" [(ngModel)]='idTema' (change)='changeTema()'>
+              <select name="tema" id="tema" class="form-control" [(ngModel)]='idTema' (change)='changeTema()' (click)="trocaCorTema()">
                 <option (click)="resetarFiltro()">Nenhum</option>
                 <option *ngFor='let item of listaTemas' value="{{item.id}}">{{item.tema}}
                 </option>
@@ -139,11 +139,11 @@
             </div>
             <div class="form-group">
               <label for="tituloPostagem">Titulo</label>
-              <input class="form-control" type="text" name="tituloPostagem" [(ngModel)]='tituloPost' (keyup)='findByTituloPostagem()' id="tituloPostagem" placeholder="Titulo">
+              <input class="form-control" type="text" name="tituloPostagem" (click)="tituloFiltro()" [(ngModel)]='tituloPost' (keyup)='findByTituloPostagem()' id="tituloPostagem" placeholder="Titulo">
             </div>
             <div class="form-group">
               <label for="buscaUsuario">Pesquisar por usuário</label>
-              <input class="form-control" type="text" name="buscaUsuario" [(ngModel)]="usuario" (change)="findByUsuario()" id="buscaUsuario" placeholder="Usuário">
+              <input class="form-control" type="text" name="buscaUsuario" (click)="usuarioFiltro()" [(ngModel)]="usuario" (change)="findByUsuario()" id="buscaUsuario" placeholder="Usuário">
             </div>
           </div>
           <div>
