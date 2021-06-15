@@ -3,24 +3,24 @@
 <div class="modal-dialog modal-dialog-centered" role="document">
   <div class="modal-content md-4">
 
-    
 
-      
-  
+
+
+
       <section class="login-container">
-        
+
           <div>
               <header>
-                  <h2>Bem vindo</h2>
+                  <h2>Bem-Vindo</h2>
                   <br>
               </header>
-  
+
               <form action="" method="post">
-                
+
                   <input input [(ngModel)]='userLogin.email' type="text" name="email" id="email" class="form-control form-control-lg" id="colFormLabelLg" placeholder="Digite seu email" required="required"/>
                   <input  [(ngModel)]='userLogin.senha' type="password" name="senha" id="senha" class=" form-control form-control-lg" id="colFormLabelLg" aria-describedby="passwordHelpBlock" placeholder="Digite sua senha" required="required"/>
                   <button (click)='entrar()' type="submit" data-dismiss="modal">Entrar</button>
-  
+
                   <div class="text-center my-2" >Não tem uma conta?<button type="button" class="btn btn-link" data-dismiss="modal" routerLink="/cadastrar">Cadastre-se</button></div>
                   <div class="modal-footer">
                     <button type="button" routerLink="/inicial" class="btn btn-lg btn-outline-danger" data-dismiss="modal">Fechar</button>
@@ -28,9 +28,9 @@
               </form>
           </div>
       </section>
-  
-  
-  
+
+
+
      </div>
 </div>
 </div>

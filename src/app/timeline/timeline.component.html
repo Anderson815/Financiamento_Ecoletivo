@@ -33,15 +33,20 @@
               <h2 class="card-header-title txt-v mt-1 mb-1">{{nome}}</h2>
             </div>
           </div>
-          <div class="pt-2">
-            <a [routerLink]="['/perfil', idUser]">
-            <button class="py-0 btn btn-outline-success corBtn botaoMinhasPostagens" >Perfil</button>
-          </a>
+          <div class="pt-3">
+            <button class="py-0 btn btn-outline-success corBtn botaoMinhasPostagens" [routerLink]="['/perfil', idUser]" >Perfil</button>
           </div>
+
           <div class="pt-2">
             <button class="py-0 btn btn-outline-success corBtn botaoMinhasPostagens" data-target="#novaPostagem"
-              data-toggle="modal">Criar um projeto</button>
+              data-toggle="modal">Criar Projeto</button>
           </div>
+
+          <div class="pt-2">
+            <button class="py-0 btn btn-outline-success corBtn botaoMinhasPostagens" data-target="#tema"
+            routerLink="/tema">Criar Tema</button>
+          </div>
+
           <div class="pt-2 ">
             <button class="py-0 btn btn-outline-success corBtn botaoMinhasPostagens"
               (click)='findByMinhasPostagens()'>Minhas Postagens</button>
@@ -89,7 +94,7 @@
                     <div class="bar" [ngStyle]="{'width': ((item.valor_doado / item.meta) * 100) + '%'}">
                       <span class="percent">{{((item.valor_doado / item.meta) * 100) | number:0}}%</span>
                     </div>
-                    
+
                   </div>
                 </div>
 
@@ -138,7 +143,7 @@
               <label for="texto">TEMAS </label>
               <select name="tema" id="tema" class="form-control" [(ngModel)]='idTema' (change)='changeTema()' (click)="trocaCorTema()">
                 <option (click)="resetarFiltro()">Nenhum</option>
-                <option *ngFor='let item of listaTemas' value="{{item.id}}">{{item.tema}}
+                <option *ngFor='let item of listaTemas | orderBy : key : reverse' value="{{item.id}}">{{item.tema}}
                 </option>
               </select>
             </div>

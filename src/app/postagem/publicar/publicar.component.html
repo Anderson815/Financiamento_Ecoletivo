@@ -33,17 +33,17 @@
                 </div>
 
                   <div class="form-group">
-                      <label for="texto">Escolha um tema ou <a data-dismiss="modal" routerLink='/tema'>cadastre um novo</a>: </label>
+                      <label for="texto">Escolha um tema ou <a data-dismiss="modal" routerLink='/tema'>cadastre um novo tema   </a>: </label>
                       <select name="tema" id="tema" class="form-control" [(ngModel)]='idTema' (change)='findByIdTema()'>
-                        <option *ngFor='let item of listaTemas' value="{{item.id}}">{{item.tema}}
+                        <option *ngFor='let item of listaTemas ' value="{{item.id}}">{{item.tema}}
                         </option>
                       </select>
                   </div>
 
               </div>
               <div class="modal-footer">
-                  <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                  <button type="button" class="btn btn-success" data-dismiss="modal" (click)='publicar()' >Publicar</button>
+                  <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Cancelar</button>
+                  <button type="button" class="btn btn-outline-success" data-dismiss="modal" (click)='publicar()' >Publicar</button>
               </div>
           </div>
       </div>
