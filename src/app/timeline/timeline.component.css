@@ -147,27 +147,14 @@ header{
     
     
 }
-/* .card-section:hover{
-	box-shadow:1px 1px 20px #d2d2d2;
-} */
-.botaoFiltro{
-    width: 130px;
-    height: 30px;
-    font-size:15px;
-    font-family:Verdana;
-    border-width:1px;
-    color:rgb(255, 255, 255);
-    border-color:rgb(255, 255, 255);
-    border-top-left-radius:3px;
-    border-top-right-radius:3px;
-    border-bottom-left-radius:3px;
-    border-bottom-right-radius:3px;
-    background: rgba(0, 104, 55, 1);   
-}
-.botaoFiltro:hover{
-  background: rgb(0, 0, 0);
-  color: white;
-}
+
+.botaoTP {
+  width: 170px;
+  height: 35px;
+  background-color: white;
+  border-color: #ced4da;
+  }
+
 .card-filtro{
     z-index: 999;
     position:fixed;
@@ -183,10 +170,9 @@ header{
     background: #006837
 }
 
-.botaoMinhasPostagens {
-    width: 200px;
-    height: 30px;
-
+.botoes {
+  width: 190px;
+  height: 35px;
 }
 
 .foto-card-perfil{

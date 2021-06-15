@@ -35,15 +35,16 @@
           </div>
           <div class="pt-2">
             <a [routerLink]="['/perfil', idUser]">
-            <button class="py-0 btn btn-outline-success corBtn botaoMinhasPostagens" >Perfil</button>
-          </a>
+              <button class="py-0 btn btn-outline-success corBtn botoes">Perfil</button>
+            </a>
           </div>
           <div class="pt-2">
-            <button class="py-0 btn btn-outline-success corBtn botaoMinhasPostagens" data-target="#novaPostagem"
+            <button class="py-0 btn btn-outline-success corBtn botoes" data-target="#novaPostagem"
               data-toggle="modal">Criar um projeto</button>
           </div>
-          <div class="pt-2 ">
-            <button class="py-0 btn btn-outline-success corBtn botaoMinhasPostagens"
+
+          <div class="pt-2">
+            <button class="py-0 btn btn-outline-success corBtn botoes "
               (click)='findByMinhasPostagens()'>Minhas Postagens</button>
           </div>
         </div>
@@ -89,27 +90,29 @@
                     <div class="bar" [ngStyle]="{'width': ((item.valor_doado / item.meta) * 100) + '%'}">
                       <span class="percent">{{((item.valor_doado / item.meta) * 100) | number:0}}%</span>
                     </div>
-                    
+
                   </div>
                 </div>
 
                 <div id="deletarAtualizarPostagem" class="margemEditar" *ngIf='minhaPostagem(item.usuario.id)'>
-<!--                   <a href="#" data-toggle="modal" data-target="#editarPostagem" (click)='editarPostagem(item)'
+                  <!--                   <a href="#" data-toggle="modal" data-target="#editarPostagem" (click)='editarPostagem(item)'
                     class="follow">Editar</a>
                   <a href="#" data-toggle="modal" data-target="#excluirPostagem" (click)='editarPostagem(item)'
                     class="info">Excluir</a> -->
-                    <button type="button" class="botaoEditar mr-3 ml-1" data-toggle="modal" data-target="#editarPostagem" (click)='editarPostagem(item)'>
-                   Editar
+                  <button type="button" class="botaoEditar mr-3 ml-1" data-toggle="modal" data-target="#editarPostagem"
+                    (click)='editarPostagem(item)'>
+                    Editar
                   </button>
-                  <button type="button" class="botaoApagar" data-toggle="modal" data-target="#excluirPostagem" (click)='editarPostagem(item)'>
+                  <button type="button" class="botaoApagar" data-toggle="modal" data-target="#excluirPostagem"
+                    (click)='editarPostagem(item)'>
                     Excluir
-                   </button>
+                  </button>
                 </div>
                 <div class="col pl-0 ml-2 mt-3">
                   <div *ngIf='outraPostagem(item.usuario.id)'>
-                    <button type="button" class="botaoDoar" data-toggle="modal"
-                      data-target="#doacao" (click)='editarPostagem(item)'>
-                     Doar
+                    <button type="button" class="botaoDoar" data-toggle="modal" data-target="#doacao"
+                      (click)='editarPostagem(item)'>
+                      Doar
                     </button>
                   </div>
                 </div>
@@ -128,31 +131,33 @@
   <!-- CARD DE FILTRO -->
   <div class="col-md-3 margemCard sombraF">
     <div class="card-filtro">
-      <div class="col-lg-10 text-center ">
+      <div class="col-lg-10">
         <div class="card-section border rounded p-3 cor">
           <div class="card-header-first rounded pb-5">
-            <h2 class="card-header-title text-white pt-3">EXPLORAR</h2>
+            <h2 class="card-header-title text-center text-white pt-3">Explorar</h2>
           </div>
-          <div class="card-body text-center">
+          <div class="card-body pt-3">  
             <div class="form-group">
-              <label for="texto">TEMAS </label>
-              <select name="tema" id="tema" class="form-control" [(ngModel)]='idTema' (change)='changeTema()' (click)="trocaCorTema()">
+              <label for="texto" class="text-left text-secondary mb-0 ml-2">Temas </label>
+              <select name="tema" id="tema" class="form-control" [(ngModel)]='idTema' (change)='changeTema()'
+                (click)="trocaCorTema()">
                 <option (click)="resetarFiltro()">Nenhum</option>
                 <option *ngFor='let item of listaTemas' value="{{item.id}}">{{item.tema}}
                 </option>
               </select>
             </div>
             <div class="form-group">
-              <label for="tituloPostagem">Titulo</label>
-              <input class="form-control" type="text" name="tituloPostagem" (click)="tituloFiltro()" [(ngModel)]='tituloPost' (keyup)='findByTituloPostagem()' id="tituloPostagem" placeholder="Titulo">
+              <input class="form-control" type="text" name="tituloPostagem" (click)="tituloFiltro()"
+                [(ngModel)]='tituloPost' (keyup)='findByTituloPostagem()' id="tituloPostagem" placeholder="Titulo">
             </div>
             <div class="form-group">
-              <label for="buscaUsuario">Pesquisar por usuário</label>
-              <input class="form-control" type="text" name="buscaUsuario" (click)="usuarioFiltro()" [(ngModel)]="usuario" (change)="findByUsuario()" id="buscaUsuario" placeholder="Usuário">
+              <input class="form-control" type="text" name="buscaUsuario" (click)="usuarioFiltro()"
+                [(ngModel)]="usuario" (change)="findByUsuario()" id="buscaUsuario" placeholder="Usuário">
             </div>
-          </div>
-          <div>
-            <button class="py-0 btn btn-secondary botaoFiltro" (click)='resetarFiltro()'>Todos projetos</button>
+
+            <div>
+              <button class="py-0 btn botaoTP text-secondary" (click)='resetarFiltro()'>Todos Projetos</button>
+            </div>            
           </div>
         </div>
       </div>
