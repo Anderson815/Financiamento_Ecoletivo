@@ -41,6 +41,11 @@ export class CadastroComponent implements OnInit {
       this.alertas.showAlertDanger('As senhas estão diferentes!');
     }
     else{
+
+      if(this.user.foto == null){
+        this.user.foto = "../../assets/img/perfil.png"
+      }
+
       this.authService.cadastrar(this.user).subscribe((resp: User) => {
         this.user = resp;
         this.router.navigate(['/inicial']);
