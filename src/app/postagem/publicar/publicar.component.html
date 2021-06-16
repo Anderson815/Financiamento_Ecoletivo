@@ -17,7 +17,7 @@
                           placeholder="Digite o título">
                   </div>
 
-                  <div class="form-group">
+                  <div class="form-group text-end">
                       <label for="texto">Texto</label>
                       <textarea [(ngModel)]='postagem.descricao' class="form-control" name="texto" id="texto" placeholder="Digite uma descrição do projeto" rows="3"></textarea>
                   </div>
@@ -33,7 +33,7 @@
                 </div>
 
                   <div class="form-group">
-                      <label for="texto">Escolha um tema ou <a data-dismiss="modal" routerLink='/tema'>cadastre um novo tema   </a>: </label>
+                      <label for="texto">Escolha um tema</label>
                       <select name="tema" id="tema" class="form-control" [(ngModel)]='idTema' (change)='findByIdTema()'>
                         <option *ngFor='let item of listaTemas ' value="{{item.id}}">{{item.tema}}
                         </option>

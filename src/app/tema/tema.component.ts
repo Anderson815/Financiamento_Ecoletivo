@@ -16,7 +16,7 @@ export class TemaComponent implements OnInit {
   tema: Tema = new Tema()
   listaTemas: Tema[]
 
-  key = 'data'
+  key = 'id'
   reverse = true
 
   constructor(
@@ -33,7 +33,7 @@ export class TemaComponent implements OnInit {
     }
 
     if(environment.tipo != 'admin') {
-      this.alertas.showAlertDanger('Você precisa ser administrador para realizar essa tarefa!')
+      this.alertas.showAlertDanger('Atenção: você precisa ser administrador para realizar essa tarefa!')
       this.router.navigate(['/timeline'])
     }
 

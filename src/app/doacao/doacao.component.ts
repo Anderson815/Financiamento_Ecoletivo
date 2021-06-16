@@ -34,11 +34,11 @@ export class DoacaoComponent implements OnInit {
         },100)
       }, erro => {
         if(erro.status == 400){
-          this.alertas.showAlertDanger('O valor ultrapassa a meta');
+          this.alertas.showAlertDanger('Atenção: o valor doado ultrapassa a meta!');
         }
       })
     }else{
-      this.alertas.showAlertDanger('O valor não pode ser negativo ou zero')
+      this.alertas.showAlertDanger('Atenção: o valor doado não pode ser um número negativo ou zero!')
     }
 
   }

@@ -2,12 +2,14 @@
   <div class="container mt-5 pb-5 pt-5">
       <div class="row mt-5 mb-5">
           <div class="col-md-12">
-              <h1 class="text-center text-success">Apagar Tema</h1>
+              <h1 class="text-center">Apagar Tema</h1>
           </div>
       </div>
       <div class="row mb-3">
+        <hr>
           <div class="col-md-12">
-              <h4 class="text-center">Você tem certeza que deseja apagar este tema? Todas as postagens relacionadas a ele serão igualmente apagadas.</h4>
+              <h4 class="text-center">Você tem certeza que deseja apagar este tema?
+                <br> <h6>Obs.: Todas as postagens relacionadas a ele serão igualmente apagadas!</h6></h4>
           </div>
       </div>
 
@@ -19,7 +21,7 @@
 
       <div class="row">
           <div class="col-md-12 d-flex justify-content-center">
-              <button class="btn btn-outline-danger mr-4" routerLink="/tema">Cancelar</button>
+              <button class="btn btn-outline-danger mr-4" routerLink='/tema' >Cancelar</button>
               <button class="btn btn-outline-success" (click)="deletar()">Apagar</button>
               <!-- Colocar no botão sim:  -->
               <!--Cancelar e Apagar-->

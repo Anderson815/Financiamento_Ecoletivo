@@ -38,7 +38,7 @@ export class CadastroComponent implements OnInit {
     this.user.tipo = this.tipoUsuario;
 
     if(this.user.senha != this.confirmarSenha){
-      this.alertas.showAlertDanger('Senhas estão diferentes!');
+      this.alertas.showAlertDanger('As senhas estão diferentes!');
     }
     else{
       this.authService.cadastrar(this.user).subscribe((resp: User) => {
@@ -47,7 +47,7 @@ export class CadastroComponent implements OnInit {
         this.alertas.showAlertSucess('Usuário cadastrado com sucesso!')
 
       }, erro => {
-        this.alertas.showAlertDanger('O cadastro não está completo');
+        this.alertas.showAlertDanger('O cadastro não está completo!');
       })
     }
   }
