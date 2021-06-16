@@ -127,7 +127,7 @@ header{
 /* Card Perfil */
 .card-perfil{
     position: fixed;
-    
+
 }
 
 
@@ -137,15 +137,15 @@ header{
     height: 80px;
 	/* background: linear-gradient(-90deg, #56BFA5, #76b734); */
     background: #006837
-    
-	
+
+
 }
 .card-section{
     -webkit-box-shadow: 6px 6px 11px -1px rgba(0,0,0,0.75);
     -moz-box-shadow: 6px 6px 11px -1px rgba(0,0,0,0.75);
     box-shadow: 6px 6px 11px -1px rgba(0,0,0,0.75);
-    
-    
+
+
 }
 /* .card-section:hover{
 	box-shadow:1px 1px 20px #d2d2d2;
@@ -162,7 +162,7 @@ header{
     border-top-right-radius:3px;
     border-bottom-left-radius:3px;
     border-bottom-right-radius:3px;
-    background: rgba(0, 104, 55, 1);   
+    background: rgba(0, 104, 55, 1);
 }
 .botaoFiltro:hover{
   background: rgb(0, 0, 0);
@@ -333,11 +333,11 @@ border: 4px double #ffffff;
     margin:0 0 4%;
     padding:2.5% 3.5%;
     }
-    
+
     .fund:last-child {
     margin-bottom:4%;
     }
-    
+
     .progress {
     background-color:#bdd3fb;
     border-radius:4px;
@@ -345,61 +345,62 @@ border: 4px double #ffffff;
     height:27px;
     margin-bottom:2%;
     overflow:hidden;
+/*     background-color:#bdd3fb; */
     }
-    
+
     .bar {
-    background-color:#df0d0d;
+    background-color:#0ddf76;
     box-shadow:0 -1px 1px rgba(0,0,0,.15) inset;
     color:#fff;
     float:left;
     height:100%;
     position:relative;
     text-align:left;
-    
+/*     background-color:#0ddf76; */
     }
-    
+
     .bar > .percent {
     font-size:.9rem;
     left:8px;
     position:absolute;
     top:3px;
     }
-    
+
     .goal {
     color:#dfe2ed;
     }
-    
+
     .donate {
     color:#fff;
     float:right;
     font-weight:400;
     text-decoration:none;
     }
-    
+
     .donate:hover {
     text-decoration:underline;
     }
-    
-    
+
+
     /* Responsive */
-    
+
     @media only screen and (max-width:600px) {
         h1 {
         font-size:2rem;
         margin:8% 0;
         }
-        
+
         .fund {
         margin:0 0 10%;
         padding:5%;
         }
     }
-    
+
     @media only screen and (max-width:480px) {
         h1 {
         font-size:1.4rem;
         }
-        
+
         .donate {
         display:block;
         float:none;
@@ -423,7 +424,7 @@ border: 4px double #ffffff;
       border-bottom-right-radius:3px;
       background:rgba(255, 255, 255, 1);
     }
-    
+
     .botaoDoar:hover {
       background: #2980b9;
       color: white;
