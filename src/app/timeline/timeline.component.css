@@ -127,7 +127,7 @@ header{
 /* Card Perfil */
 .card-perfil{
     position: fixed;
-    
+
 }
 
 
@@ -137,15 +137,14 @@ header{
     height: 80px;
 	/* background: linear-gradient(-90deg, #56BFA5, #76b734); */
     background: #006837
-    
-	
+
+
 }
+
 .card-section{
-    -webkit-box-shadow: 6px 6px 11px -1px rgba(0,0,0,0.75);
-    -moz-box-shadow: 6px 6px 11px -1px rgba(0,0,0,0.75);
-    box-shadow: 6px 6px 11px -1px rgba(0,0,0,0.75);
-    
-    
+  -webkit-box-shadow: 6px 6px 11px -1px rgba(0,0,0,0.75);
+  -moz-box-shadow: 6px 6px 11px -1px rgba(0,0,0,0.75);
+  box-shadow: 6px 6px 11px -1px rgba(0,0,0,0.75);
 }
 
 .botaoTP {
@@ -155,6 +154,27 @@ header{
   border-color: #ced4da;
   }
 
+/* .card-section:hover{
+	box-shadow:1px 1px 20px #d2d2d2;
+} */
+.botaoFiltro{
+    width: 130px;
+    height: 30px;
+    font-size:15px;
+    font-family:Verdana;
+    border-width:1px;
+    color:rgb(255, 255, 255);
+    border-color:rgb(255, 255, 255);
+    border-top-left-radius:3px;
+    border-top-right-radius:3px;
+    border-bottom-left-radius:3px;
+    border-bottom-right-radius:3px;
+    background: rgba(0, 104, 55, 1);
+}
+.botaoFiltro:hover{
+  background: rgb(0, 0, 0);
+  color: white;
+}
 .card-filtro{
     z-index: 999;
     position:fixed;
@@ -208,7 +228,6 @@ header{
 .corBtn{
     color: black;
 }
-
 
 /* ___________________________________________________ */
 
@@ -319,11 +338,11 @@ border: 4px double #ffffff;
     margin:0 0 4%;
     padding:2.5% 3.5%;
     }
-    
+
     .fund:last-child {
     margin-bottom:4%;
     }
-    
+
     .progress {
     background-color:#bdd3fb;
     border-radius:4px;
@@ -332,7 +351,7 @@ border: 4px double #ffffff;
     margin-bottom:2%;
     overflow:hidden;
     }
-    
+
     .bar {
     background-color:#df0d0d;
     box-shadow:0 -1px 1px rgba(0,0,0,.15) inset;
@@ -341,51 +360,51 @@ border: 4px double #ffffff;
     height:100%;
     position:relative;
     text-align:left;
-    
+
     }
-    
+
     .bar > .percent {
     font-size:.9rem;
     left:8px;
     position:absolute;
     top:3px;
     }
-    
+
     .goal {
     color:#dfe2ed;
     }
-    
+
     .donate {
     color:#fff;
     float:right;
     font-weight:400;
     text-decoration:none;
     }
-    
+
     .donate:hover {
     text-decoration:underline;
     }
-    
-    
+
+
     /* Responsive */
-    
+
     @media only screen and (max-width:600px) {
         h1 {
         font-size:2rem;
         margin:8% 0;
         }
-        
+
         .fund {
         margin:0 0 10%;
         padding:5%;
         }
     }
-    
+
     @media only screen and (max-width:480px) {
         h1 {
         font-size:1.4rem;
         }
-        
+
         .donate {
         display:block;
         float:none;
@@ -409,7 +428,7 @@ border: 4px double #ffffff;
       border-bottom-right-radius:3px;
       background:rgba(255, 255, 255, 1);
     }
-    
+
     .botaoDoar:hover {
       background: #2980b9;
       color: white;

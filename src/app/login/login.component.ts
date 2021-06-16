@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['/timeline'])
     }, erro => {
       if(erro.status == 500){
-        this.alertas.showAlertDanger('Usuário ou senha estão incorretas');
+        this.alertas.showAlertDanger('Atenção: usuário ou senha incorretos!');
       }
     })
   }

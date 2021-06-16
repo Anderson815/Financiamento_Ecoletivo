@@ -19,7 +19,7 @@ export class PerfilComponent implements OnInit {
   tipoUsuario: string;
   idUser: number
   usuario: string
- 
+
   nome = environment.nome
   foto = environment.foto
   token = environment.token
@@ -54,13 +54,13 @@ export class PerfilComponent implements OnInit {
     this.user.tipo = this.tipoUsuario;
 
     if(this.user.senha != this.confirmarSenha){
-      this.alertas.showAlertDanger('Senhas estão diferentes!');
+      this.alertas.showAlertDanger('As senhas estão diferentes!');
     }
     else{
       this.authService.atualizar(this.user).subscribe((resp: User) => {
         this.user = resp;
         this.router.navigate(['/timeline']);
-        this.alertas.showAlertSucess('Usuário atualizado com sucesso, faça o login novamente')
+        this.alertas.showAlertSucess('Usuário atualizado com sucesso, faça o login novamente!')
         environment.token = ""
         environment.nome = ""
         environment.foto = ""
@@ -70,7 +70,7 @@ export class PerfilComponent implements OnInit {
       })
     }
   }
-  
+
   findByIdUser(id: number){
     this.authService.getByIdUser(id).subscribe((resp: User)=>{
       this.user = resp
