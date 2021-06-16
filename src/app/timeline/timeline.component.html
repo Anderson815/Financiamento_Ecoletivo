@@ -20,10 +20,10 @@
 <!-- /Card de Postagem -->
 
 <!-- FEED -->
-<div class="row margem " id="timeline">
+<div class="row margem d-flex justify-content-around" id="timeline">
 
   <!-- Card de Perfil -->
-  <div class="col-md-3 margemPerfil margemCard">
+  <div class="col-md-3 margemCard">
     <div class="card-perfil">
       <div class="col-lg-10 text-center ajuste">
         <div class="card-section border rounded p-3 cor ">
@@ -89,7 +89,7 @@
                     <div class="bar" [ngStyle]="{'width': ((item.valor_doado / item.meta) * 100) + '%'}">
                       <span class="percent">{{((item.valor_doado / item.meta) * 100) | number:0}}%</span>
                     </div>
-                    
+
                   </div>
                 </div>
 
@@ -133,7 +133,7 @@
           <div class="card-header-first rounded pb-5">
             <h2 class="card-header-title text-white pt-3">EXPLORAR</h2>
           </div>
-          <div class="card-body text-center">
+          <div class="card-body px-1 text-center">
             <div class="form-group">
               <label for="texto">TEMAS </label>
               <select name="tema" id="tema" class="form-control" [(ngModel)]='idTema' (change)='changeTema()' (click)="trocaCorTema()">
