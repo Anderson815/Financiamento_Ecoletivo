@@ -59,15 +59,17 @@
 <h2 id="Tecnologias">🛠 Tecnologias</h2>
 
 
-<a href="https://www.java.com/pt-BR/"><img src="Midias_Readme/ferramentas/Java.png" alt="Java" title="Java" height="62px" width="62px"></a>
-<a href="https://start.spring.io/"><img src="Midias_Readme/ferramentas/Spring Boot.png" alt="Spring" title="Spring" height="62px" width="62px"></a>
-<a href="https://maven.apache.org/"><img src="Midias_Readme/ferramentas/Maven.png" alt="Maven" title="Maven" height="62px" width="62px"></a>
-<a href="https://www.mysql.com/"><img src="Midias_Readme/ferramentas/MySQL.png" alt="MySQL" title="MySQL" height="62px" width="62px"></a>
+<a href="https://www.w3schools.com/html/"><img src="Midias_Readme/ferramentas/HTML.png" alt="HTML" title="HTML" height="62px" width="62px"></a>
+<a href="https://www.w3schools.com/css/"><img src="Midias_Readme/ferramentas/CSS.png" alt="CSS" title="CSS" height="62px" width="62px"></a>
+<a href="https://www.typescriptlang.org/"><img src="Midias_Readme/ferramentas/TypeScript.png" alt="TypeScript" title="TypeScript"></a>
+<a href="https://getbootstrap.com.br/"><img src="Midias_Readme/ferramentas/Bootstrap.png" alt="Bootstrap" title="Bootstrap" height="62px" width="62px"></a>
+<a href="https://angular.io/"><img src="Midias_Readme/ferramentas/Angular.png" alt="Angular" title="Angular" height="62px" width="62px"></a>
 
 <p>Utilitários:</p>
 <a href="https://git-scm.com/"><img src="Midias_Readme/ferramentas/Git.png" alt="Git" title="Git" height="62px" width="62px"></a>
 <a href="https://github.com/"><img src="Midias_Readme/ferramentas/GitHub.png" alt="GitHub" title="GitHub" height="62px" width="62px"></a>
-<a href="https://www.postman.com/"><img src="Midias_Readme/ferramentas/Postman.png" alt="Postman" title="Postman" height="62px" width="62px"></a>
+<a href="https://code.visualstudio.com/"><img src="Midias_Readme/ferramentas/VSCode.png" alt="VSCode" title="VSCode" height="52px" width="52px"></a>
+<a href="https://trello.com/pt-BR"><img src="Midias_Readme/ferramentas/Trello.png" alt="Trello" title="Trello" height="62px" width="62px"></a>
 
 <h2 id="Integrantes">👨‍💻 Integrantes do Grupo</h2>
 <p>Esse projeto foi feito com muito ❤️ e carinho por essa galera, entre em contato :D</p>
@@ -94,4 +96,4 @@
 
 <h2 id="Licenca">📝 Licença</h2>
 
-<p>Este projeto esta sob a licença <a href="https://github.com/caio199307/Projeto_IntegradorG4/blob/99505619b567ba9cb970a3a5cf8fd8974d657599/LICENSE">MIT</a>.</p>
+<p>Este projeto esta sob a licença <a href="https://github.com/Anderson815/Financiamento_Ecoletivo/blob/89857883ee2b52865098bfb328aaa76b1955c00d/LICENSE">MIT</a>.</p>
